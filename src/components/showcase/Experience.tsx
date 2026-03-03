@@ -1,292 +1,211 @@
 import React from 'react';
+import { useLocale, useResumeConfig } from '../../i18n';
 import ResumeDownload from './ResumeDownload';
+import { RoadIllustration } from './ResumeIllustrations';
 
 export interface ExperienceProps {}
 
-const Experience: React.FC<ExperienceProps> = (props) => {
+const Experience: React.FC<ExperienceProps> = () => {
+    const locale = useLocale();
+    const config = useResumeConfig();
+    const items = config.experience.items;
+
     return (
         <div className="site-page-content">
-            <ResumeDownload />
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1>Hover</h1>
-                        <a
-                            rel="noreferrer"
-                            target="_blank"
-                            href={'https://hover.gg/'}
-                        >
-                            <h4>www.hover.gg</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>Frontend Engineer</h3>
-                        <b>
-                            <p>Summer 2020 - Fall 2021</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
+            <h1>{config.experience.title}</h1>
+            <h3>{locale === 'zh' ? '时间线' : 'Timeline'}</h3>
+            <br />
+
+            <ResumeDownload
+                altText={locale === 'zh' ? '需要 PDF 简历？' : 'Need a PDF resume?'}
+            />
+
+            <div className="captioned-image">
+                <RoadIllustration />
                 <p>
-                    Targeted towards online content creators and streamers
-                    looking to build a brand, Hover is the home of over 150K
-                    users. Written in Typescript using React, React-Native,
-                    Framer, Express, and Redux.
+                    <sub>
+                        <b>{locale === 'zh' ? '图示：' : 'Figure:'}</b>{' '}
+                        {locale === 'zh'
+                            ? '从 0 到 1 搭建工具与管线：把“路”铺出来，让内容生产跑得更快、更稳。'
+                            : 'Building tools & pipelines from 0 to 1 — paving the road for faster and safer iteration.'}
+                    </sub>
                 </p>
-                <br />
-                <ul>
-                    <li>
-                        <p>
-                            Architected and engineered the vertical scrolling
-                            discover player which, at its daily peak, was
-                            responsible for generating over 600,000 views across
-                            20,000 active users.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Designed and implemented multiple features to
-                            increase app usability and user experience while
-                            ensuring the quality, maintainability and
-                            scalability of the front end as the user base grew
-                            by over 50,000.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Coordinated major refactors targeted towards app
-                            optimization and performance resulting in a smoother
-                            user experience and accomplished by eliminating
-                            redundant re-renders and API calls by over 50%.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Directed and executed an internal migration of 3
-                            individual repositories to a single monorepo,
-                            greatly reducing overhead for developing new
-                            features, fixing bugs, and managing dependencies.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Rebuilt the website with React and shared mobile app
-                            components allowing users to access a wide variety
-                            of app interactions entirely on the web, resulting
-                            in over 700,000 total site visits.
-                        </p>
-                    </li>
-                </ul>
             </div>
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1>BrACS</h1>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={'https://bracs.co/'}
+
+            <div style={styles.timeline}>
+                {items.map((item, idx) => {
+                    const isLast = idx === items.length - 1;
+                    const dateRange = `${item.start} - ${item.end}`;
+                    return (
+                        <div
+                            key={`${item.company}-${item.role}-${idx}`}
+                            style={styles.timelineItem}
                         >
-                            <h4>www.bracs.co</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>Team Lead & Engineer</h3>
-                        <b>
-                            <p>Fall 2021 - Spring 2022</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
-                <p>
-                    Supervised and developed the front end of bracs.co, a
-                    beautifully simple and effective bracket creation and
-                    management engine. Written in Typescript using React and
-                    deployed using AWS Elastic Beanstalk.
-                </p>
-                <br />
-                <ul>
-                    <li>
-                        <p>
-                            Managed the project and team members by conducting
-                            bi-weekly stand-ups.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Architected bracket view UI using React Flow and
-                            custom bracket data types built from binary trees.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Created conversion algorithms to serialize bracket
-                            tree data to allow for saving in the cloud.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Implemented bracket generation utilities which
-                            employ gray code for proper team seeding and
-                            placement.
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div style={styles.headerContainer}>
-                <div style={styles.header}>
-                    <div style={styles.headerRow}>
-                        <h1>K-F/X</h1>
-                        <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href={'https://kfxnyc.com/'}
-                        >
-                            <h4>www.kfxnyc.com</h4>
-                        </a>
-                    </div>
-                    <div style={styles.headerRow}>
-                        <h3>Special Effects Technician</h3>
-                        <b>
-                            <p>Fall 2019, Summer 2021</p>
-                        </b>
-                    </div>
-                </div>
-            </div>
-            <div className="text-block">
-                <p>
-                    Applied problem solving and technical skills to operate
-                    large equipment such as rain machines, fog machines, small
-                    explosives and general rigging with a professional crew of
-                    50+ people.
-                </p>
-                <br />
-                <h3 style={styles.indent}>Screen Credits:</h3>
-                <ul>
-                    <li style={styles.row}>
-                        <p>• Ray Donovan</p>
-                        <p>
-                            [{' '}
-                            <a
-                                href="https://www.sho.com/ray-donovan"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                SHOWTIME
-                            </a>{' '}
-                            ]
-                        </p>
-                    </li>
-                    <li style={styles.row}>
-                        <p>• Ray Donovan: The Movie</p>
-                        <p>
-                            [{' '}
-                            <a
-                                href="https://www.sho.com/titles/3508117/ray-donovan-the-movie"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                SHOWTIME
-                            </a>{' '}
-                            ]
-                        </p>
-                    </li>
-                    <li style={styles.row}>
-                        <p>• Hightown</p>
-                        <p>
-                            [{' '}
-                            <a
-                                href="https://www.starz.com/us/en/series/hightown/57463"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                STARZ
-                            </a>{' '}
-                            ]
-                        </p>
-                    </li>
-                    <li style={styles.row}>
-                        <p>• Bull</p>
-                        <p>
-                            [{' '}
-                            <a
-                                href="https://www.cbs.com/shows/bull/"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                CBS
-                            </a>{' '}
-                            ]
-                        </p>
-                    </li>
-                    <li style={styles.row}>
-                        <p>• At Home with Amy Sedaris</p>
-                        <p>
-                            [{' '}
-                            <a
-                                href="https://www.trutv.com/shows/at-home-with-amy-sedaris"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                truTV
-                            </a>{' '}
-                            ]
-                        </p>
-                    </li>
-                </ul>
+                            <div style={styles.markerColumn}>
+                                <div style={styles.marker} />
+                                {!isLast ? (
+                                    <div style={styles.markerLine} />
+                                ) : (
+                                    <div style={styles.markerLineEnd} />
+                                )}
+                            </div>
+                            <div style={styles.itemBody}>
+                                <div style={styles.itemHeader}>
+                                    <div style={styles.itemHeaderLeft}>
+                                        <h2 style={styles.company}>
+                                            {item.company}
+                                        </h2>
+                                        <h4 style={styles.role}>
+                                            {item.role}
+                                        </h4>
+                                    </div>
+                                    <div style={styles.itemHeaderRight}>
+                                        <p>
+                                            <b>{dateRange}</b>
+                                        </p>
+                                        {item.location ? (
+                                            <p style={styles.meta}>
+                                                <sub>{item.location}</sub>
+                                            </p>
+                                        ) : null}
+                                    </div>
+                                </div>
+
+                                {item.summary ? (
+                                    <div className="text-block">
+                                        <p>{item.summary}</p>
+                                    </div>
+                                ) : null}
+
+                                <div className="text-block" style={styles.card}>
+                                    <ul style={styles.list}>
+                                        {item.bullets.map((b) => (
+                                            <li key={b}>
+                                                <p>{b}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    {item.tags?.length ? (
+                                        <div style={styles.tags}>
+                                            {item.tags.map((t) => (
+                                                <span key={t} style={styles.tag}>
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    ) : null}
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
 const styles: StyleSheetCSS = {
-    header: {
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        width: '100%',
-    },
-    skillRow: {
-        flex: 1,
-        justifyContent: 'space-between',
-    },
-    skillName: {
-        minWidth: 56,
-    },
-    skill: {
-        flex: 1,
-        padding: 8,
-        alignItems: 'center',
-    },
-    progressBar: {
-        flex: 1,
-        background: 'red',
-        marginLeft: 8,
-        height: 8,
-    },
-    hoverLogo: {
-        height: 32,
-        marginBottom: 16,
-    },
-    headerContainer: {
-        alignItems: 'flex-end',
-        width: '100%',
-        justifyContent: 'center',
-    },
-    hoverText: {
-        marginBottom: 8,
-    },
-    indent: {
-        marginLeft: 24,
-    },
-    headerRow: {
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-    },
-    row: {
+    timeline: {
         display: 'flex',
+        flexDirection: 'column',
+        gap: 18,
+        width: '100%',
+        paddingBottom: 24,
+    },
+    timelineItem: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 18,
+        width: '100%',
+        alignItems: 'stretch',
+    },
+    markerColumn: {
+        width: 22,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: 10,
+    },
+    marker: {
+        width: 14,
+        height: 14,
+        borderRadius: 999,
+        border: '2px solid black',
+        background: 'white',
+        boxSizing: 'border-box',
+    },
+    markerLine: {
+        width: 2,
+        flex: 1,
+        background: 'black',
+        marginTop: 8,
+    },
+    markerLineEnd: {
+        width: 2,
+        height: 18,
+        background: 'transparent',
+        marginTop: 8,
+    },
+    itemBody: {
+        flexDirection: 'column',
+        flex: 1,
+        minWidth: 0,
+    },
+    itemHeader: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
         justifyContent: 'space-between',
+        gap: 18,
+        flexWrap: 'wrap',
+    },
+    itemHeaderLeft: {
+        flexDirection: 'column',
+        gap: 6,
+        minWidth: 320,
+    },
+    itemHeaderRight: {
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        gap: 2,
+    },
+    company: {
+        fontSize: 32,
+        lineHeight: 1.05,
+    },
+    role: {
+        opacity: 0.9,
+    },
+    meta: {
+        opacity: 0.8,
+    },
+    card: {
+        border: '2px solid black',
+        background: 'white',
+        padding: 14,
+        boxSizing: 'border-box',
+        width: '100%',
+        gap: 12,
+    },
+    list: {
+        marginTop: 0,
+        marginBottom: 0,
+        paddingLeft: 20,
+        display: 'block',
+    },
+    tags: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 10,
+        marginTop: 10,
+    },
+    tag: {
+        padding: '4px 10px',
+        border: '2px solid black',
+        background: 'white',
+        fontFamily: 'MillenniumBold',
+        fontSize: 16,
     },
 };
 

@@ -1,83 +1,72 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from '../general';
 import { useLocation, useNavigate } from 'react-router';
+import { useLocale, useResumeConfig } from '../../i18n';
+import LanguageToggle from './LanguageToggle';
 
 export interface VerticalNavbarProps {}
 
 const VerticalNavbar: React.FC<VerticalNavbarProps> = (props) => {
     const location = useLocation();
-    const [projectsExpanded, setProjectsExpanded] = useState(false);
-    const [isHome, setIsHome] = useState(false);
+    const locale = useLocale();
+    const config = useResumeConfig();
+    const isHome = location.pathname === '/';
 
     const navigate = useNavigate();
     const goToContact = () => {
         navigate('/contact');
     };
 
-    useEffect(() => {
-        if (location.pathname.includes('/projects')) {
-            setProjectsExpanded(true);
-        } else {
-            setProjectsExpanded(false);
-        }
-        if (location.pathname === '/') {
-            setIsHome(true);
-        } else {
-            setIsHome(false);
-        }
-        return () => {};
-    }, [location.pathname]);
+    const year = new Date().getFullYear() % 100;
+    const nameLines = config.profile.name.split(' ').filter(Boolean);
+    const displayLines =
+        nameLines.length === 2 ? nameLines : [config.profile.name];
 
     return !isHome ? (
         <div style={styles.navbar}>
             <div style={styles.header}>
-                <h1 style={styles.headerText}>Henry</h1>
-                <h1 style={styles.headerText}>Heffernan</h1>
-                <h3 style={styles.headerShowcase}>Showcase '22</h3>
+                {displayLines.map((line) => (
+                    <h1 key={line} style={styles.headerText}>
+                        {line}
+                    </h1>
+                ))}
+                <h3 style={styles.headerShowcase}>
+                    {locale === 'zh' ? '作品集' : 'Showcase'} '{year}
+                </h3>
+                <div style={styles.lang}>
+                    <LanguageToggle />
+                </div>
             </div>
             <div style={styles.links}>
-                <Link containerStyle={styles.link} to="" text="HOME" />
-                <Link containerStyle={styles.link} to="about" text="ABOUT" />
+                <Link
+                    containerStyle={styles.link}
+                    to=""
+                    text={config.nav.home}
+                />
+                <Link
+                    containerStyle={styles.link}
+                    to="about"
+                    text={config.nav.about}
+                />
                 <Link
                     containerStyle={styles.link}
                     to="experience"
-                    text="EXPERIENCE"
+                    text={config.nav.experience}
                 />
                 <Link
-                    containerStyle={Object.assign(
-                        {},
-                        styles.link,
-                        projectsExpanded && styles.expandedLink
-                    )}
+                    containerStyle={styles.link}
                     to="projects"
-                    text="PROJECTS"
+                    text={config.nav.projects}
                 />
-                {
-                    // if current path contains projects
-                    projectsExpanded && (
-                        <div style={styles.insetLinks}>
-                            <Link
-                                containerStyle={styles.insetLink}
-                                to="projects/software"
-                                text="SOFTWARE"
-                            />
-                            <Link
-                                containerStyle={styles.insetLink}
-                                to="projects/music"
-                                text="MUSIC"
-                            />
-                            <Link
-                                containerStyle={styles.insetLink}
-                                to="projects/art"
-                                text="ART"
-                            />
-                        </div>
-                    )
-                }
+                <Link
+                    containerStyle={styles.link}
+                    to="skills"
+                    text={config.nav.skills}
+                />
                 <Link
                     containerStyle={styles.link}
                     to="contact"
-                    text="CONTACT"
+                    text={config.nav.contact}
                 />
             </div>
             <div style={styles.spacer} />
@@ -111,23 +100,15 @@ const styles: StyleSheetCSS = {
     headerShowcase: {
         marginTop: 12,
     },
+    lang: {
+        marginTop: 18,
+    },
     logo: {
         width: '100%',
         marginBottom: 8,
     },
     link: {
         marginBottom: 32,
-    },
-    expandedLink: {
-        marginBottom: 16,
-    },
-    insetLinks: {
-        flexDirection: 'column',
-        marginLeft: 32,
-        marginBottom: 16,
-    },
-    insetLink: {
-        marginBottom: 8,
     },
     links: {
         flexDirection: 'column',

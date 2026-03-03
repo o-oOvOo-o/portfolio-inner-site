@@ -1,187 +1,232 @@
 import React from 'react';
-import me from '../../assets/pictures/workingAtComputer.jpg';
-import meNow from '../../assets/pictures/currentme.jpg';
-import { Link } from 'react-router-dom';
+import { useLocale, useResumeConfig } from '../../i18n';
 import ResumeDownload from './ResumeDownload';
+import { PipelineIllustration } from './ResumeIllustrations';
 
 export interface AboutProps {}
 
-const About: React.FC<AboutProps> = (props) => {
+function HighlightIcon({ index }: { index: number }) {
+    const icons = [
+        // Gear
+        <path
+            key="gear"
+            d="M12 2l1 2 2 .5-.5 2 1.5 1.5-1.5 1.5.5 2-2 .5-1 2-2-1-2 1-1-2-2-.5.5-2L2 8l1.5-1.5-.5-2L5 4l1-2 2 1 2-1zM8 8a2 2 0 104 0 2 2 0 00-4 0z"
+        />,
+        // Bolt
+        <path
+            key="bolt"
+            d="M9 1L3 9h4l-1 6 6-8H8l1-6z"
+        />,
+        // Check
+        <path
+            key="check"
+            d="M6.5 12.2L3.3 9l1.4-1.4 1.8 1.8 5-5L13 5.8l-6.5 6.4z"
+        />,
+        // Code
+        <path
+            key="code"
+            d="M6 4L2 8l4 4 1.4-1.4L4.8 8l2.6-2.6L6 4zm4 0l-1.4 1.4L11.2 8l-2.6 2.6L10 12l4-4-4-4z"
+        />,
+    ];
+
+    const icon = icons[index % icons.length];
     return (
-        // add on resize listener
+        <svg
+            width="18"
+            height="18"
+            viewBox="0 0 16 16"
+            style={styles.highlightIcon}
+            aria-hidden="true"
+        >
+            <g fill="none" stroke="#000" strokeWidth="1.4">
+                {icon}
+            </g>
+        </svg>
+    );
+}
+
+const About: React.FC<AboutProps> = () => {
+    const locale = useLocale();
+    const config = useResumeConfig();
+
+    const pipelineSteps =
+        locale === 'zh'
+            ? ['编辑器', '校验', '打包', '落地']
+            : ['Editor', 'Validation', 'Packaging', 'Shipping'];
+
+    return (
         <div className="site-page-content">
-            {/* <img src={me} style={styles.topImage} alt="" /> */}
-            <h1 style={{ marginLeft: -16 }}>Welcome</h1>
-            <h3>I'm Henry Heffernan</h3>
+            <h1>{config.meta.title}</h1>
+            <h3>{config.profile.title}</h3>
             <br />
+
+            <ResumeDownload
+                altText={locale === 'zh' ? '需要 PDF 简历？' : 'Need a PDF resume?'}
+            />
+
             <div className="text-block">
-                <p>
-                    I'm a software engineer currently working at Vercel! In May
-                    of 2022 I graduated from Rensselaer Polytechnic Institute
-                    with my BS in Computer Science.
-                </p>
+                <div style={styles.profileRow}>
+                    <div style={styles.profileLeft}>
+                        <p>
+                            <b>{locale === 'zh' ? '姓名：' : 'Name: '}</b>
+                            {config.profile.name}
+                        </p>
+                        <p>
+                            <b>{locale === 'zh' ? '地点：' : 'Location: '}</b>
+                            {config.profile.location}
+                        </p>
+                        <p>
+                            <b>Email: </b>
+                            <a href={`mailto:${config.profile.email}`}>
+                                {config.profile.email}
+                            </a>
+                        </p>
+                    </div>
+                    <div style={styles.profileRight}>
+                        <div style={styles.avatar} aria-hidden="true">
+                            <p style={styles.avatarText}>
+                                {config.profile.name.slice(0, 1).toUpperCase()}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <br />
-                <p>
-                    Thank you for taking the time to check out my portfolio. I
-                    really hope you enjoy exploring it as much as I enjoyed
-                    building it. If you have any questions or comments, feel
-                    free to contact me using{' '}
-                    <Link to="/contact">this form</Link> or shoot me an email at{' '}
-                    <a href="mailto:henryheffernan@gmail.com">
-                        henryheffernan@gmail.com
-                    </a>
-                </p>
+                <p>{config.profile.bio}</p>
+
+                {config.profile.interests?.length ? (
+                    <>
+                        <br />
+                        <p>
+                            <b>{locale === 'zh' ? '兴趣：' : 'Interests: '}</b>
+                        </p>
+                        <div style={styles.tags}>
+                            {config.profile.interests.map((i) => (
+                                <span key={i} style={styles.tag}>
+                                    {i}
+                                </span>
+                            ))}
+                        </div>
+                    </>
+                ) : null}
             </div>
-            <ResumeDownload />
+
             <div className="text-block">
-                <h3>About Me</h3>
+                <h2>{config.highlights.title}</h2>
                 <br />
-                <p>
-                    From a young age, I have had a curiosity about how things
-                    worked. This naturally led me to become absolutely obsessed
-                    with Lego and I fell in love with building things. In
-                    elementary school, I joined the Lego Robotics team at my
-                    local middle school, which was my first real exposure to
-                    programming. In 2008, my family and I moved across the
-                    country from California to New York, where I attended middle
-                    school, high school, and college.
-                </p>
+                <div style={styles.highlightGrid}>
+                    {config.highlights.items.map((item, idx) => (
+                        <div
+                            key={`${item.label}-${idx}`}
+                            style={styles.highlightCard}
+                        >
+                            <div style={styles.highlightHeader}>
+                                <HighlightIcon index={idx} />
+                                <h4>{item.label}</h4>
+                            </div>
+                            <p>
+                                <b>{item.value}</b>
+                            </p>
+                            {item.detail ? (
+                                <p style={styles.highlightDetail}>
+                                    {item.detail}
+                                </p>
+                            ) : null}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="text-block">
+                <h2>{locale === 'zh' ? '工作流示意' : 'Workflow'}</h2>
                 <br />
                 <div className="captioned-image">
-                    <img src={me} style={styles.image} alt="" />
+                    <PipelineIllustration steps={pipelineSteps} height={140} />
                     <p>
                         <sub>
-                            <b>Figure 1:</b> A real photo of me developing this
-                            website :)
+                            <b>{locale === 'zh' ? '图示：' : 'Figure:'}</b>{' '}
+                            {locale === 'zh'
+                                ? '从编辑器工作流到自动化校验与规范化产物，再到生产落地。'
+                                : 'From editor workflows to automated validation and standardized outputs.'}
                         </sub>
                     </p>
                 </div>
-
-                <p>
-                    I started programming more seriously in high school,
-                    initially learning how to scrape and interact with websites.
-                    I went on to do a ton of passion projects, many of them with
-                    one of my closest friends,{' '}
-                    <a
-                        rel="noreferrer"
-                        target="_blank"
-                        href="https://www.linkedin.com/in/scott-bass-189a7919b/"
-                    >
-                        Scott Bass
-                    </a>
-                    . We worked on many projects together, including chat bots,
-                    multiple game projects, apps, and more. One of these
-                    projects is viewable on my{' '}
-                    <Link to="/projects/software">Software Projects</Link> page.
-                </p>
-                <br />
-                <p>
-                    In 2017, I got accepted into Rennselear Polytechnic
-                    Institute to study Computer Science. It was my first choice
-                    and I was absolutely ecstatic to be going to such a great
-                    university. At the end of my sophomore year, I got an
-                    internship working for the startup Hover, primarily focusing
-                    on frontend work. I continued to work at Hover on and off
-                    for about a year and a half, until the start of my senior
-                    year when I decided to focus on other opportunities.
-                </p>
-                <br />
-                <br />
-                <div style={{}}>
-                    <div
-                        style={{
-                            flex: 1,
-                            textAlign: 'justify',
-                            alignSelf: 'center',
-                            flexDirection: 'column',
-                        }}
-                    >
-                        <h3>My Hobbies</h3>
-                        <br />
-                        <p>
-                            Beyond software, I have a lot of hobbies that I
-                            enjoy doing in my free time. The more tangible
-                            hobbies I have are{' '}
-                            <Link to="/projects/music">Music Production</Link>{' '}
-                            and creating{' '}
-                            <Link to="/projects/art">Digital Art</Link>. You can
-                            read more about each of these on their respective
-                            pages under my projects tab. Some other hobbies I
-                            enjoy are working out, cooking, and (unsurprisingly)
-                            playing video games.
-                        </p>
-                        <br />
-                        <p>
-                            In college, I was an active member in the fraternity
-                            Sigma Alpha Epsilon and held multiple positions in
-                            the chapter. I met a lot of amazing people through
-                            my fraternity and thoroughly enjoyed the community.
-                        </p>
-                    </div>
-                    <div style={styles.verticalImage}>
-                        <img src={meNow} style={styles.image} alt="" />
-                        <p>
-                            <sub>
-                                <b>Figure 2:</b> Me, April 2022
-                            </sub>
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-                <p>
-                    Thanks for reading about me! I hope that you enjoy exploring
-                    the rest of my portfolio website and everything it has to
-                    offer. If you find the easter egg make sure to let me know
-                    on twitter{' '}
-                    <a
-                        rel="noreferrer"
-                        target="_blank"
-                        href="https://twitter.com/henryheffernan"
-                    >
-                        @henryheffernan
-                    </a>{' '}
-                    Good luck and have fun!
-                </p>
-                <br />
-                <p>
-                    If you have any questions or comments I would love to hear
-                    them. You can reach me through the{' '}
-                    <Link to="/contact">contact page</Link> or shoot me an email
-                    at{' '}
-                    <a href="mailto:henryheffernan@gmail.com">
-                        henryheffernan@gmail.com
-                    </a>
-                </p>
             </div>
         </div>
     );
 };
 
 const styles: StyleSheetCSS = {
-    contentHeader: {
-        marginBottom: 16,
-        fontSize: 48,
+    profileRow: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 24,
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
     },
-    image: {
-        height: 'auto',
-        width: '100%',
-    },
-    topImage: {
-        height: 'auto',
-        width: '100%',
-        marginBottom: 32,
-    },
-    verticalImage: {
-        alignSelf: 'center',
-        // width: '80%',
-        marginLeft: 32,
-        flex: 0.8,
-
-        alignItems: 'center',
-        // marginBottom: 32,
-        textAlign: 'center',
+    profileLeft: {
         flexDirection: 'column',
+        gap: 6,
+        minWidth: 260,
+    },
+    profileRight: {
+        alignItems: 'center',
+    },
+    avatar: {
+        width: 96,
+        height: 96,
+        border: '2px solid black',
+        background:
+            'linear-gradient(135deg, rgba(59,130,246,0.20), rgba(34,197,94,0.16))',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    avatarText: {
+        fontFamily: 'MillenniumBold',
+        fontSize: 48,
+        lineHeight: 1,
+    },
+    tags: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 10,
+        marginTop: 10,
+    },
+    tag: {
+        padding: '4px 10px',
+        border: '2px solid black',
+        background: 'white',
+        fontFamily: 'MillenniumBold',
+        fontSize: 16,
+    },
+    highlightGrid: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gap: 16,
+    },
+    highlightCard: {
+        border: '2px solid black',
+        background: 'white',
+        padding: 14,
+        boxSizing: 'border-box',
+        flexDirection: 'column',
+        gap: 6,
+    },
+    highlightHeader: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+        marginBottom: 8,
+    },
+    highlightDetail: {
+        opacity: 0.85,
+        marginTop: 6,
+    },
+    highlightIcon: {
+        flexShrink: 0,
     },
 };
 

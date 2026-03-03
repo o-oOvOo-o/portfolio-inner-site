@@ -2,39 +2,65 @@ import React from 'react';
 import { Link } from '../general';
 
 import { useNavigate } from 'react-router';
+import { useLocale, useResumeConfig } from '../../i18n';
+import LanguageToggle from './LanguageToggle';
+import { PipelineIllustration } from './ResumeIllustrations';
 
 export interface HomeProps {}
 
 const Home: React.FC<HomeProps> = (props) => {
     const navigate = useNavigate();
+    const locale = useLocale();
+    const config = useResumeConfig();
 
     const goToContact = () => {
         navigate('/contact');
     };
 
+    const pipelineSteps =
+        locale === 'zh'
+            ? ['工具', '管线', 'PCG', '落地']
+            : ['Tools', 'Pipeline', 'PCG', 'Shipping'];
+
     return (
         <div style={styles.page}>
+            <div style={styles.lang}>
+                <LanguageToggle />
+            </div>
             <div style={styles.header}>
-                <h1 style={styles.name}>Henry Heffernan</h1>
-                <h2>Software Engineer</h2>
+                <h1 style={styles.name}>{config.profile.name}</h1>
+                <h2>{config.profile.title}</h2>
+                <p style={styles.tagline}>{config.meta.description}</p>
             </div>
             <div style={styles.buttons}>
-                <Link containerStyle={styles.link} to="about" text="ABOUT" />
+                <Link
+                    containerStyle={styles.link}
+                    to="about"
+                    text={config.nav.about}
+                />
                 <Link
                     containerStyle={styles.link}
                     to="experience"
-                    text="EXPERIENCE"
+                    text={config.nav.experience}
                 />
                 <Link
                     containerStyle={styles.link}
                     to="projects"
-                    text="PROJECTS"
+                    text={config.nav.projects}
+                />
+                <Link
+                    containerStyle={styles.link}
+                    to="skills"
+                    text={config.nav.skills}
                 />
                 <Link
                     containerStyle={styles.link}
                     to="contact"
-                    text="CONTACT"
+                    text={config.nav.contact}
                 />
+            </div>
+            <div style={styles.illustration}>
+                <PipelineIllustration steps={pipelineSteps} height={140} />
             </div>
             <div style={styles.forHireContainer} onMouseDown={goToContact}>
                 {/* <img src={forhire} alt="" /> */}
@@ -54,6 +80,11 @@ const styles: StyleSheetCSS = {
         flexDirection: 'column',
         height: '100%',
     },
+    lang: {
+        position: 'absolute',
+        top: 12,
+        right: 12,
+    },
     header: {
         textAlign: 'center',
         marginBottom: 64,
@@ -62,6 +93,12 @@ const styles: StyleSheetCSS = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    tagline: {
+        marginTop: 12,
+        maxWidth: 900,
+        textAlign: 'center',
+        opacity: 0.9,
     },
     buttons: {
         justifyContent: 'space-between',
@@ -75,6 +112,11 @@ const styles: StyleSheetCSS = {
     nowHiring: {
         backgroundColor: 'red',
         padding: 16,
+    },
+    illustration: {
+        width: 900,
+        maxWidth: '90%',
+        marginTop: 36,
     },
     forHireContainer: {
         marginTop: 64,

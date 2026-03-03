@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Colors from '../../constants/colors';
 import { Icon } from '../general';
+import { useResumeConfig } from '../../i18n';
 // import { } from '../general';
 // import Home from '../site/Home';
 // import Window from './Window';
@@ -16,6 +17,9 @@ const Toolbar: React.FC<ToolbarProps> = ({
     toggleMinimize,
     shutdown,
 }) => {
+    const config = useResumeConfig();
+    const osLabel = `${config.profile.name.split(' ')[0] || config.profile.name}OS`;
+
     const getTime = () => {
         const date = new Date();
         let hours = date.getHours();
@@ -96,7 +100,7 @@ const Toolbar: React.FC<ToolbarProps> = ({
                 >
                     <div style={styles.startWindowInner}>
                         <div style={styles.verticalStartContainer}>
-                            <p style={styles.verticalText}>HeffernanOS</p>
+                            <p style={styles.verticalText}>{osLabel}</p>
                         </div>
                         <div style={styles.startWindowContent}>
                             <div style={styles.startMenuSpace} />

@@ -1,10 +1,14 @@
 import React from 'react';
 import Window from '../os/Window';
 import Wordle from '../wordle/Wordle';
+import { useResumeConfig } from '../../i18n';
 
 export interface HenordleAppProps extends WindowAppProps {}
 
 const HenordleApp: React.FC<HenordleAppProps> = (props) => {
+    const config = useResumeConfig();
+    const year = new Date().getFullYear();
+
     return (
         <Window
             top={20}
@@ -12,11 +16,11 @@ const HenordleApp: React.FC<HenordleAppProps> = (props) => {
             width={600}
             height={860}
             windowBarIcon="windowGameIcon"
-            windowTitle="Henordle"
+            windowTitle="Wordle"
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
-            bottomLeftText={'© Copyright 2022 Henry Heffernan'}
+            bottomLeftText={`© ${year} ${config.profile.name}`}
         >
             <div className="site-page">
                 <Wordle />

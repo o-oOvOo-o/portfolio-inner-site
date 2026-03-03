@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../showcase/Home';
 import About from '../showcase/About';
 import Window from '../os/Window';
 import Experience from '../showcase/Experience';
 import Projects from '../showcase/Projects';
+import Skills from '../showcase/Skills';
 import Contact from '../showcase/Contact';
-import SoftwareProjects from '../showcase/projects/Software';
-import MusicProjects from '../showcase/projects/Music';
-import ArtProjects from '../showcase/projects/Art';
 import VerticalNavbar from '../showcase/VerticalNavbar';
 import useInitialWindowSize from '../../hooks/useInitialWindowSize';
+import { useLocale, useResumeConfig } from '../../i18n';
 
 export interface ShowcaseExplorerProps extends WindowAppProps {}
 
 const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
     const { initWidth, initHeight } = useInitialWindowSize({ margin: 100 });
+    const locale = useLocale();
+    const config = useResumeConfig();
+    const year = useMemo(() => new Date().getFullYear(), []);
+    const windowTitle =
+        locale === 'zh'
+            ? `${config.profile.name} - 作品集 ${year}`
+            : `${config.profile.name} - Showcase ${year}`;
 
     return (
         <Window
@@ -23,12 +29,12 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
             left={56}
             width={initWidth}
             height={initHeight}
-            windowTitle="Henry Heffernan - Showcase 2022"
+            windowTitle={windowTitle}
             windowBarIcon="windowExplorerIcon"
             closeWindow={props.onClose}
             onInteract={props.onInteract}
             minimizeWindow={props.onMinimize}
-            bottomLeftText={'© Copyright 2022 Henry Heffernan'}
+            bottomLeftText={`© ${year} ${config.profile.name}`}
         >
             <Router>
                 <div className="site-page">
@@ -38,16 +44,8 @@ const ShowcaseExplorer: React.FC<ShowcaseExplorerProps> = (props) => {
                         <Route path="/about" element={<About />} />
                         <Route path="/experience" element={<Experience />} />
                         <Route path="/projects" element={<Projects />} />
+                        <Route path="/skills" element={<Skills />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route
-                            path="/projects/software"
-                            element={<SoftwareProjects />}
-                        />
-                        <Route
-                            path="/projects/music"
-                            element={<MusicProjects />}
-                        />
-                        <Route path="/projects/art" element={<ArtProjects />} />
                     </Routes>
                 </div>
             </Router>
