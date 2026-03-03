@@ -1,17 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Colors from '../../constants/colors';
 import ShowcaseExplorer from '../applications/ShowcaseExplorer';
-import Doom from '../applications/Doom';
-import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
-// import ThisComputer from '../applications/ThisComputer';
-import Henordle from '../applications/Henordle';
 import Toolbar from './Toolbar';
 import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
-import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
-import Credits from '../applications/Credits';
 import Cunning3D from '../applications/Cunning3D';
+import Winamp from '../applications/Winamp';
 
 export interface DesktopProps {}
 
@@ -25,53 +20,23 @@ const APPLICATIONS: {
         component: React.FC<ExtendedWindowAppProps<any>>;
     };
 } = {
-    // computer: {
-    //     key: 'computer',
-    //     name: 'This Computer',
-    //     shortcutIcon: 'computerBig',
-    //     component: ThisComputer,
-    // },
     showcase: {
         key: 'showcase',
         name: 'My Showcase',
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
     },
-    trail: {
-        key: 'trail',
-        name: 'The Oregon Trail',
-        shortcutIcon: 'trailIcon',
-        component: OregonTrail,
-    },
-    doom: {
-        key: 'doom',
-        name: 'Doom',
-        shortcutIcon: 'doomIcon',
-        component: Doom,
-    },
-    scrabble: {
-        key: 'scrabble',
-        name: 'Scrabble',
-        shortcutIcon: 'scrabbleIcon',
-        component: Scrabble,
-    },
-    henordle: {
-        key: 'henordle',
-        name: 'Wordle',
-        shortcutIcon: 'henordleIcon',
-        component: Henordle,
-    },
-    credits: {
-        key: 'credits',
-        name: 'Credits',
-        shortcutIcon: 'credits',
-        component: Credits,
-    },
     cunning3d: {
         key: 'cunning3d',
         name: 'Cunning3D',
         shortcutIcon: 'windowExplorerIcon',
         component: Cunning3D,
+    },
+    winamp: {
+        key: 'winamp',
+        name: 'Winamp',
+        shortcutIcon: 'winampIcon',
+        component: Winamp,
     },
 };
 
