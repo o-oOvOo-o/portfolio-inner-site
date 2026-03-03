@@ -352,16 +352,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         education: {
             title: 'Education',
-            items: [
-                {
-                    school: 'Arts University (Confidential)',
-                    degree: 'B.A. in Arts & Crafts',
-                },
-                {
-                    school: 'Language Studies (Confidential)',
-                    degree: 'Dual degree in English Linguistics (Confidential)',
-                },
-            ],
+            items: [],
         },
         contact: {
             title: 'Contact',
@@ -589,16 +580,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         education: {
             title: '教育',
-            items: [
-                {
-                    school: '艺术类本科（保密）',
-                    degree: '工艺美术',
-                },
-                {
-                    school: '英语语言学（双学位，保密）',
-                    degree: '英语语言学',
-                },
-            ],
+            items: [],
         },
         contact: {
             title: '联系',

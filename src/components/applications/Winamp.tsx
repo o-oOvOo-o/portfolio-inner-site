@@ -1,48 +1,53 @@
-import React, { useState } from 'react';
-import Window from '../os/Window';
+import React, { useEffect, useRef } from 'react';
 
 export interface WinampAppProps extends WindowAppProps {}
 
 const WinampApp: React.FC<WinampAppProps> = (props) => {
-    const [width, setWidth] = useState(720);
-    const [height, setHeight] = useState(520);
+    const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+    useEffect(() => {
+        const onMessage = (event: MessageEvent) => {
+            if (event.origin !== window.location.origin) return;
+            if (event.source !== iframeRef.current?.contentWindow) return;
+
+            const type = (event.data as any)?.type;
+            if (type === 'winamp:close') props.onClose();
+            if (type === 'winamp:minimize') props.onMinimize();
+            if (type === 'winamp:interact') props.onInteract();
+        };
+
+        window.addEventListener('message', onMessage);
+        return () => {
+            window.removeEventListener('message', onMessage);
+        };
+    }, [props.onClose, props.onMinimize, props.onInteract]);
 
     return (
-        <Window
-            top={56}
-            left={140}
-            width={width}
-            height={height}
-            windowBarIcon="winampIcon"
-            windowTitle="Winamp"
-            bottomLeftText="Classic player powered by Webamp"
-            closeWindow={props.onClose}
-            onInteract={props.onInteract}
-            minimizeWindow={props.onMinimize}
-            onWidthChange={setWidth}
-            onHeightChange={setHeight}
-        >
-            <div className="site-page" style={styles.page}>
-                <iframe
-                    src="/winamp.html"
-                    title="Winamp"
-                    style={styles.iframe}
-                />
-            </div>
-        </Window>
+        <div style={styles.container} onMouseDown={props.onInteract}>
+            <iframe
+                ref={iframeRef}
+                src="/winamp.html"
+                title="Winamp"
+                style={styles.iframe}
+            />
+        </div>
     );
 };
 
 const styles: StyleSheetCSS = {
-    page: {
-        width: '100%',
-        height: '100%',
+    container: {
+        position: 'absolute',
+        top: 56,
+        left: 140,
+        width: 560,
+        height: 420,
+        overflow: 'hidden',
     },
     iframe: {
         width: '100%',
         height: '100%',
         border: 'none',
-        background: '#c0c0c0',
+        background: 'transparent',
     },
 };
 

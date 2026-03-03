@@ -11,8 +11,6 @@ const Skills: React.FC<SkillsProps> = () => {
     return (
         <div className="site-page-content">
             <h1>{config.skills.title}</h1>
-            <h3>{config.education.title}</h3>
-            <br />
             <div className="captioned-image">
                 <NodeGraphIllustration />
                 <p>
@@ -40,20 +38,22 @@ const Skills: React.FC<SkillsProps> = () => {
                 ))}
             </div>
 
-            <div className="text-block">
-                <h2>{config.education.title}</h2>
-                <br />
-                <ul>
-                    {config.education.items.map((edu) => (
-                        <li key={`${edu.school}-${edu.degree}`}>
-                            <p>
-                                <b>{edu.school}</b> — {edu.degree}
-                            </p>
-                            {edu.detail && <p>{edu.detail}</p>}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            {config.education.items.length > 0 ? (
+                <div className="text-block">
+                    <h2>{config.education.title}</h2>
+                    <br />
+                    <ul>
+                        {config.education.items.map((edu) => (
+                            <li key={`${edu.school}-${edu.degree}`}>
+                                <p>
+                                    <b>{edu.school}</b> — {edu.degree}
+                                </p>
+                                {edu.detail && <p>{edu.detail}</p>}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ) : null}
         </div>
     );
 };
