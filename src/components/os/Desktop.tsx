@@ -11,6 +11,7 @@ import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
 import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
+import Cunning3D from '../applications/Cunning3D';
 
 export interface DesktopProps {}
 
@@ -65,6 +66,12 @@ const APPLICATIONS: {
         name: 'Credits',
         shortcutIcon: 'credits',
         component: Credits,
+    },
+    cunning3d: {
+        key: 'cunning3d',
+        name: 'Cunning3D',
+        shortcutIcon: 'windowExplorerIcon',
+        component: Cunning3D,
     },
 };
 
