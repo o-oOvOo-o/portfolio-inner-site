@@ -20,7 +20,7 @@ const CUNNING3D_CARD = {
         en: 'Open live site',
         zh: '打开实时站点',
     },
-    tags: ['Rust', 'Bevy', 'DCC', 'Procedural Modeling', 'PCG'],
+    tags: ['Rust', 'ECS', 'DCC', 'Procedural Modeling', 'PCG'],
 };
 
 const Projects: React.FC<ProjectsProps> = () => {

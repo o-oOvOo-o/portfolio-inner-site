@@ -244,7 +244,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'A complete, runnable system with a growing library of CDA examples.',
                         'Tooling-first design: reliable workflows, iteration speed, and production-minded architecture.',
                     ],
-                    tags: ['Rust', 'Bevy', 'DCC', 'Procedural Modeling', 'PCG'],
+                    tags: ['Rust', 'ECS', 'DCC', 'Procedural Modeling', 'PCG'],
                     links: [
                         { label: 'Website', href: 'https://cunning3d.com' },
                         {
@@ -500,7 +500,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         '完整可运行的软件系统，并沉淀了大量 CDA 示例案例。',
                         '以工具链与工作流为中心，强调可维护与可落地。',
                     ],
-                    tags: ['Rust', 'Bevy', 'DCC', '程序化建模', 'PCG'],
+                    tags: ['Rust', 'ECS', 'DCC', '程序化建模', 'PCG'],
                     links: [
                         { label: '官网', href: 'https://cunning3d.com' },
                         {
