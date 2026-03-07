@@ -83,6 +83,38 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
+                src: '/portfolio/project-mugen/light-rail-shot.jpg',
+                caption: {
+                    en: 'Light-rail / transit presentation shot.',
+                    zh: '城市轻轨 / 轨道展示镜头。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/project-mugen/elevated-track-shot.jpg',
+                caption: {
+                    en: 'Elevated track and road composition.',
+                    zh: '高架轨道与道路组合镜头。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/project-mugen/skyline-tower-shot.jpg',
+                caption: {
+                    en: 'Skyline tower / megastructure beauty shot.',
+                    zh: '天际线与巨构地标镜头。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/project-mugen/sunset-avenue-shot.jpg',
+                caption: {
+                    en: 'Sunset avenue shot from the city deck.',
+                    zh: '作品集中拆出的城市黄昏街景。',
+                },
+            },
+            {
+                type: 'image',
                 src: '/portfolio/project-mugen/bridge-tool.gif',
                 caption: {
                     en: 'Animated bridge-tool workflow extracted from the deck.',
@@ -301,6 +333,30 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                 caption: {
                     en: 'Lane module breakdown.',
                     zh: '车道模块拆解图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/city-pcg/road-blockout-overview.jpg',
+                caption: {
+                    en: 'Road blockout overview for city layout iteration.',
+                    zh: '用于城市布局迭代的路网白模总览。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/city-pcg/editor-blockout-shot.jpg',
+                caption: {
+                    en: 'Editor-side blockout shot.',
+                    zh: '编辑器内白模构建镜头。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/city-pcg/night-crossing-shot.jpg',
+                caption: {
+                    en: 'Night crossing shot tied back to the road system.',
+                    zh: '和路网系统关联的夜景路口镜头。',
                 },
             },
         ],
@@ -657,6 +713,14 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
+                src: '/portfolio/practice/minigame-town-night.jpg',
+                caption: {
+                    en: 'Mini-game town night scene.',
+                    zh: '小游戏夜景小镇场景。',
+                },
+            },
+            {
+                type: 'image',
                 src: '/portfolio/practice/indoor-scene.jpg',
                 caption: {
                     en: 'Interior scene / gameplay capture.',
@@ -669,6 +733,22 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                 caption: {
                     en: 'Mini-game demo clip from the deck.',
                     zh: '作品集里拆出的 MiniGame Demo 片段。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/minigame-dialogue-shot.jpg',
+                caption: {
+                    en: 'Mini-game dialogue / UI screenshot.',
+                    zh: '小游戏对话 / UI 截图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/minigame-combat-shot.jpg',
+                caption: {
+                    en: 'Mini-game combat / gameplay screenshot.',
+                    zh: '小游戏战斗 / 玩法截图。',
                 },
             },
             {

@@ -56,6 +56,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                         </p>
                         <h1 style={styles.title}>{title}</h1>
                         <p style={styles.period}>{dossier.period}</p>
+                        <p style={styles.metaLine}>
+                            {locale === 'zh'
+                                ? `${dossier.media.length} 项图像 / GIF / 视频`
+                                : `${dossier.media.length} images / GIFs / videos`}
+                        </p>
                         <p style={styles.summary}>{summary}</p>
                         <div style={styles.tagRow}>
                             {dossier.tags.map((tag) => (
@@ -207,6 +212,10 @@ const styles: StyleSheetCSS = {
         fontFamily: 'MillenniumBold',
         fontSize: 18,
     },
+    metaLine: {
+        opacity: 0.72,
+        fontSize: 16,
+    },
     summary: {
         opacity: 0.92,
     },
@@ -291,8 +300,9 @@ const styles: StyleSheetCSS = {
     },
     media: {
         width: '100%',
-        height: 260,
-        objectFit: 'cover',
+        height: 'auto',
+        maxHeight: 420,
+        objectFit: 'contain',
         borderBottom: '2px solid black',
         background: '#efefef',
     },

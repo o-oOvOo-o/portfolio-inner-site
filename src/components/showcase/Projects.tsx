@@ -26,6 +26,8 @@ const CUNNING3D_CARD = {
 const Projects: React.FC<ProjectsProps> = () => {
     const locale = useLocale();
     const config = useResumeConfig();
+    const mediaCountLabel = (count: number) =>
+        locale === 'zh' ? `${count} 项内容` : `${count} items`;
 
     return (
         <div className="site-page-content">
@@ -131,7 +133,9 @@ const Projects: React.FC<ProjectsProps> = () => {
                                     <div style={styles.cardHeader}>
                                         <div style={styles.cardTitleBlock}>
                                             <p style={styles.cardKicker}>
-                                                {dossier.period}
+                                                {`${dossier.period} · ${mediaCountLabel(
+                                                    dossier.media.length
+                                                )}`}
                                             </p>
                                             <h3 style={styles.cardTitle}>{title}</h3>
                                         </div>
