@@ -234,7 +234,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             ],
         },
         projects: {
-            title: 'Selected Projects',
+            title: 'Selected Works',
             items: [
                 {
                     name: 'Cunning3D',
@@ -490,7 +490,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             ],
         },
         projects: {
-            title: '代表项目',
+            title: '精选作品',
             items: [
                 {
                     name: 'Cunning3D',

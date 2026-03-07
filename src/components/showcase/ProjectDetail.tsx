@@ -18,7 +18,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
             <div className="site-page-content">
                 <div style={styles.wrapper}>
                     <RouterLink to="/projects" style={styles.backLink}>
-                        {locale === 'zh' ? '← 返回项目封面页' : '← Back to projects'}
+                        {locale === 'zh' ? '← 返回精选作品' : '← Back to selected works'}
                     </RouterLink>
                     <div style={styles.notFoundBox}>
                         <h2>
@@ -46,20 +46,20 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
         <div className="site-page-content">
             <div style={styles.wrapper}>
                 <RouterLink to="/projects" style={styles.backLink}>
-                    {locale === 'zh' ? '← 返回项目封面页' : '← Back to projects'}
+                    {locale === 'zh' ? '← 返回精选作品' : '← Back to selected works'}
                 </RouterLink>
 
                 <section style={styles.hero}>
                     <div style={styles.heroCopy}>
                         <p style={styles.eyebrow}>
-                            {locale === 'zh' ? '项目展示页' : 'Project Showcase'}
+                            {locale === 'zh' ? '案例研究' : 'Case Study'}
                         </p>
                         <h1 style={styles.title}>{title}</h1>
                         <p style={styles.period}>{dossier.period}</p>
                         <p style={styles.metaLine}>
                             {locale === 'zh'
-                                ? `${dossier.media.length} 项图像 / GIF / 视频`
-                                : `${dossier.media.length} images / GIFs / videos`}
+                                ? `${dossier.media.length} 组精选视觉材料`
+                                : `${dossier.media.length} curated visuals`}
                         </p>
                         <p style={styles.summary}>{summary}</p>
                         <div style={styles.tagRow}>
@@ -83,11 +83,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
 
                 <section style={styles.section}>
                     <div style={styles.sectionHeader}>
-                        <h3>{locale === 'zh' ? '核心说明' : 'Key Notes'}</h3>
+                        <h3>{locale === 'zh' ? '项目陈述' : 'Project Statement'}</h3>
                         <p style={styles.sectionCopy}>
                             {locale === 'zh'
-                                ? '这部分以文档化方式整理项目亮点，便于在网页里独立浏览。'
-                                : 'This page turns the original deck material into a standalone web dossier.'}
+                                ? '这里用简短文字说明项目的意图、方法，以及它在整套作品集中的位置。'
+                                : 'These short notes frame intention, method, and why the work matters within the portfolio.'}
                         </p>
                     </div>
                     <ul style={styles.bulletList}>
@@ -101,11 +101,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
 
                 <section style={styles.section}>
                     <div style={styles.sectionHeader}>
-                        <h3>{locale === 'zh' ? '图像 / 动图 / 视频' : 'Images / GIFs / Video'}</h3>
+                        <h3>{locale === 'zh' ? '过程与视觉材料' : 'Process & Visual Material'}</h3>
                         <p style={styles.sectionCopy}>
                             {locale === 'zh'
-                                ? '所有媒体文件都已本地化托管；GIF 会保持动态效果。'
-                                : 'All media is locally hosted; GIF entries stay animated inside the page.'}
+                                ? '静图、GIF 与视频按证据链方式排列，更接近申请作品集里的 case-study board。'
+                                : 'Still images, GIFs, and clips are sequenced as supporting evidence, closer to a case-study board in an application portfolio.'}
                         </p>
                     </div>
                     <div style={styles.gallery}>

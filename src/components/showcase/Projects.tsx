@@ -13,12 +13,12 @@ const CUNNING3D_CARD = {
         zh: 'Cunning3D',
     },
     summary: {
-        en: 'The live Cunning3D site stays separate from this archive so it keeps its native interactive showcase. Open the homepage for the full real-time experience and latest updates.',
-        zh: '实时版 Cunning3D 主页继续保持独立站点，这样可以保留它原生的交互式 showcase。点击主页即可进入完整实时体验与最新更新。',
+        en: 'An ongoing independent platform project presented through its own live site. It remains separate here so the real-time interface, responsiveness, and self-contained world stay part of the work itself.',
+        zh: '一个仍在持续发展的独立平台项目，因此保留在它自己的实时站点中；只有这样，交互、流畅度和完整世界观本身才仍然是作品的一部分。',
     },
     buttonLabel: {
-        en: 'Visit homepage',
-        zh: '访问主页',
+        en: 'Open live site',
+        zh: '打开实时站点',
     },
     tags: ['Rust', 'Bevy', 'DCC', 'Procedural Modeling', 'PCG'],
 };
@@ -27,33 +27,33 @@ const Projects: React.FC<ProjectsProps> = () => {
     const locale = useLocale();
     const config = useResumeConfig();
     const mediaCountLabel = (count: number) =>
-        locale === 'zh' ? `${count} 项内容` : `${count} items`;
+        locale === 'zh' ? `${count} 组材料` : `${count} visuals`;
 
     return (
         <div className="site-page-content">
             <div style={styles.header}>
                 <p style={styles.eyebrow}>
                     {locale === 'zh'
-                        ? '作品档案 / Portfolio Dossiers'
-                        : 'Portfolio Dossiers / Archive'}
+                        ? '精选作品 / Case Studies'
+                        : 'Selected Works / Case Studies'}
                 </p>
                 <h1>{config.projects.title}</h1>
                 <div className="text-block" style={styles.introBlock}>
                     <p>
                         {locale === 'zh'
-                            ? '下面这些项目档案已从 2021–2025 作品集 PPT 中拆出。列表页只展示轻量封面，点击后进入单独详情页，查看更多静图、GIF 和说明。'
-                            : 'These dossiers are extracted from the 2021–2025 portfolio deck. The index stays lightweight with cover images only; each card opens into a dedicated detail page with more stills, GIFs, and notes.'}
+                            ? '这一页按“留学申请作品集 / case study”的方式重新编排：索引页保留简洁封面，进入详情页后再展开图像、GIF 与简短过程说明。'
+                            : 'This section is edited like a study-abroad application portfolio: concise covers on the index, then dedicated case-study pages that unfold images, GIFs, and short process statements.'}
                     </p>
                 </div>
             </div>
 
             <section style={styles.section}>
                 <div style={styles.sectionHeader}>
-                    <h3>{locale === 'zh' ? '精选外链' : 'Featured External'}</h3>
+                    <h3>{locale === 'zh' ? '独立项目入口' : 'Independent Live Work'}</h3>
                     <p style={styles.sectionCopy}>
                         {locale === 'zh'
-                            ? 'Cunning3D 仍然直接跳转到主站。'
-                            : 'Cunning3D still points directly to the main site.'}
+                            ? 'Cunning3D 作为独立运行的实时作品保留单独站点。'
+                            : 'Cunning3D remains on its own live site so the interactive experience stays intact.'}
                     </p>
                 </div>
 
@@ -67,7 +67,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                     <div style={styles.featuredBody}>
                         <div style={styles.cardHeader}>
                             <p style={styles.cardKicker}>
-                                {locale === 'zh' ? '实时主页' : 'Live Homepage'}
+                                {locale === 'zh' ? '独立平台' : 'Independent Platform'}
                             </p>
                             <h2 style={styles.featuredTitle}>
                                 {CUNNING3D_CARD.title[locale]}
@@ -99,11 +99,11 @@ const Projects: React.FC<ProjectsProps> = () => {
 
             <section style={styles.section}>
                 <div style={styles.sectionHeader}>
-                    <h3>{locale === 'zh' ? '项目封面索引' : 'Project Cover Index'}</h3>
+                    <h3>{locale === 'zh' ? '案例研究索引' : 'Selected Case Studies'}</h3>
                     <p style={styles.sectionCopy}>
                         {locale === 'zh'
-                            ? '其余项目全部进入单独展示页，详情里保留更多图和动图。'
-                            : 'All remaining projects open into standalone showcase pages with richer galleries.'}
+                            ? '其余项目都整理成更接近申请作品集的独立 case study 页面，保留视觉材料与简短过程说明。'
+                            : 'The remaining projects are edited as compact case-study pages, closer to an application portfolio in tone and pacing.'}
                     </p>
                 </div>
 
@@ -158,8 +158,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                                             style={styles.primaryButton}
                                         >
                                             {locale === 'zh'
-                                                ? '进入展示页'
-                                                : 'Open showcase'}
+                                                ? '查看案例页'
+                                                : 'Open case study'}
                                         </RouterLink>
                                     </div>
                                 </div>
