@@ -163,6 +163,22 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                     zh: '碰撞体拟合流程。',
                 },
             },
+            {
+                type: 'image',
+                src: '/portfolio/fallen-moon/monster-skeleton-panel.png',
+                caption: {
+                    en: 'Monster skeleton / asset inspection panel.',
+                    zh: '怪物骨架与资源检查面板。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/fallen-moon/encounter-shot.png',
+                caption: {
+                    en: 'In-engine encounter / crowd shot.',
+                    zh: '引擎内遭遇战 / 群组展示镜头。',
+                },
+            },
         ],
     },
     {
@@ -295,31 +311,31 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             en: 'World Tools / Devlog / Seamless World',
             zh: '大世界工具 / Devlog / 无缝世界',
         },
-        period: '2023 – 2025',
+        period: '2019 – 2025',
         summary: {
-            en: 'A more engineering-heavy slice from the deck: export tooling, weight-remap tooling, road-segment devlogs, CSG/boolean benchmarks, and a lightweight seamless-world GIF.',
-            zh: '这部分更偏工程化：导出工具、权重重映射工具、路段 Devlog、CSG / Boolean 基准，以及无缝大世界 GIF。',
+            en: 'A tooling-first dossier that keeps the panel UI, workflow notes, road devlogs, CSG/boolean experiments, and the seamless-world animation instead of reducing everything to beauty shots.',
+            zh: '这一组更强调工具与过程：保留了面板 UI、工作流记录、道路 Devlog、CSG / Boolean 实验，以及无缝大世界动画，而不是只留下结果图。',
         },
-        coverSrc: '/portfolio/world-tools/seamless-world.gif',
+        coverSrc: '/portfolio/world-tools/cover.jpg',
         coverCaption: {
             en: 'World tools cover',
             zh: '大世界工具封面',
         },
         bullets: [
             {
-                en: 'Keeps the devlog feel instead of flattening everything into glossy final images.',
-                zh: '保留了 Devlog 气质，而不是把所有内容都抹平成“最终效果图”。',
+                en: 'Keeps panels, parameter sheets, and devlog captures so the engineering side stays readable.',
+                zh: '保留参数面板、配置表和 Devlog 录屏，让工程侧信息仍然可读。',
             },
             {
-                en: 'The local seamless-world GIF gives the portfolio an always-on animated hook.',
-                zh: '本地化的无缝大世界 GIF 让这一组始终带有动态展示钩子。',
+                en: 'Puts manual junction editing, CSG/boolean checks, and seamless-world R&D into one local archive.',
+                zh: '把手动路口编辑、CSG / Boolean 验证和无缝世界研发整理成一个本地档案。',
             },
             {
-                en: 'Useful for readers who care more about tooling decisions than beauty shots.',
-                zh: '很适合那些更关心工具设计而非纯美术效果的浏览者。',
+                en: 'Useful for readers who care more about workflow design and debugging traces than polished renders.',
+                zh: '很适合更关心工作流设计和调试痕迹，而非纯渲染效果的浏览者。',
             },
         ],
-        tags: ['Pipeline', 'CSG', 'Boolean', 'Seamless World', 'Devlog'],
+        tags: ['Pipeline', 'Workflow', 'CSG', 'Boolean', 'Devlog'],
         media: [
             {
                 type: 'image',
@@ -339,10 +355,42 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
+                src: '/portfolio/world-tools/parameter-sync-panel.png',
+                caption: {
+                    en: 'Parameter synchronization / batch panel.',
+                    zh: '参数同步 / 批处理面板。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/world-tools/replace-workflow-panel.png',
+                caption: {
+                    en: 'Replace / remap workflow panel.',
+                    zh: '替换 / 重映射工作流面板。',
+                },
+            },
+            {
+                type: 'image',
                 src: '/portfolio/world-tools/road-segment-devlog.gif',
                 caption: {
                     en: 'Road-segment devlog GIF.',
                     zh: '路段 Devlog 动图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/world-tools/manual-junction.gif',
+                caption: {
+                    en: 'Manual junction fine-tuning devlog.',
+                    zh: '手动路口精调 Devlog。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/world-tools/junction-polygon.gif',
+                caption: {
+                    en: 'Junction polygon organization test.',
+                    zh: '路口多边形组织测试。',
                 },
             },
             {
@@ -372,15 +420,195 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         ],
     },
     {
+        slug: 'terrain-road-2025',
+        title: {
+            en: 'Realtime Road × Terrain Editor',
+            zh: '实时道路 × 地形编辑',
+        },
+        period: '2025.1 – 2025.3',
+        summary: {
+            en: 'A newer R&D slice focused on editing realtime roads directly against terrain data: cross-sections, data flow, spline planning, terrain fusion, and a final city-intersection preview all inside one workflow.',
+            zh: '一组更新的研发内容：把实时道路编辑直接和地形数据放进同一工作流中，覆盖截面设计、数据流、Spline 规划、地形融合，以及最终的城市场景预览。',
+        },
+        coverSrc: '/portfolio/terrain-road-2025/cover.jpg',
+        coverCaption: {
+            en: 'Realtime road × terrain cover',
+            zh: '实时道路 × 地形封面',
+        },
+        bullets: [
+            {
+                en: 'Keeps road authoring and terrain processing in the same editor context so the interaction stays obvious.',
+                zh: '把道路创作和地形处理放到同一编辑器语境中，交互关系一眼就能看懂。',
+            },
+            {
+                en: 'Long GIF captures explain spline editing, terrain fusion, and final junction assembly better than a single still.',
+                zh: '长 GIF 比单张截图更能说明 Spline 编辑、地形融合和路口搭建过程。',
+            },
+            {
+                en: 'Pairs diagrams with live editor captures so both design thinking and output stay visible.',
+                zh: '把流程图和实时编辑录屏放在一起，既能看到设计思路，也能看到实际产出。',
+            },
+        ],
+        tags: ['Realtime Road', 'Terrain', 'Editor', 'Spline', 'R&D'],
+        media: [
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/runtime-overview.png',
+                caption: {
+                    en: 'Realtime road / terrain runtime overview.',
+                    zh: '实时道路 / 地形运行总览。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/data-flow-diagram.png',
+                caption: {
+                    en: 'Road-terrain data flow sketch.',
+                    zh: '道路 × 地形数据流示意。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/system-diagram.png',
+                caption: {
+                    en: 'Full system diagram from the deck.',
+                    zh: '从原作品集中拆出的完整系统图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/terrain-fusion.gif',
+                caption: {
+                    en: 'Terrain fusion / stamping workflow.',
+                    zh: '地形融合 / 拓印工作流。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/road-layout.gif',
+                caption: {
+                    en: 'Road layout editing and terrain interaction.',
+                    zh: '道路布局编辑与地形交互。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/spline-planning.gif',
+                caption: {
+                    en: 'Spline planning / lane routing capture.',
+                    zh: 'Spline 规划 / 车道路由演示。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/terrain-road-2025/realtime-intersection.gif',
+                caption: {
+                    en: 'Realtime city intersection assembly.',
+                    zh: '实时城市场景路口搭建。',
+                },
+            },
+        ],
+    },
+    {
+        slug: 'procedural-practice',
+        title: {
+            en: 'Procedural Practice / Rock HDA Studies',
+            zh: '程序化练习 / 岩石 HDA 学习',
+        },
+        period: '2021 – 2024',
+        summary: {
+            en: 'Practice material around procedural world-building: rock-generation experiments, Houdini-style tooling, and scene assembly studies that bridge asset work and environment composition.',
+            zh: '围绕程序化地编展开的一组练习素材：岩石生成实验、Houdini 式工具学习，以及连接资产制作与场景搭建的研究片段。',
+        },
+        coverSrc: '/portfolio/procedural-practice/cover.jpg',
+        coverCaption: {
+            en: 'Procedural practice cover',
+            zh: '程序化练习封面',
+        },
+        bullets: [
+            {
+                en: 'Keeps the curiosity-driven procedural studies instead of only the production-facing tools.',
+                zh: '除了面向生产的工具，也保留了更偏兴趣驱动的程序化研究内容。',
+            },
+            {
+                en: 'Pairs one animated workflow GIF with parameter UI, final look, and wireframe comparisons.',
+                zh: '用一张工作流动图配合参数界面、结果图和线框对照，阅读会更完整。',
+            },
+            {
+                en: 'Works well as a Houdini / HDA learning dossier inside the portfolio.',
+                zh: '很适合作为作品集里 Houdini / HDA 学习方向的补充档案。',
+            },
+        ],
+        tags: ['Houdini', 'HDA', 'Procedural', 'Environment', 'Practice'],
+        media: [
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-workflow.gif',
+                caption: {
+                    en: 'Animated rock-generation / scene workflow.',
+                    zh: '岩石生成与场景搭建流程动图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-generator-ui.png',
+                caption: {
+                    en: 'Generator parameter UI.',
+                    zh: '生成器参数界面。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-scene.jpg',
+                caption: {
+                    en: 'Rock scene result shot.',
+                    zh: '岩石场景结果图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/character-clay.jpg',
+                caption: {
+                    en: 'Character + environment clay preview.',
+                    zh: '角色与环境的灰模预览。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-shape-sheet.png',
+                caption: {
+                    en: 'Rock shape sheet / variation study.',
+                    zh: '岩石形体与变体练习。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-wireframe-a.png',
+                caption: {
+                    en: 'Wireframe study A.',
+                    zh: '线框研究 A。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/procedural-practice/rock-wireframe-b.png',
+                caption: {
+                    en: 'Wireframe study B.',
+                    zh: '线框研究 B。',
+                },
+            },
+        ],
+    },
+    {
         slug: 'practice',
         title: {
-            en: 'Practice / Props / Hobby Archive',
-            zh: '练习 / 道具 / 兴趣档案',
+            en: 'Practice / Scenes / Art Studies',
+            zh: '练习 / 场景 / 美术基础',
         },
         period: '2016 – 2025',
         summary: {
-            en: 'The “everything else worth keeping” section: practice scenes, prop work, a tiny mini-game video, and older hobby visuals that still add personality to the portfolio.',
-            zh: '把“值得保留的其他内容”统一归档：练习场景、道具作品、小型 Demo 视频，以及能补充个人气质的早期兴趣作品。',
+            en: 'A lighter personal archive: small scenes, prop studies, a mini-game clip, and a few anatomy / painting exercises that keep the portfolio from feeling purely industrial.',
+            zh: '更偏个人向的一组归档：小场景、道具练习、小游戏片段，以及一些解剖 / 绘画基础练习，让作品集不至于只剩工业化工具感。',
         },
         coverSrc: '/portfolio/practice/town-scene.jpg',
         coverCaption: {
@@ -389,34 +617,34 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'Helps the portfolio feel human instead of only corporate tooling.',
-                zh: '让作品集不至于只有企业工具感，而是更像完整的个人档案。',
+                en: 'Keeps scene, prop, mini-demo, and art-study material in one readable personal page.',
+                zh: '把场景、道具、小 Demo 和美术基础练习整理成一页更容易浏览的个人档案。',
             },
             {
-                en: 'Includes one more animated GIF so the section still feels alive.',
-                zh: '这一组也放入了动态图，保证不是纯静态收尾。',
+                en: 'This section is now focused on personal training, without mixing in the older modding archive.',
+                zh: '这一页现在更聚焦个人训练内容，不再混入更早期的 mod / 插件档案。',
             },
             {
-                en: 'Pairs environment, prop, weapon, and gameplay samples into one compact archive.',
-                zh: '把场景、道具、枪械与玩法样片并成一组紧凑档案。',
+                en: 'Useful as a softer counterpart to the heavier TA / tooling sections.',
+                zh: '作为 TA / 工具向页面之外的柔和补充，会让整体作品集更平衡。',
             },
         ],
-        tags: ['Practice', 'Environment', 'Prop', 'Mini Demo', 'Hobby'],
+        tags: ['Practice', 'Environment', 'Prop', 'Mini Demo', 'Art Study'],
         media: [
-            {
-                type: 'image',
-                src: '/portfolio/practice/terrain-scene.gif',
-                caption: {
-                    en: 'Animated terrain / scene exploration.',
-                    zh: '动态地形 / 场景练习。',
-                },
-            },
             {
                 type: 'image',
                 src: '/portfolio/practice/town-scene.jpg',
                 caption: {
                     en: 'Stylized town scene.',
                     zh: '风格化城镇场景。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/street-scene.jpg',
+                caption: {
+                    en: 'Street scene environment study.',
+                    zh: '街景环境练习。',
                 },
             },
             {
@@ -429,18 +657,10 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
-                src: '/portfolio/practice/firearm-kit.jpg',
-                caption: {
-                    en: 'Weapon kit presentation.',
-                    zh: '枪械道具展示。',
-                },
-            },
-            {
-                type: 'image',
                 src: '/portfolio/practice/indoor-scene.jpg',
                 caption: {
-                    en: 'Older hobby scene / gameplay capture.',
-                    zh: '较早期的兴趣场景 / 玩法截图。',
+                    en: 'Interior scene / gameplay capture.',
+                    zh: '室内场景 / 玩法截图。',
                 },
             },
             {
@@ -449,6 +669,136 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                 caption: {
                     en: 'Mini-game demo clip from the deck.',
                     zh: '作品集里拆出的 MiniGame Demo 片段。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/head-study-front.png',
+                caption: {
+                    en: 'Head sculpt study.',
+                    zh: '头像雕刻练习。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/head-study-side.png',
+                caption: {
+                    en: 'Head study from another angle.',
+                    zh: '另一视角的人头练习。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/portrait-painting.jpg',
+                caption: {
+                    en: 'Portrait painting study.',
+                    zh: '肖像绘画练习。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/practice/figure-sketch.jpg',
+                caption: {
+                    en: 'Figure sketch study.',
+                    zh: '人物速写练习。',
+                },
+            },
+        ],
+    },
+    {
+        slug: 'hobby-modchina',
+        title: {
+            en: 'Hobby Mods / Legacy Game Assets',
+            zh: '旧 Hobby / Mod / 游戏资源',
+        },
+        period: '2009 – 2011',
+        summary: {
+            en: 'An older but still revealing archive: CS / L4D hobby modding, plugin work, server operation, and a batch of self-made props and weapon renders from the same period.',
+            zh: '一组更早期但很能说明问题的档案：CS / L4D 兴趣 mod、插件开发、服务器搭建，以及同一时期制作的道具和枪械资源。',
+        },
+        coverSrc: '/portfolio/hobby-modchina/weapon-kit.jpg',
+        coverCaption: {
+            en: 'Legacy hobby/mod cover',
+            zh: '旧 hobby / mod 封面',
+        },
+        bullets: [
+            {
+                en: 'Adds the earlier modding / plugin / server chapter back into the portfolio timeline.',
+                zh: '把更早期的 modding / 插件 / 服务器阶段重新补回到个人时间线里。',
+            },
+            {
+                en: 'Shows that making tools and content started long before the recent TA work.',
+                zh: '能看出“做工具 + 做内容”的倾向，其实很早以前就已经开始了。',
+            },
+            {
+                en: 'Old work, but it gives the overall portfolio a much clearer origin story.',
+                zh: '虽然年代久远，但它能让整个作品集的起点更清楚，也更有辨识度。',
+            },
+        ],
+        tags: ['CS 1.6', 'L4D', 'Modding', 'Props', 'Legacy'],
+        media: [
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/weapon-kit.jpg',
+                caption: {
+                    en: 'Weapon kit render set.',
+                    zh: '枪械资源渲染集合。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/smg-kit.jpg',
+                caption: {
+                    en: 'SMG kit render set.',
+                    zh: '冲锋枪资源展示。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/zeppelin.jpg',
+                caption: {
+                    en: 'Airship / prop render.',
+                    zh: '飞艇道具渲染。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/church-prop.png',
+                caption: {
+                    en: 'Architecture prop study.',
+                    zh: '建筑资源练习。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/chair-prop.png',
+                caption: {
+                    en: 'Chair prop render.',
+                    zh: '座椅道具渲染。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/infected-corridor.jpg',
+                caption: {
+                    en: 'Old gameplay screenshot / mod scene.',
+                    zh: '早期玩法截图 / Mod 场景。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/plugin-overlay.png',
+                caption: {
+                    en: 'Plugin / server-side overlay capture.',
+                    zh: '插件 / 服务器侧界面截图。',
+                },
+            },
+            {
+                type: 'image',
+                src: '/portfolio/hobby-modchina/survival-scene.png',
+                caption: {
+                    en: 'Legacy survival-horror scene capture.',
+                    zh: '早期生存恐怖场景截图。',
                 },
             },
         ],
