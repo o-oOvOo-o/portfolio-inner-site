@@ -4,6 +4,7 @@ export interface WinampAppProps extends WindowAppProps {}
 
 const WinampApp: React.FC<WinampAppProps> = (props) => {
     const iframeRef = useRef<HTMLIFrameElement | null>(null);
+    const { onClose, onInteract, onMinimize } = props;
 
     useEffect(() => {
         const onMessage = (event: MessageEvent) => {
@@ -11,19 +12,19 @@ const WinampApp: React.FC<WinampAppProps> = (props) => {
             if (event.source !== iframeRef.current?.contentWindow) return;
 
             const type = (event.data as any)?.type;
-            if (type === 'winamp:close') props.onClose();
-            if (type === 'winamp:minimize') props.onMinimize();
-            if (type === 'winamp:interact') props.onInteract();
+            if (type === 'winamp:close') onClose();
+            if (type === 'winamp:minimize') onMinimize();
+            if (type === 'winamp:interact') onInteract();
         };
 
         window.addEventListener('message', onMessage);
         return () => {
             window.removeEventListener('message', onMessage);
         };
-    }, [props.onClose, props.onMinimize, props.onInteract]);
+    }, [onClose, onInteract, onMinimize]);
 
     return (
-        <div style={styles.container} onMouseDown={props.onInteract}>
+        <div style={styles.container} onMouseDown={onInteract}>
             <iframe
                 ref={iframeRef}
                 src="/winamp.html"

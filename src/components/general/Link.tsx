@@ -12,6 +12,7 @@ export interface LinkProps {
 
 const Link: React.FC<LinkProps> = (props) => {
     const navigate = useNavigate();
+    const targetPath = `/${props.to}`;
 
     // get current location of react router
     const location = useLocation();
@@ -19,13 +20,18 @@ const Link: React.FC<LinkProps> = (props) => {
 
     // if current path is the same as the link path
     useEffect(() => {
-        if (location.pathname === `/${props.to}`) {
+        if (
+            targetPath === '/'
+                ? location.pathname === '/'
+                : location.pathname === targetPath ||
+                  location.pathname.startsWith(`${targetPath}/`)
+        ) {
             setIsHere(true);
         } else {
             setIsHere(false);
         }
         return () => {};
-    }, [location, props.to]);
+    }, [location.pathname, targetPath]);
 
     const [active, setActive] = useState(false);
 
@@ -33,9 +39,9 @@ const Link: React.FC<LinkProps> = (props) => {
         let isMounted = true;
         e.preventDefault();
         setActive(true);
-        if (location.pathname !== `/${props.to}`) {
+        if (location.pathname !== targetPath) {
             setTimeout(() => {
-                if (isMounted) navigate(`/${props.to}`);
+                if (isMounted) navigate(targetPath);
             }, 100);
         }
         let t = setTimeout(() => {
@@ -50,7 +56,7 @@ const Link: React.FC<LinkProps> = (props) => {
 
     return (
         <RouterLink
-            to={`/${props.to}`}
+            to={targetPath}
             onMouseDown={handleClick}
             style={Object.assign({}, { display: 'flex' }, props.containerStyle)}
         >
