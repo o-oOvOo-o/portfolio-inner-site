@@ -6,7 +6,6 @@ import { useLocale, useResumeConfig } from '../../i18n';
 export interface ProjectsProps {}
 
 const CUNNING3D_CARD = {
-    href: 'https://cunning3d.vercel.app/',
     coverSrc: '/portfolio/cunning3d/cover.jpg',
     title: {
         en: 'Cunning3D',
@@ -17,8 +16,8 @@ const CUNNING3D_CARD = {
         zh: '一个仍在持续发展的独立平台项目，因此保留在它自己的实时站点中；只有这样，交互、流畅度和完整世界观本身才仍然是作品的一部分。',
     },
     buttonLabel: {
-        en: 'Open live site',
-        zh: '打开实时站点',
+        en: 'Open desktop window',
+        zh: '在桌面窗口中打开',
     },
     tags: ['Rust', 'ECS', 'DCC', 'Procedural Modeling', 'PCG'],
 };
@@ -28,6 +27,15 @@ const Projects: React.FC<ProjectsProps> = () => {
     const config = useResumeConfig();
     const mediaCountLabel = (count: number) =>
         locale === 'zh' ? `${count} 组材料` : `${count} visuals`;
+    const openCunning3DWindow = () => {
+        window.dispatchEvent(
+            new CustomEvent('desktop-open-app', {
+                detail: {
+                    appKey: 'cunning3d',
+                },
+            })
+        );
+    };
 
     return (
         <div className="site-page-content">
@@ -84,14 +92,13 @@ const Projects: React.FC<ProjectsProps> = () => {
                             ))}
                         </div>
                         <div style={styles.cardActions}>
-                            <a
-                                href={CUNNING3D_CARD.href}
-                                target="_blank"
-                                rel="noreferrer"
+                            <button
+                                type="button"
+                                onClick={openCunning3DWindow}
                                 style={styles.primaryButton}
                             >
                                 {CUNNING3D_CARD.buttonLabel[locale]}
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </article>
@@ -180,6 +187,7 @@ const sharedButton: React.CSSProperties = {
     border: '2px solid black',
     color: 'black',
     background: 'white',
+    cursor: 'pointer',
     textDecoration: 'none',
     fontFamily: 'MillenniumBold',
     fontSize: 16,

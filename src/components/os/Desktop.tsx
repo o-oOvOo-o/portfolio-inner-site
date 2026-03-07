@@ -173,6 +173,32 @@ const Desktop: React.FC<DesktopProps> = (props) => {
         [getHighestZIndex]
     );
 
+    useEffect(() => {
+        const handleOpenApp = (event: Event) => {
+            const appKey = (event as CustomEvent<{ appKey?: string }>).detail?.appKey;
+            if (!appKey || !APPLICATIONS[appKey]) {
+                return;
+            }
+
+            const app = APPLICATIONS[appKey];
+            addWindow(
+                app.key,
+                <app.component
+                    onInteract={() => onWindowInteract(app.key)}
+                    onMinimize={() => minimizeWindow(app.key)}
+                    onClose={() => removeWindow(app.key)}
+                    key={app.key}
+                />
+            );
+        };
+
+        window.addEventListener('desktop-open-app', handleOpenApp);
+
+        return () => {
+            window.removeEventListener('desktop-open-app', handleOpenApp);
+        };
+    }, [addWindow, minimizeWindow, onWindowInteract, removeWindow]);
+
     return !shutdown ? (
         <div style={styles.desktop}>
             {/* For each window in windows, loop over and render  */}
