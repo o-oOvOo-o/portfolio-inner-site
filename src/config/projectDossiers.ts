@@ -10,6 +10,7 @@ export interface ProjectDossierMedia {
     src: string;
     caption: LocalizedText;
     poster?: string;
+    layout?: 'default' | 'wide';
 }
 
 export interface ProjectDossier {
@@ -321,14 +322,6 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
-                src: '/portfolio/city-pcg/zone-graph-night.gif',
-                caption: {
-                    en: 'Night-time zone graph presentation.',
-                    zh: '夜景 Zone Graph 展示。',
-                },
-            },
-            {
-                type: 'image',
                 src: '/portfolio/city-pcg/lane-module-diagram.png',
                 caption: {
                     en: 'Lane module breakdown.',
@@ -601,9 +594,10 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                 type: 'image',
                 src: '/portfolio/procedural-practice/rock-workflow.gif',
                 caption: {
-                    en: 'Animated rock-generation / scene workflow.',
-                    zh: '岩石生成与场景搭建流程动图。',
+                    en: 'Houdini workflow scene study, UE4.26.',
+                    zh: 'houdini工作流场景练习 ue4.26',
                 },
+                layout: 'wide',
             },
             {
                 type: 'image',
@@ -891,3 +885,4 @@ export function getLocalizedText(
 ): string {
     return value[locale];
 }
+

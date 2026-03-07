@@ -111,6 +111,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                     <div style={styles.gallery}>
                         {dossier.media.map((media, index) => {
                             const caption = getLocalizedText(media.caption, locale);
+                            const isWideMedia = media.layout === 'wide';
                             const badge =
                                 media.type === 'video'
                                     ? locale === 'zh'
@@ -125,14 +126,22 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                             return (
                                 <article
                                     key={`${dossier.slug}-${media.src}-${index}`}
-                                    style={styles.mediaCard}
+                                    style={
+                                        isWideMedia
+                                            ? { ...styles.mediaCard, ...styles.mediaCardWide }
+                                            : styles.mediaCard
+                                    }
                                 >
                                     <div style={styles.mediaBadge}>{badge}</div>
                                     {media.type === 'video' ? (
                                         <video
                                             src={media.src}
                                             poster={media.poster}
-                                            style={styles.media}
+                                            style={
+                                                isWideMedia
+                                                    ? { ...styles.media, ...styles.mediaWide }
+                                                    : styles.media
+                                            }
                                             controls
                                             muted
                                             loop
@@ -143,7 +152,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                                         <img
                                             src={media.src}
                                             alt={caption}
-                                            style={styles.media}
+                                            style={
+                                                isWideMedia
+                                                    ? { ...styles.media, ...styles.mediaWide }
+                                                    : styles.media
+                                            }
                                             loading="lazy"
                                         />
                                     )}
@@ -287,6 +300,9 @@ const styles: StyleSheetCSS = {
         minWidth: 0,
         position: 'relative',
     },
+    mediaCardWide: {
+        gridColumn: '1 / -1',
+    },
     mediaBadge: {
         position: 'absolute',
         top: 12,
@@ -305,6 +321,9 @@ const styles: StyleSheetCSS = {
         objectFit: 'contain',
         borderBottom: '2px solid black',
         background: '#efefef',
+    },
+    mediaWide: {
+        maxHeight: 620,
     },
     mediaBody: {
         flexDirection: 'column',
