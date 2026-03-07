@@ -338,14 +338,6 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
             },
             {
                 type: 'image',
-                src: '/portfolio/city-pcg/editor-blockout-shot.jpg',
-                caption: {
-                    en: 'Editor-side blockout shot.',
-                    zh: '编辑器内白模构建镜头。',
-                },
-            },
-            {
-                type: 'image',
                 src: '/portfolio/city-pcg/night-crossing-shot.jpg',
                 caption: {
                     en: 'Night crossing shot tied back to the road system.',
@@ -885,4 +877,3 @@ export function getLocalizedText(
 ): string {
     return value[locale];
 }
-
