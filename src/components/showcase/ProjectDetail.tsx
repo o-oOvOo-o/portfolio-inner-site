@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import { PROJECT_DOSSIERS, getLocalizedText } from '../../config/projectDossiers';
 import { useLocale } from '../../i18n';
@@ -8,10 +8,32 @@ export interface ProjectDetailProps {}
 const ProjectDetail: React.FC<ProjectDetailProps> = () => {
     const { slug } = useParams();
     const locale = useLocale();
+    const [activeImage, setActiveImage] = useState<{ src: string; alt: string } | null>(null);
     const dossier = useMemo(
         () => PROJECT_DOSSIERS.find((entry) => entry.slug === slug),
         [slug]
     );
+
+    useEffect(() => {
+        if (!activeImage) {
+            return;
+        }
+
+        const previousOverflow = document.body.style.overflow;
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setActiveImage(null);
+            }
+        };
+
+        document.body.style.overflow = 'hidden';
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [activeImage]);
 
     if (!dossier) {
         return (
@@ -41,6 +63,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
     const summary = getLocalizedText(dossier.summary, locale);
     const bullets = dossier.bullets.map((item) => getLocalizedText(item, locale));
     const coverCaption = getLocalizedText(dossier.coverCaption, locale);
+    const imageActionLabel = locale === 'zh' ? '点击图片放大' : 'Click image to enlarge';
+    const lightboxHint = locale === 'zh' ? '再点图片即可收起' : 'Click the image again to close';
 
     return (
         <div className="site-page-content">
@@ -71,12 +95,25 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                         </div>
                     </div>
                     <div style={styles.heroMedia}>
-                        <img
-                            src={dossier.coverSrc}
-                            alt={coverCaption}
-                            style={styles.heroImage}
-                            loading="lazy"
-                        />
+                        <button
+                            type="button"
+                            style={styles.imageButton}
+                            onClick={() =>
+                                setActiveImage({
+                                    src: dossier.coverSrc,
+                                    alt: coverCaption,
+                                })
+                            }
+                            aria-label={`${imageActionLabel}: ${coverCaption}`}
+                            title={imageActionLabel}
+                        >
+                            <img
+                                src={dossier.coverSrc}
+                                alt={coverCaption}
+                                style={styles.heroImage}
+                                loading="lazy"
+                            />
+                        </button>
                         <p style={styles.heroCaption}>{coverCaption}</p>
                     </div>
                 </section>
@@ -149,16 +186,29 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                                             preload="metadata"
                                         />
                                     ) : (
-                                        <img
-                                            src={media.src}
-                                            alt={caption}
-                                            style={
-                                                isWideMedia
-                                                    ? { ...styles.media, ...styles.mediaWide }
-                                                    : styles.media
+                                        <button
+                                            type="button"
+                                            style={styles.imageButton}
+                                            onClick={() =>
+                                                setActiveImage({
+                                                    src: media.src,
+                                                    alt: caption,
+                                                })
                                             }
-                                            loading="lazy"
-                                        />
+                                            aria-label={`${imageActionLabel}: ${caption}`}
+                                            title={imageActionLabel}
+                                        >
+                                            <img
+                                                src={media.src}
+                                                alt={caption}
+                                                style={
+                                                    isWideMedia
+                                                        ? { ...styles.media, ...styles.mediaWide }
+                                                        : styles.media
+                                                }
+                                                loading="lazy"
+                                            />
+                                        </button>
                                     )}
                                     <div style={styles.mediaBody}>
                                         <p style={styles.mediaCaption}>{caption}</p>
@@ -169,6 +219,26 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                     </div>
                 </section>
             </div>
+            {activeImage ? (
+                <div
+                    style={styles.lightboxOverlay}
+                    onClick={() => setActiveImage(null)}
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter' || event.key === ' ') {
+                            setActiveImage(null);
+                        }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={lightboxHint}
+                >
+                    <div style={styles.lightboxFrame}>
+                        <img src={activeImage.src} alt={activeImage.alt} style={styles.lightboxImage} />
+                        <p style={styles.lightboxCaption}>{activeImage.alt}</p>
+                        <p style={styles.lightboxHint}>{lightboxHint}</p>
+                    </div>
+                </div>
+            ) : null}
         </div>
     );
 };
@@ -237,6 +307,16 @@ const styles: StyleSheetCSS = {
         background: 'white',
         flexDirection: 'column',
         overflow: 'hidden',
+    },
+    imageButton: {
+        display: 'block',
+        width: '100%',
+        padding: 0,
+        margin: 0,
+        border: 'none',
+        background: 'transparent',
+        cursor: 'zoom-in',
+        textAlign: 'left',
     },
     heroImage: {
         width: '100%',
@@ -333,6 +413,44 @@ const styles: StyleSheetCSS = {
     },
     mediaCaption: {
         opacity: 0.92,
+    },
+    lightboxOverlay: {
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 24,
+        background: 'rgba(245, 245, 245, 0.92)',
+        cursor: 'zoom-out',
+        boxSizing: 'border-box',
+    },
+    lightboxFrame: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 12,
+        width: '100%',
+        maxWidth: 1280,
+        maxHeight: '100%',
+        padding: 16,
+        border: '2px solid black',
+        background: 'white',
+        boxSizing: 'border-box',
+    },
+    lightboxImage: {
+        width: '100%',
+        maxHeight: 'calc(100vh - 180px)',
+        objectFit: 'contain',
+        background: '#efefef',
+    },
+    lightboxCaption: {
+        opacity: 0.96,
+    },
+    lightboxHint: {
+        fontFamily: 'MillenniumBold',
+        fontSize: 15,
+        opacity: 0.72,
     },
 };
 
