@@ -31,6 +31,15 @@ const Home: React.FC<HomeProps> = (props) => {
                 <h1 style={styles.name}>{config.profile.name}</h1>
                 <h2>{config.profile.title}</h2>
                 <p style={styles.tagline}>{config.meta.description}</p>
+                {config.profile.interests?.length ? (
+                    <div style={styles.focusRow}>
+                        {config.profile.interests.map((item) => (
+                            <span key={item} style={styles.focusTag}>
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+                ) : null}
             </div>
             <div style={styles.buttons}>
                 <Link
@@ -99,6 +108,21 @@ const styles: StyleSheetCSS = {
         maxWidth: 900,
         textAlign: 'center',
         opacity: 0.9,
+    },
+    focusRow: {
+        marginTop: 20,
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 10,
+        justifyContent: 'center',
+        maxWidth: 900,
+    },
+    focusTag: {
+        padding: '4px 10px',
+        border: '2px solid black',
+        background: 'white',
+        fontFamily: 'MillenniumBold',
+        fontSize: 16,
     },
     buttons: {
         justifyContent: 'space-between',

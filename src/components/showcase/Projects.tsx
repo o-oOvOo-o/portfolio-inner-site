@@ -12,8 +12,8 @@ const CUNNING3D_CARD = {
         zh: 'Cunning3D',
     },
     summary: {
-        en: 'An ongoing independent platform project presented through its own live site. It remains separate here so the real-time interface, responsiveness, and self-contained world stay part of the work itself.',
-        zh: '一个仍在持续发展的独立平台项目，因此保留在它自己的实时站点中；只有这样，交互、流畅度和完整世界观本身才仍然是作品的一部分。',
+        en: 'An independent authoring platform that is best shown as a live system, not a static slide. It stays separate here because interface feel, graph behavior, and responsiveness are part of the work itself.',
+        zh: '这是一个更适合以“活系统”而不是静态图版来展示的独立创作平台；之所以保留独立入口，是因为界面手感、Graph 行为与流畅度本身就是作品的一部分。',
     },
     buttonLabel: {
         en: 'Open desktop window',
@@ -49,8 +49,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                 <div className="text-block" style={styles.introBlock}>
                     <p>
                         {locale === 'zh'
-                            ? '这一页按“留学申请作品集 / case study”的方式重新编排：索引页保留简洁封面，进入详情页后再展开图像、GIF 与简短过程说明。'
-                            : 'This section is edited like a study-abroad application portfolio: concise covers on the index, then dedicated case-study pages that unfold images, GIFs, and short process statements.'}
+                            ? '这一页按“申请作品集 + 高级岗位作品站”的双重标准重写：索引页先给出清晰定位，详情页再展开图像、GIF、流程图与简短过程说明。'
+                            : 'This section is edited for both graduate applications and senior creator-tools roles: concise positioning on the index, then dedicated case-study pages with visuals, GIFs, diagrams, and short process notes.'}
                     </p>
                 </div>
             </div>
@@ -60,8 +60,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                     <h3>{locale === 'zh' ? '独立项目入口' : 'Independent Live Work'}</h3>
                     <p style={styles.sectionCopy}>
                         {locale === 'zh'
-                            ? 'Cunning3D 作为独立运行的实时作品保留单独站点。'
-                            : 'Cunning3D remains on its own live site so the interactive experience stays intact.'}
+                            ? 'Cunning3D 保留为独立运行入口，因为它本身就是一个实时创作系统，而不只是可截图的项目。'
+                            : 'Cunning3D stays as a separate live entry because it is itself a real-time authoring system, not just a project that can be flattened into screenshots.'}
                     </p>
                 </div>
 
@@ -109,8 +109,8 @@ const Projects: React.FC<ProjectsProps> = () => {
                     <h3>{locale === 'zh' ? '案例研究索引' : 'Selected Case Studies'}</h3>
                     <p style={styles.sectionCopy}>
                         {locale === 'zh'
-                            ? '其余项目都整理成更接近申请作品集的独立 case study 页面，保留视觉材料与简短过程说明。'
-                            : 'The remaining projects are edited as compact case-study pages, closer to an application portfolio in tone and pacing.'}
+                            ? '其余项目整理成更利于阅读的独立 case study：每页都尽量同时保留结果、过程证据与系统线索。'
+                            : 'The remaining projects are organized as readable case studies, each trying to preserve outcome, process evidence, and system thinking at the same time.'}
                     </p>
                 </div>
 

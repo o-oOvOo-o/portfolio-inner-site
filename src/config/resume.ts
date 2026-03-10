@@ -112,7 +112,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         meta: {
             title: 'About',
             description:
-                'Engine tools engineer / technical artist focused on production tooling and pipelines for games.',
+                'AI-native authoring systems, engine tools, and creator workflows for flagship open-world production.',
         },
         nav: {
             home: 'HOME',
@@ -124,38 +124,48 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         profile: {
             name: 'Anonymous',
-            title: 'Engine Tools Engineer / Technical Artist / Software Engineer',
+            title: 'AI-Native Authoring Systems / Engine Tools / Technical Art',
             location: 'Private',
             email: 'anonymous@example.com',
-            bio: 'Engine tools engineer / technical artist focused on production tooling and pipelines for games: editor workflows, asset validation/packaging, automation, and procedural utilities. Comfortable bridging art and engineering; shipped tools used by content teams (C++ / Rust / C#).',
-            interests: ['PCG', 'Tools', 'Pipelines', 'Open World'],
+            bio: 'I build creator-facing systems for flagship game production: procedural authoring, editor tooling, validation pipelines, packaging workflows, and runtime-connected utilities that help art and design teams ship faster with more control. My work sits between engine, technical art, and production systems, with a long-term focus on open-world scale, PCG, and AI-native tooling. In parallel, I build Cunning3D as an independent experiment in graph-based authoring, reusable kernels, and next-generation creator workflow.',
+            interests: [
+                'AI Authoring',
+                'Creator Tools',
+                'Open World Systems',
+                'PCG',
+            ],
             social: {
                 github: 'https://github.com/Cunning3D',
-                website: 'https://cunning3d.com',
+                website: 'https://cunning3d.vercel.app/',
             },
         },
         highlights: {
             title: 'Highlights',
             items: [
                 {
-                    label: 'Focus',
-                    value: 'Engine Tools · Tech Art · Pipeline',
-                    detail: 'Production-ready systems for content teams',
+                    label: 'Positioning',
+                    value: 'AI-Native Authoring · Engine Tools',
+                    detail: 'Creator-facing systems designed for real production use',
                 },
                 {
-                    label: 'Impact',
-                    value: 'Iteration Speed & Reliability',
-                    detail: 'Editor UX + validation tooling for large scenes',
+                    label: 'Ownership',
+                    value: '0→1 Systems · Workflow Architecture',
+                    detail: 'Roads, validation, packaging, and graph-driven tooling',
                 },
                 {
-                    label: 'Achievement',
-                    value: 'Shipped Tooling (Confidential)',
-                    detail: 'Production tools used daily by content teams',
+                    label: 'Scale',
+                    value: 'Flagship Open Worlds',
+                    detail: 'Large-scene iteration, streaming-aware tooling, and shipping constraints',
+                },
+                {
+                    label: 'Bridge',
+                    value: 'Art × Engine × Production',
+                    detail: 'Translating between artists, TA, and core engineering',
                 },
                 {
                     label: 'Stack',
                     value: 'C++ · Rust · C#',
-                    detail: 'Engine/runtime + editor tooling',
+                    detail: 'Editor/runtime/toolchain work across host engines',
                 },
             ],
         },
@@ -164,28 +174,33 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             items: [
                 {
                     company: 'NetEase Games · Tianxia Division · “Moonfall”',
-                    role: 'Technical Artist · Animation Tools (Campus Hire)',
+                    role: 'Technical Artist · Animation Tooling',
                     start: '2019.07',
                     end: '2020.07',
                     location: 'Confidential',
                     summary:
-                        'Campus hire on a high-quality AAA title built on an in-house engine.',
+                        'Started in animation tooling on a high-end in-house-engine production, learning how editor UX, rig logic, and batch automation directly affect content throughput.',
                     bullets: [
-                        'Built animation asset batch-processing tooling.',
-                        'Developed a bulk skeleton hierarchy update tool.',
-                        'Drove tuning feedback and iteration for Messiah engine animation tools.',
-                        'Built Houdini-based workflow “tricks” (e.g., Nanite-to-Messiah VFX conversion).',
+                        'Built batch tools for animation assets and repeatable cleanup tasks.',
+                        'Developed bulk skeleton hierarchy update tooling to reduce manual rig maintenance.',
+                        'Closed the loop on Messiah animation-tool feedback through debugging, tuning, and iteration with users.',
+                        'Prototyped Houdini-assisted workflows for hard engine constraints and one-off conversion problems.',
                     ],
                     tags: ['Houdini', 'Animation', 'Tools', 'Pipeline'],
                 },
                 {
                     company: 'NetEase Games (Leihuo) · Project New World',
-                    role: 'PCG Tools Engineer · Pipeline Landing',
+                    role: 'PCG Tools Engineer · Pipeline Integration',
                     start: '2020.07',
                     end: '2021.07',
                     location: 'Confidential',
+                    summary:
+                        'Worked with the central tech-platform side to adapt shared PCG capability into project production and turn it into something content teams could actually use.',
                     bullets: [
-                        'Worked with the technical platform team to land the central PCG pipeline tools into the project (Unity mainline + Houdini for geometry/terrain masks), debugged PCG tooling, and built a PCG cliff tool.',
+                        'Landed shared PCG pipeline tooling into a Unity-based project with Houdini-assisted geometry and terrain-mask workflows.',
+                        'Debugged toolchain issues across editor, data, and content usage scenarios.',
+                        'Built a project-specific PCG cliff tool as direct production support.',
+                        'Translated platform-side capability into day-to-day creator workflow.',
                     ],
                     tags: ['Unity', 'Houdini', 'C#', 'PCG', 'Tools', 'Pipeline'],
                 },
@@ -196,12 +211,12 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     end: '2024.05',
                     location: 'Confidential',
                     summary:
-                        'Joined as a new graduate; independently built a PCG road system and a PCG art asset packaging/validation pipeline from 0 to 1 for a large-scale project.',
+                        'Owned 0→1 road authoring and PCG asset-pipeline work for a flagship open-world production, with responsibility spanning system design, editor UX, and production landing.',
                     bullets: [
-                        'Built the PCG road system end-to-end: data structures, generation logic, editor workflows, and engine integration.',
-                        'Improved content iteration speed for environment/level teams through robust tooling and UX-focused workflows.',
-                        'Developed a PCG art asset packaging/validation pipeline (dependencies, standardized outputs, automated checks) designed to be stable and low-maintenance.',
-                        'Partnered with client engineering to develop a traffic graph data system; optimized scene load; heavily contributed to maintaining the mobile open-world PCG scene asset pipeline.',
+                        'Built the road authoring stack end-to-end: core data, generation logic, editor workflows, and engine integration.',
+                        'Improved iteration speed for environment and level teams through robust WYSIWYG tooling and production-safe UX decisions.',
+                        'Built a PCG art-asset packaging/validation pipeline covering dependencies, standardized outputs, and automated checks.',
+                        'Co-developed a traffic-graph data system, supported scene-load optimization, and maintained mobile open-world PCG asset workflows at production scale.',
                     ],
                     tags: ['C++', 'C#', 'PCG', 'Tooling', 'Pipeline'],
                 },
@@ -211,25 +226,31 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     start: '2024.05',
                     end: '2025.07',
                     location: 'Confidential',
+                    summary:
+                        'Led technical art direction for tools and production pipelines on a large-scale project, with emphasis on shipping stable workflows rather than one-off demos.',
                     bullets: [
-                        'Led the technical art team to deliver tools and pipelines for a large-scale project.',
-                        'Implemented a seamless open-world streaming solution to support large scenes and content organization.',
-                        'Built and maintained packaging/validation tooling to improve delivery quality and stability.',
-                        'Partnered with engineering to unblock mobile builds and packaging workflows.',
+                        'Led the TA team around creator-tooling priorities and production pain points.',
+                        'Implemented seamless open-world streaming support for large-scene organization and iteration.',
+                        'Built and maintained packaging/validation tooling to improve delivery quality, reliability, and cross-team handoff.',
+                        'Partnered with engineering to unblock mobile build, packaging, and integration workflows.',
                     ],
                     tags: ['Technical Art', 'Open World', 'Pipeline', 'Tools'],
                 },
                 {
-                    company: 'Game Studio (Confidential)',
-                    role: 'PCG Engineer · Open-world Project (Confidential)',
+                    company: 'Top-tier AI Lab (Confidential)',
+                    role: 'AI-Native Engine / Authoring Systems Lead',
                     start: '2025.07',
                     end: 'Present',
                     location: 'Confidential',
-                    summary: 'PCG development for a confidential project.',
+                    summary:
+                        'Leading exploration of AI-driven generation and MCP-style engine workflows, while grounding experiments in real creator tooling and flagship-scale production needs.',
                     bullets: [
-                        'Procedural utilities for world details (e.g., power lines).',
+                        'Define and prototype AI-assisted authoring workflows that connect engine runtime, tools, and creator operations.',
+                        'Explore MCP-style engine integration so AI agents can act through structured tool surfaces instead of brittle ad-hoc automation.',
+                        'Continue shipping procedural world-building utilities for confidential large-scale production.',
+                        'Use Rust/C++ to turn exploratory ideas into stable interfaces, reusable kernels, and production-minded prototypes.',
                     ],
-                    tags: ['C++', 'Rust', 'PCG'],
+                    tags: ['AI Systems', 'MCP', 'Authoring', 'Rust', 'PCG'],
                 },
             ],
         },
@@ -239,14 +260,14 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'Cunning3D',
                     description:
-                        'A node-based procedural modeling DCC built around a reusable kernel (Rust + Bevy).',
+                        'An independent procedural authoring platform built around a reusable Rust kernel, graph workflows, and creator-facing tools.',
                     highlights: [
-                        'A complete, runnable system with a growing library of CDA examples.',
-                        'Tooling-first design: reliable workflows, iteration speed, and production-minded architecture.',
+                        'A complete, runnable system rather than a mockup, with live interaction and growing procedural examples.',
+                        'Explores graph-based authoring, reusable kernels, and the shape of AI-native creation workflow.',
                     ],
                     tags: ['Rust', 'ECS', 'DCC', 'Procedural Modeling', 'PCG'],
                     links: [
-                        { label: 'Website', href: 'https://cunning3d.com' },
+                        { label: 'Website', href: 'https://cunning3d.vercel.app/' },
                         {
                             label: 'GitHub',
                             href: 'https://github.com/Cunning3D/Cunning3D-Dev',
@@ -272,28 +293,28 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'PCG Road System (Confidential)',
                     description:
-                        'A procedural road generation & editing system designed for production use at scale.',
+                        'A production road authoring system designed for scale, reliability, and day-to-day content iteration.',
                     highlights: [
                         'End-to-end ownership from design to implementation and iteration with content teams.',
-                        'Emphasis on stability, usability, and iteration speed for daily production.',
+                        'Treats tooling as product surface: usability, stability, and iteration speed all mattered.',
                     ],
                     tags: ['PCG', 'C++', 'Tools'],
                 },
                 {
                     name: 'Seamless Open World Streaming (Confidential)',
                     description:
-                        'A seamless open-world streaming solution to support large-scale world building.',
+                        'A seamless open-world streaming solution built to support large-scene organization and production iteration.',
                     highlights: [
-                        'Designed with production constraints and iteration speed in mind.',
+                        'Designed around production constraints, ownership boundaries, and predictable shipping behavior.',
                     ],
                     tags: ['Open World', 'Tools', 'Pipeline'],
                 },
                 {
                     name: 'Art Asset Packaging Pipeline',
                     description:
-                        'A packaging/validation pipeline for art assets to improve delivery quality and consistency.',
+                        'A packaging and validation pipeline for art assets that improves delivery quality, consistency, and maintainability.',
                     highlights: [
-                        'Low-maintenance pipeline with automated validation and standardized outputs.',
+                        'Low-maintenance pipeline with automated validation, standardized outputs, and fewer late-stage surprises.',
                     ],
                     tags: ['Pipeline', 'C#', 'Automation'],
                 },
@@ -331,21 +352,30 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             groups: [
                 { name: 'Languages', items: ['C++', 'Rust', 'C#'] },
                 {
-                    name: 'PCG',
+                    name: 'Authoring Systems',
                     items: [
-                        'Roads',
-                        'Open World',
-                        'High-voltage lines',
-                        'Procedural Tools',
+                        'AI-native workflows',
+                        'Editor tools',
+                        'Graph workflows',
+                        'Validation & packaging',
+                    ],
+                },
+                {
+                    name: 'Open World / PCG',
+                    items: [
+                        'Road systems',
+                        'Traffic graphs',
+                        'Streaming-aware tooling',
+                        'Procedural world details',
                     ],
                 },
                 {
                     name: 'Production',
                     items: [
-                        'Asset Packaging',
-                        'Validation',
+                        'Creator UX',
                         'Automation',
-                        'Mobile Build/Packaging',
+                        'Cross-discipline translation',
+                        'Shipping constraints',
                     ],
                 },
             ],
@@ -356,7 +386,8 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         contact: {
             title: 'Contact',
-            subtitle: 'Prefer email. I typically reply within 24–48 hours.',
+            subtitle:
+                'Open to PhD, research, and senior creator-tools / engine-systems opportunities. Email is best.',
             sendEmail: 'Send email',
             copyEmail: 'Copy email',
             copiedTitle: 'Copied',
@@ -364,13 +395,13 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         resume: {
             title: 'Resume',
-            hint: 'PDF version available upon request — please email me.',
+            hint: 'PDF resume / portfolio version available upon request — please email me.',
         },
     },
     zh: {
         meta: {
             title: '关于我',
-            description: '引擎工具/技术美术：编辑器工具、生产管线与自动化。',
+            description: 'AI 原生创作系统、引擎工具与面向旗舰大世界生产的创作者工作流。',
         },
         nav: {
             home: '首页',
@@ -382,38 +413,43 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         profile: {
             name: 'Anonymous',
-            title: '引擎工具工程师 / 技术美术 / 软件工程师',
+            title: 'AI 原生创作系统 / 引擎工具 / 技术美术',
             location: '保密',
             email: 'anonymous@example.com',
-            bio: '五年级起开始对游戏 Mod 开发感兴趣，参与《Cry of Fear》（曾在 Steam 免费恐怖游戏榜单 Top 10）前作 AoMDC 的联机地图开发。2021 年大学毕业转行加入游戏行业，工作至今主要负责 PCG 方向技术美术与工具需求开发（C++ / Rust / C#）。',
-            interests: ['PCG', '工具链', '生产管线', '大世界'],
+            bio: '我长期在游戏生产一线做面向创作者的系统：程序化创作、编辑器工具、资源校验、打包流程，以及和运行时紧密相连的生产工具，目标是让美术与设计团队以更高的控制力、更低的成本完成迭代。我的工作天然处在引擎、技术美术和生产系统的交叉带，长期关注大世界规模、PCG 与 AI 原生工具。与此同时，我也在持续构建 Cunning3D，把它作为图式创作、可复用内核和下一代创作者工作流的独立实验场。',
+            interests: ['AI 创作', '创作者工具', '大世界系统', 'PCG'],
             social: {
                 github: 'https://github.com/Cunning3D',
-                website: 'https://cunning3d.com',
+                website: 'https://cunning3d.vercel.app/',
             },
         },
         highlights: {
             title: '亮点',
             items: [
                 {
-                    label: '方向',
-                    value: '引擎工具 · 技术美术 · 管线',
-                    detail: '面向内容生产的可用系统',
+                    label: '定位',
+                    value: 'AI 原生创作 · 引擎工具',
+                    detail: '不是演示型原型，而是面向真实生产的创作者系统',
                 },
                 {
-                    label: '影响',
-                    value: '迭代提效与稳定性',
-                    detail: '编辑器体验 + 自动化校验，支撑大规模内容生产',
+                    label: '能力',
+                    value: '0→1 系统 · 工作流架构',
+                    detail: '道路、校验、打包、Graph 工作流都能独立搭起来',
                 },
                 {
-                    label: '成绩',
-                    value: '工具落地（保密）',
-                    detail: '已投入生产并被内容团队日常使用',
+                    label: '规模',
+                    value: '旗舰级大世界',
+                    detail: '围绕大场景迭代、流式加载与落地约束组织工具系统',
+                },
+                {
+                    label: '协同',
+                    value: '美术 × 引擎 × 生产',
+                    detail: '能在创作者语言和核心工程语言之间做翻译',
                 },
                 {
                     label: '技术栈',
                     value: 'C++ · Rust · C#',
-                    detail: '引擎运行时 + 编辑器工具',
+                    detail: '覆盖编辑器、运行时与工具链',
                 },
             ],
         },
@@ -422,28 +458,33 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             items: [
                 {
                     company: '网易 · 天下事业部 · 《月球陨落》',
-                    role: '动画工具开发 · 技术美术（校招）',
+                    role: '动画工具开发 · 技术美术',
                     start: '2019.07',
                     end: '2020.07',
                     location: '保密',
                     summary:
-                        '校招参与高品质自研引擎 3A 项目《月球陨落》，负责动画相关工具与工作流。',
+                        '从动画工具切入高品质自研引擎项目，最早一批经验就落在“编辑器体验、Rig 逻辑、批处理自动化如何直接影响内容产能”这件事上。',
                     bullets: [
-                        '开发动画资产批处理工具。',
-                        '开发批量骨骼层级更新工具。',
-                        '弥赛亚引擎动画工具调优与反馈闭环。',
-                        'Houdini 辅助的“邪恶 trick”工作流：例如 Nanite 转弥赛亚特效等方案。',
+                        '开发动画资产批处理工具，覆盖重复性整理与清理任务。',
+                        '开发批量骨骼层级更新工具，降低手工维护 Rig 的成本。',
+                        '围绕 Messiah 动画工具做调试、调优与用户反馈闭环。',
+                        '用 Houdini 辅助解决硬引擎约束下的一次性转换与特殊流程问题。',
                     ],
                     tags: ['Houdini', '动画', '工具链', '管线'],
                 },
                 {
                     company: '网易雷火 · Project New World',
-                    role: 'PCG 工具工程师 · 中台落地',
+                    role: 'PCG 工具工程师 · 中台接入',
                     start: '2020.07',
                     end: '2021.07',
                     location: '保密',
+                    summary:
+                        '和技术中台一起把共享 PCG 能力真正落进项目生产，不只是“接上去”，而是把它变成内容团队愿意用、能稳定用的流程。',
                     bullets: [
-                        '和技术中台一起，负责中台 PCG 管线工具项目内落地（Unity 主干 && Houdini 辅助处理几何、地形 Mask 等），调试 PCG 工具，开发 PCG 崖壁工具。',
+                        '负责中台 PCG 管线工具在 Unity 项目内落地，并结合 Houdini 处理几何、地形 Mask 等流程。',
+                        '排查编辑器、数据与内容使用链路中的工具问题。',
+                        '开发 PCG 崖壁工具，作为项目侧直接生产支持。',
+                        '把平台能力翻译成日常可执行的创作者工作流。',
                     ],
                     tags: ['Unity', 'Houdini', 'C#', 'PCG', '工具链', '管线'],
                 },
@@ -454,12 +495,12 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     end: '2024.05',
                     location: '保密',
                     summary:
-                        '应届入职起，从 0 到 1 独立开发 PCG 道路系统与 PCG 美术资产打包/校验管线。',
+                        '围绕旗舰级开放世界项目，负责从 0 到 1 的道路创作系统与 PCG 资产管线；工作内容同时覆盖系统设计、编辑器体验和生产落地。',
                     bullets: [
-                        '从 0 到 1 独立开发 PCG 道路系统：核心数据结构、生成逻辑、编辑器工作流与引擎侧对接。',
-                        '面向内容生产提效：提供稳定易用的道路编辑/生成工作流，支撑大规模内容迭代。',
-                        '建设 PCG 美术资产打包/校验管线：依赖处理、产物规范与自动化，强调稳定与低维护。',
-                        '与客户端合作开发交通 Graph 数据系统；优化场景负载；重度参与手机版本大世界 PCG 场景资产管线维护。',
+                        '从 0 到 1 搭建道路创作系统：核心数据、生成逻辑、编辑器工作流与引擎对接全部负责。',
+                        '通过所见即所得、稳定可控的工具体验提升环境与关卡团队迭代效率。',
+                        '建设 PCG 美术资产打包/校验管线：依赖处理、产物规范与自动化检查完整覆盖。',
+                        '与客户端共同建设交通 Graph 数据系统，支撑场景负载优化，并维护移动端开放世界 PCG 资产流程。',
                     ],
                     tags: ['C++', 'C#', 'PCG', '工具链', '管线'],
                 },
@@ -469,23 +510,30 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     start: '2024.05',
                     end: '2025.07',
                     location: '保密',
+                    summary:
+                        '负责工具与生产管线方向的技术美术组织工作，重点不是一次性 demo，而是让跨团队工作流长期稳定运行。',
                     bullets: [
-                        '带领技术美术团队推动工具/管线落地，提升内容生产效率。',
-                        '开发无缝大世界/流式加载方案，支撑大规模场景与内容组织。',
-                        '建设资产打包管线与自动化校验，提升交付一致性与稳定性。',
-                        '配合工程团队打通移动端构建与资源侧集成流程。',
+                        '围绕创作者工具与生产痛点组织 TA 团队优先级。',
+                        '开发无缝大世界/流式加载支持方案，服务大场景组织与迭代。',
+                        '建设并维护资产打包与自动化校验工具，提升交付一致性与跨团队交接质量。',
+                        '与工程团队一起打通移动端构建、打包与资源集成流程。',
                     ],
                     tags: ['技术美术', '大世界', '管线', '工具'],
                 },
                 {
-                    company: 'AAA 游戏工作室（保密）',
-                    role: 'PCG 开发工程师（保密项目）',
+                    company: '头部 AI 实验室（保密）',
+                    role: 'AI 原生引擎 / 创作系统负责人',
                     start: '2025.07',
                     end: '至今',
                     location: '保密',
-                    summary: '负责保密项目 PCG 方向开发。',
-                    bullets: ['程序化世界细节（例如：高压线）。'],
-                    tags: ['C++', 'Rust', 'PCG'],
+                    summary: '主导 AI 驱动生成与 MCP 风格引擎工作流的探索，把研究型想法落回真实创作者工具与旗舰项目生产约束中。',
+                    bullets: [
+                        '定义并原型化 AI 辅助创作工作流，把引擎运行时、工具层与创作者操作串起来。',
+                        '探索 MCP 风格的引擎集成方式，让 AI Agent 通过结构化工具表面工作，而不是脆弱的临时脚本拼接。',
+                        '继续为保密大型项目交付程序化世界构建工具。',
+                        '用 Rust/C++ 把探索性想法收敛成稳定接口、可复用内核与面向生产的原型。',
+                    ],
+                    tags: ['AI Systems', 'MCP', 'Authoring', 'Rust', 'PCG'],
                 },
             ],
         },
@@ -495,14 +543,14 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'Cunning3D',
                     description:
-                        '基于 Rust + Bevy 的节点式程序化建模软件（DCC），围绕可复用内核构建。',
+                        '围绕可复用 Rust 内核、Graph 工作流与创作者工具搭建的独立程序化创作平台。',
                     highlights: [
-                        '完整可运行的软件系统，并沉淀了大量 CDA 示例案例。',
-                        '以工具链与工作流为中心，强调可维护与可落地。',
+                        '不是概念图，而是完整可运行的系统，交互与界面本身就是作品的一部分。',
+                        '持续探索图式创作、可复用内核与 AI 原生工作流的可能性。',
                     ],
                     tags: ['Rust', 'ECS', 'DCC', '程序化建模', 'PCG'],
                     links: [
-                        { label: '官网', href: 'https://cunning3d.com' },
+                        { label: '官网', href: 'https://cunning3d.vercel.app/' },
                         {
                             label: 'GitHub',
                             href: 'https://github.com/Cunning3D/Cunning3D-Dev',
@@ -528,26 +576,29 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'PCG 道路系统（保密）',
                     description:
-                        '面向内容生产的道路生成与编辑系统，强调稳定性、易用性与迭代效率。',
+                        '面向内容生产的道路创作系统，重点放在规模化、稳定性与日常迭代效率。',
                     highlights: [
-                        '从设计到实现端到端负责，与内容团队共同打磨工作流并投入日常生产。',
+                        '从设计到实现端到端负责，并和内容团队一起把工作流磨到可长期使用。',
+                        '把工具视为产品表面：易用性、稳定性和迭代速度同样重要。',
                     ],
                     tags: ['PCG', 'C++', '工具'],
                 },
                 {
                     name: '无缝大世界方案',
                     description:
-                        '开发无缝大世界/流式加载方案以支撑大规模场景与内容组织。',
+                        '面向大规模场景组织与生产迭代的无缝大世界 / 流式加载方案。',
                     highlights: [
-                        '以生产约束为导向，强调可迭代、可落地与性能边界可控。',
+                        '围绕真实生产约束、模块边界与可预测的上线行为来设计。',
                     ],
                     tags: ['大世界', '工具链', '管线'],
                 },
                 {
                     name: '美术资产打包管线',
                     description:
-                        '美术资产打包与校验管线，保障产物一致性与交付质量。',
-                    highlights: ['自动化校验与规范产物，长期稳定且基本无需维护。'],
+                        '美术资产打包与校验管线，提升产物一致性、交付质量与可维护性。',
+                    highlights: [
+                        '自动化校验、规范化产物、减少末端返工，长期稳定且低维护。',
+                    ],
                     tags: ['管线', 'C#', '自动化'],
                 },
                 {
@@ -574,8 +625,18 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: '技能',
             groups: [
                 { name: '语言', items: ['C++', 'Rust', 'C#'] },
-                { name: 'PCG', items: ['道路', '大世界', '高压线', '程序化工具'] },
-                { name: '生产', items: ['资产打包', '自动化校验', '工具链建设', '移动端出包'] },
+                {
+                    name: '创作系统',
+                    items: ['AI 原生工作流', '编辑器工具', 'Graph 工作流', '校验与打包'],
+                },
+                {
+                    name: '大世界 / PCG',
+                    items: ['道路系统', '交通 Graph', '流式加载工具', '程序化世界细节'],
+                },
+                {
+                    name: '生产',
+                    items: ['创作者体验', '自动化', '跨学科协同', '上线约束'],
+                },
             ],
         },
         education: {
@@ -584,7 +645,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         contact: {
             title: '联系',
-            subtitle: '优先邮件联系，一般 24–48 小时内回复。',
+            subtitle: '可联系 PhD / research / 高级 creator-tools 与 engine-systems 机会；优先邮件。',
             sendEmail: '发送邮件',
             copyEmail: '复制邮箱',
             copiedTitle: '已复制',
@@ -592,7 +653,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         resume: {
             title: '简历',
-            hint: '如需 PDF 版本，请邮件联系我。',
+            hint: '如需 PDF 简历 / 作品集版本，请邮件联系我。',
         },
     },
 };

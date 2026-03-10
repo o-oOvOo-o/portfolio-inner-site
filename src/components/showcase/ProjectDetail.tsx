@@ -141,8 +141,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = () => {
                         <h3>{locale === 'zh' ? '过程与视觉材料' : 'Process & Visual Material'}</h3>
                         <p style={styles.sectionCopy}>
                             {locale === 'zh'
-                                ? '静图、GIF 与视频按证据链方式排列，更接近申请作品集里的 case-study board。'
-                                : 'Still images, GIFs, and clips are sequenced as supporting evidence, closer to a case-study board in an application portfolio.'}
+                                ? '静图、GIF 与视频按证据链方式排列，方便同时服务申请阅读和高级岗位评估。'
+                                : 'Still images, GIFs, and clips are sequenced as supporting evidence so the page works for both application review and senior-role evaluation.'}
                         </p>
                     </div>
                     <div style={styles.gallery}>

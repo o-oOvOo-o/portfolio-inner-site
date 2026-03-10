@@ -34,8 +34,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2021.7 – 2024.6',
         summary: {
-            en: 'A curated urban-world case study centered on spatial composition, city-scale procedural thinking, and the translation of tool-driven systems into cinematic, player-facing environments.',
-            zh: '一组围绕城市开放世界展开的案例研究，关注空间组织、城市尺度的程序化思维，以及如何把工具驱动的系统转译成具有叙事感的玩家视角环境。',
+            en: 'A flagship open-world authoring case study that connects city-scale procedural systems, road/traffic logic, and final presentation shots into one story about how tools become player-facing space.',
+            zh: '一个围绕旗舰级开放世界创作系统展开的案例页，把城市尺度程序化、道路/交通逻辑与最终展示镜头收束到同一条叙事里，说明工具如何转化为玩家真正看到的空间。',
         },
         coverSrc: '/portfolio/project-mugen/city-crossing.jpg',
         coverCaption: {
@@ -44,16 +44,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'Frames the city not only as technical output, but as a designed atmosphere shaped through scale, circulation, and viewpoint.',
-                zh: '这部分把“城市”视为被设计出来的空间氛围，而不只是技术产出；尺度、流线与视角共同构成它的视觉语言。',
+                en: 'Treats the city as the output of an authoring stack: layout, circulation, and spatial rhythm all come from system decisions.',
+                zh: '这里把城市视为一整套创作系统的产物：布局、流线与空间节奏都来自底层工具决策。',
             },
             {
-                en: 'Brings together editor evidence and presentation shots, allowing process and final visual language to be read as one continuous design story.',
-                zh: '我把编辑器证据与展示镜头并置，让过程与最终效果能够被读成同一条连续的设计叙事。',
+                en: 'Keeps editor evidence beside final shots so authorship and process stay visible instead of disappearing behind the beauty images.',
+                zh: '我把编辑器证据和最终镜头并置，让作者性与过程证据不会被效果图完全遮住。',
             },
             {
-                en: 'The preserved bridge-tool animation functions as process material, closer to the development sheets often expected in an application portfolio.',
-                zh: '保留下来的天桥工具 GIF 更像申请作品集里的过程页材料，能直接说明方法，而不只是结果。',
+                en: 'The preserved bridge-tool GIF works as workflow proof: a small but concrete example of creator-facing tooling in motion.',
+                zh: '保留下来的天桥工具 GIF 更像工作流证据：它直接说明一个面向创作者的工具是如何运转的。',
             },
         ],
         tags: ['Open World', 'City PCG', 'Pedestrian Bridge', 'Showcase'],
@@ -132,8 +132,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2021.7 – 2021.11',
         summary: {
-            en: 'A character-tooling case study focused on motion, rig logic, and readability: from ragdoll setup to animation browsing, collision fitting, and asset inspection.',
-            zh: '一个围绕角色运动与工具可读性展开的案例页面，涵盖 ragdoll 配置、动作库浏览、物理骨架检查与碰撞体拟合。',
+            en: 'A creator-tooling case study centered on animation inspection, rig logic, and physics readability: from ragdoll setup to browsing, fitting, and asset review.',
+            zh: '一个围绕动画检查、Rig 逻辑与物理可读性展开的创作者工具案例页，涵盖 ragdoll 配置、动作浏览、拟合与资产检查。',
         },
         coverSrc: '/portfolio/fallen-moon/ragdoll-ui.png',
         coverCaption: {
@@ -142,16 +142,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'Presented as a compact case study, it highlights how interface decisions support animation workflow rather than merely listing features.',
-                zh: '页面以“案例研究”的方式组织内容，强调界面决策如何服务动画工作流，而不只是罗列功能。',
+                en: 'The page emphasizes how interface decisions support animator workflow rather than simply listing tool features.',
+                zh: '页面强调的是界面决策如何服务动画工作流，而不是单纯堆叠功能点。',
             },
             {
                 en: 'Animated captures make timing, hierarchy, and inspection behavior legible in a way static screenshots cannot.',
                 zh: '动态捕捉让时间关系、层级结构与检查逻辑都更易理解，这是静态截图难以替代的。',
             },
             {
-                en: 'One stable interface frame paired with multiple motion studies reads closer to the process boards commonly seen in application portfolios.',
-                zh: '一张稳定界面图配合多段运动研究，更接近留学申请作品集中常见的过程展示方式。',
+                en: 'One stable interface frame paired with multiple motion studies makes the tool readable as both system design and user experience.',
+                zh: '一张稳定界面图配合多段运动研究，让这个案例既能被读成系统设计，也能被读成工具体验设计。',
             },
         ],
         tags: ['Animation', 'Ragdoll', 'Physics', 'Character Tools'],
@@ -222,8 +222,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: 'R&D / Unity',
         summary: {
-            en: 'A small but deliberate prototype exploring how AI-assisted recoloring can enter an art workflow as a controlled post-processing instrument rather than a novelty.',
-            zh: '一个规模不大但研究意图明确的原型：把 AI 辅助换色放进真实美术流程中，作为可控的后处理工具，而不是单纯的新奇功能。',
+            en: 'A compact AI-authoring prototype exploring how assisted recoloring can enter an art workflow as a controllable tool instead of a novelty effect.',
+            zh: '一个聚焦 AI 创作辅助的小型原型，讨论换色能力如何以“可控工具”的形式进入美术流程，而不是停留在新奇效果。',
         },
         coverSrc: '/portfolio/aigc-color-tool/texture-recolor-ui.png',
         coverCaption: {
@@ -232,16 +232,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'The project asks where authorship, control, and efficiency can coexist when generative tooling is introduced into production.',
-                zh: '它讨论的不是“能不能生成”，而是作者控制、效率与风格一致性如何在流程中共存。',
+                en: 'The key question is not whether AI can generate, but how authorship, control, and efficiency can coexist inside production.',
+                zh: '它讨论的重点不是“AI 能不能生成”，而是作者控制、效率与风格一致性如何在生产里共存。',
             },
             {
                 en: 'The moving example foregrounds transformation and iteration, which is more persuasive than a single final swatch.',
                 zh: '动图强调颜色转译与迭代过程，因此比单张最终效果图更有说服力。',
             },
             {
-                en: 'Its scale is intentionally modest, but it clearly communicates a research-minded attitude within the larger portfolio.',
-                zh: '虽然体量较小，但它在整套作品集中清楚地表达了我对研究型工具的兴趣。',
+                en: 'Its scale is intentionally modest, but it clearly signals a research-minded interest in controllable AI tooling.',
+                zh: '虽然体量不大，但它非常明确地表达了我对“可控 AI 工具”的研究兴趣。',
             },
         ],
         tags: ['Unity', 'AIGC', 'Stable Diffusion', 'Tooling'],
@@ -272,8 +272,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2023 – 2025',
         summary: {
-            en: 'A systems-oriented city study that combines road editing, traffic logic, and presentation imagery into one narrative about structure, movement, and urban readability.',
-            zh: '一组关于城市结构与流动关系的系统性研究，把道路编辑、交通逻辑与氛围化镜头整合为同一叙事。',
+            en: 'A systems case study about road authoring, traffic graphs, and urban readability, combining editor logic and presentation imagery into one continuous narrative.',
+            zh: '一个关于道路创作、交通 Graph 与城市可读性的系统案例，把编辑器逻辑和最终展示镜头串成同一条连续叙事。',
         },
         coverSrc: '/portfolio/city-pcg/road-network-overview.png',
         coverCaption: {
@@ -282,16 +282,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'The road network is treated as both interface design and spatial composition, rather than as background infrastructure alone.',
+                en: 'The road network is treated as both interface design and spatial composition, not merely as background infrastructure.',
                 zh: '我把路网视为界面设计与空间构成的交叉问题，而不是单纯的背景基础设施。',
             },
             {
-                en: 'Night scenes and debug views are kept together to show how analytical diagrams can coexist with atmosphere.',
-                zh: '夜景镜头与调试视图并置，说明分析性图层也可以与氛围表达同时成立。',
+                en: 'Debug views and final shots are kept together so analytical diagrams can be read against atmosphere rather than hidden from it.',
+                zh: '调试视图和最终镜头被放在一起，说明分析图并不需要和氛围表达割裂开来。',
             },
             {
-                en: 'The module diagram keeps the system legible, echoing the explanatory drawings often expected in academic portfolios.',
-                zh: '模块拆解图让系统逻辑保持可读，这种解释性表达也很接近学术类作品集常见的版面方式。',
+                en: 'The module diagram keeps the system legible and makes authorship visible beyond the rendered result.',
+                zh: '模块图让系统保持可读，也让作者性不只停留在渲染结果层面。',
             },
         ],
         tags: ['Road Editor', 'Traffic Graph', 'Zone Graph', 'City Tools'],
@@ -354,8 +354,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2019 – 2025',
         summary: {
-            en: 'A process-heavy archive that foregrounds interface logic, debugging, and iterative experiments, treating tools themselves as design artifacts worthy of presentation.',
-            zh: '一组强调界面逻辑、调试过程与迭代实验的过程档案，把“工具本身”作为值得展示的设计对象。',
+            en: 'An archive of tool experiments, devlogs, and interface studies that foregrounds method, debugging, and authorship instead of polished output alone.',
+            zh: '一个汇总工具实验、开发日志与界面研究的档案页，强调方法、调试过程与作者性，而不只展示打磨后的结果。',
         },
         coverSrc: '/portfolio/world-tools/cover.jpg',
         coverCaption: {
@@ -364,16 +364,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'Panels, parameter sheets, and devlogs are treated as visual material, much like process boards in an application portfolio.',
-                zh: '参数面板、设置表与 Devlog 在这里被当作视觉材料处理，类似申请作品集里的草图板与过程板。',
+                en: 'Panels, parameter sheets, and devlogs are treated as first-class evidence of how the systems were actually made.',
+                zh: '参数面板、调试图与 Devlog 都被当作一手证据，直接说明这些系统究竟是如何被做出来的。',
             },
             {
-                en: 'Manual junction editing, CSG tests, and seamless-world research are shown together to reveal a sustained interest in systems thinking.',
-                zh: '手动路口编辑、CSG 验证与无缝世界研究共同呈现出我对系统思维的持续兴趣。',
+                en: 'Manual junction editing, CSG tests, and seamless-world research are shown together to reveal a sustained systems mindset.',
+                zh: '手动路口编辑、CSG 测试与 seamless world 研究被放在一起，显露出持续稳定的系统思维。',
             },
             {
-                en: 'The page deliberately privileges method and authorship over polish, which clarifies how the work was actually made.',
-                zh: '这页刻意优先展示方法与作者判断，而不是只追求一张光鲜的结果图。',
+                en: 'The page deliberately privileges method over polish so the underlying decision-making stays readable.',
+                zh: '这一页刻意把方法放在精修效果之前，因此底层决策过程反而更清楚。',
             },
         ],
         tags: ['Pipeline', 'Workflow', 'CSG', 'Boolean', 'Devlog'],
@@ -468,8 +468,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2025.1 – 2025.3',
         summary: {
-            en: 'A recent case study on the dialogue between terrain and infrastructure, asking how realtime road editing can become a spatial design problem rather than a purely technical one.',
-            zh: '一项较新的案例研究，讨论地形与基础设施之间的对话：实时道路编辑如何从纯技术问题转变为空间设计问题。',
+            en: 'A recent authoring-systems study on how realtime road editing, terrain fusion, and intersection assembly can live inside one interactive workflow.',
+            zh: '一个较新的创作系统案例，讨论实时道路编辑、地形融合与路口拼装如何共存于同一套交互式工作流中。',
         },
         coverSrc: '/portfolio/terrain-road-2025/cover.jpg',
         coverCaption: {
@@ -478,16 +478,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'The page focuses on relationships—road, slope, spline, and junction—so it reads as landscape composition as much as tool development.',
-                zh: '页面关注的是道路、坡度、Spline 与路口之间的关系，因此它既是工具开发，也是地形与景观构成。',
+                en: 'The page focuses on road, slope, spline, and junction as one authoring problem rather than separate technical features.',
+                zh: '页面把路、坡面、样条与路口视为同一个创作问题，而不是彼此割裂的功能点。',
             },
             {
-                en: 'Extended GIFs work like moving process sheets, making temporal decisions visible across editing, fusion, and assembly.',
-                zh: '较长的 GIF 像会动的过程页，把编辑、融合与搭建中的时间性决策展示出来。',
+                en: 'Extended GIFs work like moving process sheets, making editing, fusion, and assembly decisions visible over time.',
+                zh: '较长的 GIF 更像动态过程页，把编辑、融合与拼装中的时间关系清楚展示出来。',
             },
             {
                 en: 'Diagrams and live captures are paired so conceptual framing and executable implementation remain visible at the same time.',
-                zh: '图示与实录并置，分别承担概念框架与可执行实现，两者共同构成完整论述。',
+                zh: '概念图和实录并置，让抽象结构与可执行实现同时保持可见。',
             },
         ],
         tags: ['Realtime Road', 'Terrain', 'Editor', 'Spline', 'R&D'],
@@ -558,8 +558,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         period: '2021 – 2024',
         summary: {
-            en: 'A study-led procedural exploration centered on rock generation and environment assembly, tracing the movement from formal experimentation to spatial atmosphere.',
-            zh: '一组以研究为导向的程序化练习，围绕岩石生成与环境搭建，记录从形式实验到空间氛围形成的过渡。',
+            en: 'A procedural environment study centered on rock generation and scene assembly, showing how tool learning turns into spatial decisions.',
+            zh: '一组围绕岩石生成与场景搭建展开的程序化练习，重点展示工具学习如何逐步转化为空间决策。',
         },
         coverSrc: '/portfolio/procedural-practice/cover.jpg',
         coverCaption: {
@@ -568,16 +568,16 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'These exploratory studies remain in the portfolio to show how technical learning also shapes visual language.',
-                zh: '我保留了这些更偏探索性的内容，用来说明技术学习也在塑造我的视觉语言。',
+                en: 'These studies stay in the portfolio because technical learning also shapes visual language and environment judgment.',
+                zh: '这些练习被保留下来，是为了说明技术学习过程也会反向塑造视觉语言与环境判断。',
             },
             {
-                en: 'The UI, workflow GIF, wireframes, and final images are arranged like a small development board.',
-                zh: '参数界面、工作流 GIF、线框图与结果图的排列方式，更接近一个小型 development board。',
+                en: 'The UI, workflow GIF, wireframes, and final images are arranged like a compact development board.',
+                zh: '参数界面、流程 GIF、线框与结果图被组织成一张紧凑的小型开发板。',
             },
             {
-                en: 'Within an application portfolio, this section supports a narrative of iterative making rather than pure production readiness.',
-                zh: '对于申请作品集而言，这部分能补充“持续迭代、边做边研究”的工作方法。',
+                en: 'Within the larger portfolio, this section supports a narrative of iterative making rather than pure production readiness.',
+                zh: '在整套作品集中，这一页补充的是“迭代式创作”的叙事，而不只是生产成熟度。',
             },
         ],
         tags: ['Houdini', 'HDA', 'Procedural', 'Environment', 'Practice'],
@@ -659,8 +659,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
         },
         bullets: [
             {
-                en: 'Scene work, interaction mockups, and drawing practice share one page, closer to the balance often expected in school applications.',
-                zh: '场景、交互截图与基础美术练习被放在同一页里，这种平衡也更接近留学申请作品集的阅读期待。',
+                en: 'Scene work, interaction mockups, and drawing practice share one page to keep the portfolio balanced beyond purely technical authorship.',
+                zh: '场景、交互截图与基础美术练习被放在同一页里，让整套作品不至于只剩纯技术作者视角。',
             },
             {
                 en: 'The fragments are modest in scale, but they reveal sensitivity to mood, staging, and character.',
@@ -797,8 +797,8 @@ export const PROJECT_DOSSIERS: ProjectDossier[] = [
                 zh: '插件截图、旧道具与玩法画面在这里更像历史性的过程材料，而不是今天的主视觉。',
             },
             {
-                en: 'For an application portfolio, this page adds continuity, self-direction, and a clearer sense of trajectory.',
-                zh: '对于申请作品集来说，这页补充了持续性、自驱力，以及一条更清楚的成长轨迹。',
+                en: 'This page adds continuity, self-direction, and a clearer sense of long-term trajectory.',
+                zh: '这页补充了持续性、自驱力，以及一条更清楚的长期成长轨迹。',
             },
         ],
         tags: ['CS 1.6', 'L4D', 'Modding', 'Props', 'Legacy'],
