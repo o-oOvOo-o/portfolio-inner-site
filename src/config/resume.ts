@@ -112,7 +112,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         meta: {
             title: 'About',
             description:
-                'AI-native authoring systems, engine tools, and creator workflows for flagship open-world production.',
+                'Runtime procedural generation, engine systems, and open-world toolchains — shipped on flagship productions.',
         },
         nav: {
             home: 'HOME',
@@ -124,15 +124,15 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         profile: {
             name: 'Anonymous',
-            title: 'AI-Native Authoring Systems / Engine Tools / Technical Art',
+            title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
             location: 'Private',
             email: 'anonymous@example.com',
-            bio: 'I build creator-facing systems for flagship game production: procedural authoring, editor tooling, validation pipelines, packaging workflows, and runtime-connected utilities that help art and design teams ship faster with more control. My work sits between engine, technical art, and production systems, with a long-term focus on open-world scale, PCG, and AI-native tooling. In parallel, I build Cunning3D as an independent experiment in graph-based authoring, reusable kernels, and next-generation creator workflow.',
+            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain, and I build Cunning3D independently as a graph-based procedural engine with a reusable Rust kernel.',
             interests: [
-                'AI Authoring',
-                'Creator Tools',
-                'Open World Systems',
-                'PCG',
+                'Runtime PCG',
+                'Engine Systems',
+                'Open World',
+                'AI × Games',
             ],
             social: {
                 github: 'https://github.com/Cunning3D',
@@ -144,23 +144,23 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             items: [
                 {
                     label: 'Positioning',
-                    value: 'AI-Native Authoring · Engine Tools',
-                    detail: 'Creator-facing systems designed for real production use',
+                    value: 'Runtime PCG · Engine Systems',
+                    detail: 'Procedural world generation that runs live, not offline',
                 },
                 {
-                    label: 'Ownership',
-                    value: '0→1 Systems · Workflow Architecture',
-                    detail: 'Roads, validation, packaging, and graph-driven tooling',
+                    label: 'Breakthrough',
+                    value: 'Offline-Grade PCG, Delivered at Runtime',
+                    detail: 'Terrain and geometry generation in-engine, with streaming and open-world scale',
                 },
                 {
-                    label: 'Scale',
+                    label: 'Shipped',
                     value: 'Flagship Open Worlds',
-                    detail: 'Large-scene iteration, streaming-aware tooling, and shipping constraints',
+                    detail: 'Road systems and asset pipelines stable through public reveal and testing',
                 },
                 {
-                    label: 'Bridge',
-                    value: 'Art × Engine × Production',
-                    detail: 'Translating between artists, TA, and core engineering',
+                    label: 'Platformized',
+                    value: 'Shared PCG Backend',
+                    detail: 'One generation core adopted across multiple company projects',
                 },
                 {
                     label: 'Stack',
@@ -211,52 +211,78 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     end: '2024.05',
                     location: 'Confidential',
                     summary:
-                        'Owned 0→1 road authoring and PCG asset-pipeline work for a flagship open-world production, with responsibility spanning system design, editor UX, and production landing.',
+                        'Owned the 0→1 road generation system and the large-world asset partitioning/packaging pipeline for a flagship open-world title. Both ran stable through the first PV reveal, and the project became a NetEase flagship.',
                     bullets: [
-                        'Built the road authoring stack end-to-end: core data, generation logic, editor workflows, and engine integration.',
-                        'Improved iteration speed for environment and level teams through robust WYSIWYG tooling and production-safe UX decisions.',
-                        'Built a PCG art-asset packaging/validation pipeline covering dependencies, standardized outputs, and automated checks.',
-                        'Co-developed a traffic-graph data system, supported scene-load optimization, and maintained mobile open-world PCG asset workflows at production scale.',
+                        'Built the road generation system end-to-end: core data model, generation logic, editor workflow, and engine integration.',
+                        'Built the large-world asset partitioning and packaging pipeline: dependency resolution, standardized outputs, and automated validation.',
+                        'Sustained both systems in production through the first PV reveal without regressions.',
+                        'Co-developed the traffic-graph data system, supported scene-load optimization, and maintained mobile open-world PCG asset workflows at production scale.',
                     ],
                     tags: ['C++', 'C#', 'PCG', 'Tooling', 'Pipeline'],
                 },
                 {
                     company: 'Game Studio (Confidential)',
-                    role: 'Technical Art Lead',
+                    role: 'Technical Art Lead · City PCG & Terrain',
                     start: '2024.05',
                     end: '2025.07',
                     location: 'Confidential',
                     summary:
-                        'Led technical art direction for tools and production pipelines on a large-scale project, with emphasis on shipping stable workflows rather than one-off demos.',
+                        'Led the TA team while personally building the project’s city PCG generation and dual-platform large-world terrain. The project reached #1 on the TapTap popularity chart at its first public test.',
                     bullets: [
-                        'Led the TA team around creator-tooling priorities and production pain points.',
-                        'Implemented seamless open-world streaming support for large-scene organization and iteration.',
-                        'Built and maintained packaging/validation tooling to improve delivery quality, reliability, and cross-team handoff.',
+                        'Solo-built the city PCG generation system and the dual-platform (PC + mobile) large-world terrain solution.',
+                        'Built and maintained the asset packaging pipeline, improving delivery consistency and cross-team handoff.',
+                        'Directed development of the animation toolset, setting technical direction for the team rather than implementing it alone.',
                         'Partnered with engineering to unblock mobile build, packaging, and integration workflows.',
                     ],
-                    tags: ['Technical Art', 'Open World', 'Pipeline', 'Tools'],
+                    tags: ['City PCG', 'Terrain', 'Open World', 'Pipeline'],
                 },
                 {
-                    company: 'Top-tier AI Lab (Confidential)',
-                    role: 'AI-Native Engine / Authoring Systems Lead',
+                    company: 'Vasapura',
+                    role: 'Runtime PCG Engineer · AI Game Project',
                     start: '2025.07',
-                    end: 'Present',
+                    end: '2026.03',
                     location: 'Confidential',
                     summary:
-                        'Leading exploration of AI-driven generation and MCP-style engine workflows, while grounding experiments in real creator tooling and flagship-scale production needs.',
+                        'Maintained the city PCG pipeline, then delivered the project’s core technical breakthrough: terrain and island generation executed at runtime rather than baked offline — the class of PCG content usually presented as an offline pipeline, made live.',
                     bullets: [
-                        'Define and prototype AI-assisted authoring workflows that connect engine runtime, tools, and creator operations.',
-                        'Explore MCP-style engine integration so AI agents can act through structured tool surfaces instead of brittle ad-hoc automation.',
-                        'Continue shipping procedural world-building utilities for confidential large-scale production.',
-                        'Use Rust/C++ to turn exploratory ideas into stable interfaces, reusable kernels, and production-minded prototypes.',
+                        'Built runtime real-time PCG terrain and island generation for an AI game project.',
+                        'Moved terrain and geometry generation into the runtime — conference-grade procedural content (comparable to published Ubisoft PCG work) delivered live instead of pre-baked.',
+                        'Carried streaming and open-world support through the runtime path, so generated worlds hold up at production scale.',
+                        'Hardened the system into a shared PCG backend now adopted across multiple company projects.',
+                        'Maintained and extended the existing city PCG pipeline alongside the new runtime work.',
                     ],
-                    tags: ['AI Systems', 'MCP', 'Authoring', 'Rust', 'PCG'],
+                    tags: ['Runtime PCG', 'Terrain', 'Streaming', 'Rust', 'C++'],
+                },
+                {
+                    company: 'miHoYo · Project Anti-Entropy',
+                    role: 'AI R&D · Runtime World Generation',
+                    start: '2026.03',
+                    end: '2026.07',
+                    location: 'Confidential',
+                    summary:
+                        'Joined the AI technology R&D group to bring runtime island and terrain generation into an AI-driven production context.',
+                    bullets: [
+                        'Brought the runtime island/terrain generation approach into the AI R&D group’s technical direction.',
+                        'Applied runtime procedural world generation inside an AI-driven research and production setting.',
+                    ],
+                    tags: ['AI R&D', 'Runtime PCG', 'World Generation'],
                 },
             ],
         },
         projects: {
             title: 'Selected Works',
             items: [
+                {
+                    name: 'Runtime PCG Terrain & Island Generation',
+                    description:
+                        'Real-time procedural terrain, geometry, and island generation executed at runtime, with streaming and open-world support — now a shared PCG backend across multiple projects.',
+                    highlights: [
+                        'Takes procedural content of the kind usually shown as an offline pipeline and delivers it live in the runtime.',
+                        'Streaming and large-world support carried through the runtime path, so generation holds at production scale.',
+                        'Generalized from one AI game project into reusable backend infrastructure adopted company-wide.',
+                    ],
+                    tags: ['Runtime PCG', 'Terrain', 'Streaming', 'Open World', 'Rust'],
+                },
                 {
                     name: 'Cunning3D',
                     description:
@@ -350,32 +376,32 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         skills: {
             title: 'Skills',
             groups: [
-                { name: 'Languages', items: ['C++', 'Rust', 'C#'] },
+                { name: 'Languages', items: ['Rust', 'C++', 'C#'] },
                 {
-                    name: 'Authoring Systems',
+                    name: 'Runtime Systems',
                     items: [
-                        'AI-native workflows',
+                        'Runtime PCG',
+                        'Terrain & geometry generation',
+                        'Streaming',
+                        'Open-world scale',
+                    ],
+                },
+                {
+                    name: 'PCG / Open World',
+                    items: [
+                        'Road & city generation',
+                        'Traffic graphs',
+                        'Island & terrain generation',
+                        'Asset partitioning & packaging',
+                    ],
+                },
+                {
+                    name: 'Engine & Tooling',
+                    items: [
                         'Editor tools',
                         'Graph workflows',
-                        'Validation & packaging',
-                    ],
-                },
-                {
-                    name: 'Open World / PCG',
-                    items: [
-                        'Road systems',
-                        'Traffic graphs',
-                        'Streaming-aware tooling',
-                        'Procedural world details',
-                    ],
-                },
-                {
-                    name: 'Production',
-                    items: [
-                        'Creator UX',
-                        'Automation',
-                        'Cross-discipline translation',
-                        'Shipping constraints',
+                        'Reusable kernels & backends',
+                        'AI-native workflows',
                     ],
                 },
             ],
@@ -387,7 +413,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         contact: {
             title: 'Contact',
             subtitle:
-                'Open to PhD, research, and senior creator-tools / engine-systems opportunities. Email is best.',
+                'Open to game development engineering roles in runtime systems, PCG, and AI × games. Email is best.',
             sendEmail: 'Send email',
             copyEmail: 'Copy email',
             copiedTitle: 'Copied',
@@ -401,7 +427,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
     zh: {
         meta: {
             title: '关于我',
-            description: 'AI 原生创作系统、引擎工具与面向旗舰大世界生产的创作者工作流。',
+            description: 'Runtime PCG、引擎系统与大世界工具链——在旗舰项目上真正跑到上线。',
         },
         nav: {
             home: '首页',
@@ -413,11 +439,11 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         profile: {
             name: 'Anonymous',
-            title: 'AI 原生创作系统 / 引擎工具 / 技术美术',
+            title: 'Runtime PCG / 引擎系统 / 大世界工具链',
             location: '保密',
             email: 'anonymous@example.com',
-            bio: '我长期在游戏生产一线做面向创作者的系统：程序化创作、编辑器工具、资源校验、打包流程，以及和运行时紧密相连的生产工具，目标是让美术与设计团队以更高的控制力、更低的成本完成迭代。我的工作天然处在引擎、技术美术和生产系统的交叉带，长期关注大世界规模、PCG 与 AI 原生工具。与此同时，我也在持续构建 Cunning3D，把它作为图式创作、可复用内核和下一代创作者工作流的独立实验场。',
-            interests: ['AI 创作', '创作者工具', '大世界系统', 'PCG'],
+            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链；同时独立开发 Cunning3D——一个基于可复用 Rust 内核的图式程序化引擎。',
+            interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
                 github: 'https://github.com/Cunning3D',
                 website: 'https://cunning3d.vercel.app/',
@@ -428,23 +454,23 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             items: [
                 {
                     label: '定位',
-                    value: 'AI 原生创作 · 引擎工具',
-                    detail: '不是演示型原型，而是面向真实生产的创作者系统',
+                    value: 'Runtime PCG · 引擎系统',
+                    detail: '程序化世界生成在运行时实时兑现，而不是离线烘出来',
                 },
                 {
-                    label: '能力',
-                    value: '0→1 系统 · 工作流架构',
-                    detail: '道路、校验、打包、Graph 工作流都能独立搭起来',
+                    label: '技术突破',
+                    value: '离线级 PCG，Runtime 兑现',
+                    detail: '地形与几何生成搬进运行时，并带流式加载与大世界支持',
                 },
                 {
-                    label: '规模',
-                    value: '旗舰级大世界',
-                    detail: '围绕大场景迭代、流式加载与落地约束组织工具系统',
+                    label: '落地',
+                    value: '旗舰级开放世界',
+                    detail: '道路系统与资产管线稳定支撑到 PV 首爆与首测',
                 },
                 {
-                    label: '协同',
-                    value: '美术 × 引擎 × 生产',
-                    detail: '能在创作者语言和核心工程语言之间做翻译',
+                    label: '平台化',
+                    value: '公司级 PCG 后端',
+                    detail: '一套生成内核被多个项目复用',
                 },
                 {
                     label: '技术栈',
@@ -495,51 +521,78 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     end: '2024.05',
                     location: '保密',
                     summary:
-                        '围绕旗舰级开放世界项目，负责从 0 到 1 的道路创作系统与 PCG 资产管线；工作内容同时覆盖系统设计、编辑器体验和生产落地。',
+                        '负责从 0 到 1 的道路生成系统，以及大世界资产分割打包管线。两套系统稳定运行至 PV 首爆，项目成为网易旗舰项目。',
                     bullets: [
-                        '从 0 到 1 搭建道路创作系统：核心数据、生成逻辑、编辑器工作流与引擎对接全部负责。',
-                        '通过所见即所得、稳定可控的工具体验提升环境与关卡团队迭代效率。',
-                        '建设 PCG 美术资产打包/校验管线：依赖处理、产物规范与自动化检查完整覆盖。',
+                        '从 0 到 1 搭建道路生成系统：核心数据、生成逻辑、编辑器工作流与引擎对接全部负责。',
+                        '建设大世界资产分割打包管线：依赖处理、产物规范与自动化校验完整覆盖。',
+                        '两套系统稳定运行至 PV 首爆，全程无回归事故。',
                         '与客户端共同建设交通 Graph 数据系统，支撑场景负载优化，并维护移动端开放世界 PCG 资产流程。',
                     ],
                     tags: ['C++', 'C#', 'PCG', '工具链', '管线'],
                 },
                 {
                     company: '游戏工作室（保密）',
-                    role: 'TA组长',
+                    role: 'TA 组长 · 城市 PCG 与地形',
                     start: '2024.05',
                     end: '2025.07',
                     location: '保密',
                     summary:
-                        '负责工具与生产管线方向的技术美术组织工作，重点不是一次性 demo，而是让跨团队工作流长期稳定运行。',
+                        '带 TA 组，同时个人独立完成项目的城市 PCG 生成与双端大世界地形。项目首爆测试登上 TapTap 人气榜首。',
                     bullets: [
-                        '围绕创作者工具与生产痛点组织 TA 团队优先级。',
-                        '开发无缝大世界/流式加载支持方案，服务大场景组织与迭代。',
-                        '建设并维护资产打包与自动化校验工具，提升交付一致性与跨团队交接质量。',
+                        'Solo 完成城市 PCG 生成系统，以及双端（PC + 移动）大世界 Terrain 方案。',
+                        '建设并维护资产打包管线，提升交付一致性与跨团队交接质量。',
+                        '指导动画工具集开发，负责技术方向把控而非独立实现。',
                         '与工程团队一起打通移动端构建、打包与资源集成流程。',
                     ],
-                    tags: ['技术美术', '大世界', '管线', '工具'],
+                    tags: ['城市 PCG', 'Terrain', '大世界', '管线'],
                 },
                 {
-                    company: '头部 AI 实验室（保密）',
-                    role: 'AI 原生引擎 / 创作系统负责人',
+                    company: 'Vasapura',
+                    role: 'Runtime PCG 工程师 · AI 游戏项目',
                     start: '2025.07',
-                    end: '至今',
+                    end: '2026.03',
                     location: '保密',
-                    summary: '主导 AI 驱动生成与 MCP 风格引擎工作流的探索，把研究型想法落回真实创作者工具与旗舰项目生产约束中。',
+                    summary:
+                        '负责城市 PCG 管线维护，并完成项目核心技术突破：地形与岛屿生成在 Runtime 实时兑现，而非离线烘制——把通常以离线管线形态呈现的 PCG 内容做成了实时的。',
                     bullets: [
-                        '定义并原型化 AI 辅助创作工作流，把引擎运行时、工具层与创作者操作串起来。',
-                        '探索 MCP 风格的引擎集成方式，让 AI Agent 通过结构化工具表面工作，而不是脆弱的临时脚本拼接。',
-                        '继续为保密大型项目交付程序化世界构建工具。',
-                        '用 Rust/C++ 把探索性想法收敛成稳定接口、可复用内核与面向生产的原型。',
+                        '为 AI 游戏项目实现 Runtime 实时 PCG 地形与岛屿生成。',
+                        '把地形生成与几何生成搬进 Runtime：达到育碧分享级的程序化内容规格，但以运行时实时兑现，而不是预先烘出。',
+                        'Runtime 路径完整覆盖流式加载与大世界支持，保证生成结果在生产规模下站得住。',
+                        '将系统沉淀为公司级 PCG 底层后端，已在多个项目中复用。',
+                        '同时维护并扩展既有城市 PCG 管线。',
                     ],
-                    tags: ['AI Systems', 'MCP', 'Authoring', 'Rust', 'PCG'],
+                    tags: ['Runtime PCG', 'Terrain', '流式加载', 'Rust', 'C++'],
+                },
+                {
+                    company: '米哈游 · 逆熵',
+                    role: 'AI 技术研发组 · Runtime 世界生成',
+                    start: '2026.03',
+                    end: '2026.07',
+                    location: '保密',
+                    summary:
+                        '在 AI 技术研发组内，把 Runtime 岛屿与地形生成能力带入 AI 驱动的研发语境。',
+                    bullets: [
+                        '将 Runtime 岛屿 / 地形生成方案带入 AI 技术研发组的技术方向。',
+                        '在 AI 驱动的研发与生产场景中应用 Runtime 程序化世界生成。',
+                    ],
+                    tags: ['AI 研发', 'Runtime PCG', '世界生成'],
                 },
             ],
         },
         projects: {
             title: '精选作品',
             items: [
+                {
+                    name: 'Runtime PCG 地形与岛屿生成',
+                    description:
+                        '在运行时实时执行的程序化地形、几何与岛屿生成，完整支持流式加载与大世界规模；现已成为跨项目复用的 PCG 底层后端。',
+                    highlights: [
+                        '把通常以离线管线形态呈现的程序化内容，做到运行时实时兑现。',
+                        '流式加载与大世界支持贯穿 Runtime 路径，保证生成在生产规模下站得住。',
+                        '从单个 AI 游戏项目泛化为可复用后端基础设施，被公司多个项目采用。',
+                    ],
+                    tags: ['Runtime PCG', 'Terrain', '流式加载', '大世界', 'Rust'],
+                },
                 {
                     name: 'Cunning3D',
                     description:
@@ -624,18 +677,18 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         skills: {
             title: '技能',
             groups: [
-                { name: '语言', items: ['C++', 'Rust', 'C#'] },
+                { name: '语言', items: ['Rust', 'C++', 'C#'] },
                 {
-                    name: '创作系统',
-                    items: ['AI 原生工作流', '编辑器工具', 'Graph 工作流', '校验与打包'],
+                    name: '运行时系统',
+                    items: ['Runtime PCG', '地形与几何生成', '流式加载', '大世界规模'],
                 },
                 {
-                    name: '大世界 / PCG',
-                    items: ['道路系统', '交通 Graph', '流式加载工具', '程序化世界细节'],
+                    name: 'PCG / 大世界',
+                    items: ['道路与城市生成', '交通 Graph', '岛屿与地形生成', '资产分割与打包'],
                 },
                 {
-                    name: '生产',
-                    items: ['创作者体验', '自动化', '跨学科协同', '上线约束'],
+                    name: '引擎与工具',
+                    items: ['编辑器工具', 'Graph 工作流', '可复用内核与后端', 'AI 原生工作流'],
                 },
             ],
         },
@@ -645,7 +698,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         contact: {
             title: '联系',
-            subtitle: '可联系 PhD / research / 高级 creator-tools 与 engine-systems 机会；优先邮件。',
+            subtitle: '正在寻找游戏开发工程师机会，方向为运行时系统、PCG 与 AI × 游戏；优先邮件。',
             sendEmail: '发送邮件',
             copyEmail: '复制邮箱',
             copiedTitle: '已复制',
