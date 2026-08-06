@@ -237,7 +237,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['City PCG', 'Terrain', 'Open World', 'Pipeline'],
                 },
                 {
-                    company: 'Vasapura',
+                    company: 'miHoYo · Vasapura',
                     role: 'Runtime PCG Engineer · AI Game Project',
                     start: '2025.07',
                     end: '2026.03',
@@ -254,16 +254,16 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['Runtime PCG', 'Terrain', 'Streaming', 'Rust', 'C++'],
                 },
                 {
-                    company: 'miHoYo · Project Anti-Entropy',
-                    role: 'AI R&D · Runtime World Generation',
+                    company: 'miHoYo · Anti-Entropy',
+                    role: 'AI Technology R&D · Runtime World Generation',
                     start: '2026.03',
                     end: '2026.07',
                     location: 'Confidential',
                     summary:
-                        'Joined the AI technology R&D group to bring runtime island and terrain generation into an AI-driven production context.',
+                        'Moved internally to the AI technology R&D department, carrying the runtime island and terrain generation work into an AI-driven research context.',
                     bullets: [
-                        'Brought the runtime island/terrain generation approach into the AI R&D group’s technical direction.',
-                        'Applied runtime procedural world generation inside an AI-driven research and production setting.',
+                        'Continued the runtime island/terrain generation line of work inside the AI R&D department.',
+                        'Applied runtime procedural world generation in an AI-driven research and production setting.',
                     ],
                     tags: ['AI R&D', 'Runtime PCG', 'World Generation'],
                 },
@@ -547,7 +547,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['城市 PCG', 'Terrain', '大世界', '管线'],
                 },
                 {
-                    company: 'Vasapura',
+                    company: '米哈游 · Vasapura',
                     role: 'Runtime PCG 工程师 · AI 游戏项目',
                     start: '2025.07',
                     end: '2026.03',
@@ -570,9 +570,9 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     end: '2026.07',
                     location: '保密',
                     summary:
-                        '在 AI 技术研发组内，把 Runtime 岛屿与地形生成能力带入 AI 驱动的研发语境。',
+                        '内部转入 AI 技术研发部门，把 Runtime 岛屿与地形生成的工作延续到 AI 驱动的研发语境中。',
                     bullets: [
-                        '将 Runtime 岛屿 / 地形生成方案带入 AI 技术研发组的技术方向。',
+                        '在 AI 技术研发部门内延续 Runtime 岛屿 / 地形生成方向的工作。',
                         '在 AI 驱动的研发与生产场景中应用 Runtime 程序化世界生成。',
                     ],
                     tags: ['AI 研发', 'Runtime PCG', '世界生成'],
