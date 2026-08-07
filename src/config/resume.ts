@@ -123,10 +123,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             contact: 'CONTACT',
         },
         profile: {
-            name: 'Anonymous',
+            name: 'TODO_NAME',
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
-            location: 'Private',
-            email: 'anonymous@example.com',
+            location: 'TODO_LOCATION',
+            email: 'TODO_EMAIL',
             bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain, and I build Cunning3D independently as a graph-based procedural engine with a reusable Rust kernel.',
             interests: [
                 'Runtime PCG',
@@ -177,7 +177,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'Technical Artist · Animation Tooling',
                     start: '2019.07',
                     end: '2020.07',
-                    location: 'Confidential',
                     summary:
                         'Started in animation tooling on a high-end in-house-engine production, learning how editor UX, rig logic, and batch automation directly affect content throughput.',
                     bullets: [
@@ -193,7 +192,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'PCG Tools Engineer · Pipeline Integration',
                     start: '2020.07',
                     end: '2021.07',
-                    location: 'Confidential',
                     summary:
                         'Worked with the central tech-platform side to adapt shared PCG capability into project production and turn it into something content teams could actually use.',
                     bullets: [
@@ -209,7 +207,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'PCG Roads System Owner · Tools & Pipeline',
                     start: '2021.07',
                     end: '2024.05',
-                    location: 'Confidential',
                     summary:
                         'Owned the 0→1 road generation system and the large-world asset partitioning/packaging pipeline for a flagship open-world title. Both ran stable through the first PV reveal, and the project became a NetEase flagship.',
                     bullets: [
@@ -221,11 +218,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['C++', 'C#', 'PCG', 'Tooling', 'Pipeline'],
                 },
                 {
-                    company: 'Game Studio (Confidential)',
+                    company: 'TODO_STUDIO_NAME',
                     role: 'Technical Art Lead · City PCG & Terrain',
                     start: '2024.05',
                     end: '2025.07',
-                    location: 'Confidential',
                     summary:
                         'Led the TA team while personally building the project’s city PCG generation and dual-platform large-world terrain. The project reached #1 on the TapTap popularity chart at its first public test.',
                     bullets: [
@@ -241,7 +237,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'Runtime PCG Engineer · AI Game Project',
                     start: '2025.07',
                     end: '2026.03',
-                    location: 'Confidential',
                     summary:
                         'Maintained the city PCG pipeline, then delivered the project’s core technical breakthrough: terrain and island generation executed at runtime rather than baked offline — the class of PCG content usually presented as an offline pipeline, made live.',
                     bullets: [
@@ -258,7 +253,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'AI Technology R&D · Runtime World Generation',
                     start: '2026.03',
                     end: '2026.07',
-                    location: 'Confidential',
                     summary:
                         'Moved internally to the AI technology R&D department, carrying the runtime island and terrain generation work into an AI-driven research context.',
                     bullets: [
@@ -317,7 +311,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['Unity', 'C#', 'PCG', 'Graph', 'Rust', 'Editor Tools'],
                 },
                 {
-                    name: 'PCG Road System (Confidential)',
+                    name: 'PCG Road System · Project Mugen',
                     description:
                         'A production road authoring system designed for scale, reliability, and day-to-day content iteration.',
                     highlights: [
@@ -327,7 +321,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['PCG', 'C++', 'Tools'],
                 },
                 {
-                    name: 'Seamless Open World Streaming (Confidential)',
+                    name: 'Seamless Open World Streaming',
                     description:
                         'A seamless open-world streaming solution built to support large-scene organization and production iteration.',
                     highlights: [
@@ -438,10 +432,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             contact: '联系',
         },
         profile: {
-            name: 'Anonymous',
+            name: 'TODO_NAME',
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
-            location: '保密',
-            email: 'anonymous@example.com',
+            location: 'TODO_LOCATION',
+            email: 'TODO_EMAIL',
             bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链；同时独立开发 Cunning3D——一个基于可复用 Rust 内核的图式程序化引擎。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
@@ -487,7 +481,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: '动画工具开发 · 技术美术',
                     start: '2019.07',
                     end: '2020.07',
-                    location: '保密',
                     summary:
                         '从动画工具切入高品质自研引擎项目，最早一批经验就落在“编辑器体验、Rig 逻辑、批处理自动化如何直接影响内容产能”这件事上。',
                     bullets: [
@@ -503,7 +496,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'PCG 工具工程师 · 中台接入',
                     start: '2020.07',
                     end: '2021.07',
-                    location: '保密',
                     summary:
                         '和技术中台一起把共享 PCG 能力真正落进项目生产，不只是“接上去”，而是把它变成内容团队愿意用、能稳定用的流程。',
                     bullets: [
@@ -519,7 +511,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'PCG 道路系统负责人 · 工具/管线',
                     start: '2021.07',
                     end: '2024.05',
-                    location: '保密',
                     summary:
                         '负责从 0 到 1 的道路生成系统，以及大世界资产分割打包管线。两套系统稳定运行至 PV 首爆，项目成为网易旗舰项目。',
                     bullets: [
@@ -531,11 +522,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['C++', 'C#', 'PCG', '工具链', '管线'],
                 },
                 {
-                    company: '游戏工作室（保密）',
+                    company: 'TODO_STUDIO_NAME',
                     role: 'TA 组长 · 城市 PCG 与地形',
                     start: '2024.05',
                     end: '2025.07',
-                    location: '保密',
                     summary:
                         '带 TA 组，同时个人独立完成项目的城市 PCG 生成与双端大世界地形。项目首爆测试登上 TapTap 人气榜首。',
                     bullets: [
@@ -551,7 +541,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'Runtime PCG 工程师 · AI 游戏项目',
                     start: '2025.07',
                     end: '2026.03',
-                    location: '保密',
                     summary:
                         '负责城市 PCG 管线维护，并完成项目核心技术突破：地形与岛屿生成在 Runtime 实时兑现，而非离线烘制——把通常以离线管线形态呈现的 PCG 内容做成了实时的。',
                     bullets: [
@@ -568,7 +557,6 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     role: 'AI 技术研发组 · Runtime 世界生成',
                     start: '2026.03',
                     end: '2026.07',
-                    location: '保密',
                     summary:
                         '内部转入 AI 技术研发部门，把 Runtime 岛屿与地形生成的工作延续到 AI 驱动的研发语境中。',
                     bullets: [
@@ -627,7 +615,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['Unity', 'C#', 'PCG', 'Graph', 'Rust', '编辑器工具'],
                 },
                 {
-                    name: 'PCG 道路系统（保密）',
+                    name: 'PCG 道路系统 · 《无限大》',
                     description:
                         '面向内容生产的道路创作系统，重点放在规模化、稳定性与日常迭代效率。',
                     highlights: [
