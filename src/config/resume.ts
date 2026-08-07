@@ -127,7 +127,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
             location: 'Shanghai, China',
             email: '0x1900.eth@gmail.com',
-            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron.',
+            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron. This started early: I was making game mods in middle school and moderating the Half-Life section on ModChina, and GoldSource with Half-Life’s Hammer editor was the first engine and level toolchain I ever touched.',
             interests: [
                 'Runtime PCG',
                 'Engine Systems',
@@ -371,17 +371,17 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['React', 'Blockchain', 'Frontend', 'AI Coding'],
                 },
                 {
-                    name: 'AoMDC Modding & Community (2007–2009)',
+                    name: 'AoMDC Modding & ModChina Community (2007–2009)',
                     description:
-                        'Early modding and community work for the Half-Life (GoldSrc) mod AoMDC.',
+                        'Middle-school modding and community work for the Half-Life (GoldSource) mod AoMDC — where the engine and level-editing habits started.',
                     highlights: [
                         'Contributed to multiplayer map creation for AoMDC (predecessor of Cry of Fear).',
                         'Built and published maps using Hammer (Valve Hammer Editor).',
                         'Learned AMX Mod X (AMXX) plugin development.',
-                        'Moderated the GoldSrc mod section on Modchian and hosted an AoMDC server.',
+                        'Moderated the Half-Life section on ModChina and hosted an AoMDC server.',
                     ],
                     tags: [
-                        'GoldSrc',
+                        'GoldSource',
                         'Half-Life',
                         'Modding',
                         'Hammer',
@@ -462,7 +462,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
             location: '上海',
             email: '0x1900.eth@gmail.com',
-            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。',
+            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。这条线开始得很早：我初中就在做游戏 Mod，并在 ModChina 担任半条命（HL）区版主；接触的第一款游戏引擎是 GoldSource，第一个关卡编辑工具是半条命的 Hammer。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
                 github: 'https://github.com/Cunning3D',
@@ -699,16 +699,16 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['React', '区块链', '前端', 'AI Coding'],
                 },
                 {
-                    name: 'AoMDC 联机地图 & 服务器（Modchian 版主，2007–2009）',
+                    name: 'AoMDC 联机地图 & 服务器（ModChina HL 区版主，2007–2009）',
                     description:
-                        '小学时期的 Mod 开发与社区实践：围绕 Half-Life（GoldSrc）Mod「AoMDC」。',
+                        '初中时期的 Mod 开发与社区实践：围绕 Half-Life（GoldSource）Mod「AoMDC」，也是引擎与关卡编辑习惯的起点。',
                     highlights: [
                         '参与 AoMDC 联机地图制作与迭代（《Cry of Fear》前作）。',
                         '学习并使用 Hammer 工具制作/发布场景地图。',
                         '学习 AMXX 插件制作。',
-                        '担任 Modchian GoldSrc 引擎 Mod 板块版主，搭建并维护 AoMDC 服务器。',
+                        '担任 ModChina 半条命（HL）区版主，搭建并维护 AoMDC 服务器。',
                     ],
-                    tags: ['GoldSrc', 'Half-Life', 'Mod', 'Hammer', 'AMXX', '服务器'],
+                    tags: ['GoldSource', 'Half-Life', 'Mod', 'Hammer', 'AMXX', '服务器'],
                 },
             ],
         },
