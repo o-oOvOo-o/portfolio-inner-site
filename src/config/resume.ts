@@ -127,7 +127,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
             location: 'Shanghai, China',
             email: '0x1900.eth@gmail.com',
-            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain, and I build Cunning3D independently as a graph-based procedural engine with a reusable Rust kernel.',
+            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron.',
             interests: [
                 'Runtime PCG',
                 'Engine Systems',
@@ -250,7 +250,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 },
                 {
                     company: 'miHoYo · Anti-Entropy',
-                    role: 'AI Technology R&D · Runtime World Generation',
+                    role: 'AI Technology R&D Group',
                     start: '2026.03',
                     end: '2026.07',
                     summary:
@@ -280,10 +280,12 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'Cunning3D',
                     description:
-                        'An independent procedural authoring platform built around a reusable Rust kernel, graph workflows, and creator-facing tools.',
+                        'An independent procedural authoring platform (DCC) built around a reusable Rust kernel, node-graph workflows, and creator-facing tools — the same class of system as Houdini-style procedural authoring, built from scratch.',
                     highlights: [
-                        'A complete, runnable system rather than a mockup, with live interaction and growing procedural examples.',
-                        'Explores graph-based authoring, reusable kernels, and the shape of AI-native creation workflow.',
+                        'A complete, runnable system rather than a mockup: node graph, geometry kernel, viewport, and tooling all live in one Rust codebase.',
+                        'Reusable kernel design lets the same operators drive both authoring-time graphs and runtime generation.',
+                        'Runs on Metra, the self-built native GUI framework, so the editor avoids the Web/Electron performance ceiling.',
+                        'Doubles as the testbed for graph-based authoring and AI-native creation workflow.',
                     ],
                     tags: ['Rust', 'ECS', 'DCC', 'Procedural Modeling', 'PCG'],
                     links: [
@@ -292,6 +294,26 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                             label: 'GitHub',
                             href: 'https://github.com/Cunning3D/Cunning3D-Dev',
                         },
+                    ],
+                },
+                {
+                    name: 'Metra — Rust-Native GPU-Driven GUI Framework',
+                    description:
+                        'A self-built native GUI, app, and rendering framework written to solve a concrete problem: DCC tools and agent-facing apps built on Web/Electron stalls under real workloads. Metra puts UI on a GPU-driven Rust-native runtime instead.',
+                    highlights: [
+                        'Built to replace the Web/Electron route for DCC-scale interfaces, where large node graphs and heavy tool panels expose latency and jank the browser stack cannot absorb.',
+                        'GPU-driven rendering: text, SVG, SDF, images, paths, and native surfaces share one pipeline, with a Vulkan (ash) route for native PC performance and WGPU for cross-platform reach.',
+                        'Semantic action reflection makes the same native UI operable by humans and agents — controls expose stable ids, roles, values, and action contracts, so agents observe and act through the UI instead of brittle scripted automation.',
+                        'Retained UI runtime with immediate authoring and native Hot UI for fast iteration on real application surfaces.',
+                        'Serves as the application and tooling layer for Cunning3D, so the framework is validated against a real product rather than demos.',
+                    ],
+                    tags: [
+                        'Rust',
+                        'GUI Framework',
+                        'GPU-Driven',
+                        'Vulkan',
+                        'WGPU',
+                        'Agent Reflection',
                     ],
                 },
                 {
@@ -395,6 +417,8 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'Editor tools',
                         'Graph workflows',
                         'Reusable kernels & backends',
+                        'Native GUI frameworks',
+                        'GPU-driven UI (Vulkan / WGPU)',
                         'AI-native workflows',
                     ],
                 },
@@ -436,7 +460,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
             location: '上海',
             email: '0x1900.eth@gmail.com',
-            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链；同时独立开发 Cunning3D——一个基于可复用 Rust 内核的图式程序化引擎。',
+            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
                 github: 'https://github.com/Cunning3D',
@@ -554,7 +578,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 },
                 {
                     company: '米哈游 · 逆熵',
-                    role: 'AI 技术研发组 · Runtime 世界生成',
+                    role: 'AI 技术研发组',
                     start: '2026.03',
                     end: '2026.07',
                     summary:
@@ -584,10 +608,12 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     name: 'Cunning3D',
                     description:
-                        '围绕可复用 Rust 内核、Graph 工作流与创作者工具搭建的独立程序化创作平台。',
+                        '围绕可复用 Rust 内核、节点图工作流与创作者工具从零搭建的独立程序化创作平台（DCC），对标 Houdini 一类的程序化创作系统。',
                     highlights: [
-                        '不是概念图，而是完整可运行的系统，交互与界面本身就是作品的一部分。',
-                        '持续探索图式创作、可复用内核与 AI 原生工作流的可能性。',
+                        '不是概念图，而是完整可运行的系统：节点图、几何内核、视口与工具链都在同一套 Rust 代码库里。',
+                        '可复用内核设计让同一套算子既能驱动创作期 Graph，也能用于运行时生成。',
+                        '运行在自研 GUI 框架 Metra 之上，因此编辑器不受 Web / Electron 的性能天花板限制。',
+                        '同时作为图式创作与 AI 原生工作流的试验场。',
                     ],
                     tags: ['Rust', 'ECS', 'DCC', '程序化建模', 'PCG'],
                     links: [
@@ -596,6 +622,26 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                             label: 'GitHub',
                             href: 'https://github.com/Cunning3D/Cunning3D-Dev',
                         },
+                    ],
+                },
+                {
+                    name: 'Metra — Rust 原生 GPU 驱动 GUI 框架',
+                    description:
+                        '自研的原生 GUI / 应用 / 渲染框架，起因是一个很具体的问题：DCC 工具与 Agent 应用建在 Web / Electron 上，在真实负载下会卡。Metra 把 UI 放到 GPU 驱动的 Rust 原生运行时上重做。',
+                    highlights: [
+                        '针对 DCC 量级界面替换 Web / Electron 路线——大规模节点图与重型工具面板会暴露浏览器栈吸收不掉的延迟与卡顿。',
+                        'GPU 驱动渲染：文本、SVG、SDF、图像、路径与原生表面进入同一条管线；Vulkan（ash）负责 PC 原生高性能路线，WGPU 负责跨平台兼容路线。',
+                        '语义化 Action 反射让人和 Agent 操作同一套原生 UI：控件暴露稳定 id、role、value 与 action 契约，Agent 通过 UI 本身观察与执行，而不是靠脆弱的脚本自动化。',
+                        'Retained UI 运行时 + 即时式编写 + 原生 Hot UI，支持在真实应用界面上快速迭代。',
+                        '作为 Cunning3D 的应用与工具层，框架是在真实产品上验证的，而不是靠 demo。',
+                    ],
+                    tags: [
+                        'Rust',
+                        'GUI 框架',
+                        'GPU 驱动',
+                        'Vulkan',
+                        'WGPU',
+                        'Agent 反射',
                     ],
                 },
                 {
@@ -676,7 +722,14 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 },
                 {
                     name: '引擎与工具',
-                    items: ['编辑器工具', 'Graph 工作流', '可复用内核与后端', 'AI 原生工作流'],
+                    items: [
+                        '编辑器工具',
+                        'Graph 工作流',
+                        '可复用内核与后端',
+                        '原生 GUI 框架',
+                        'GPU 驱动 UI（Vulkan / WGPU）',
+                        'AI 原生工作流',
+                    ],
                 },
             ],
         },
