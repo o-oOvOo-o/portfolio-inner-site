@@ -123,10 +123,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             contact: 'CONTACT',
         },
         profile: {
-            name: 'TODO_NAME',
+            name: 'Shuangqing Liu',
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
-            location: 'TODO_LOCATION',
-            email: 'TODO_EMAIL',
+            location: 'Shanghai, China',
+            email: '0x1900.eth@gmail.com',
             bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain, and I build Cunning3D independently as a graph-based procedural engine with a reusable Rust kernel.',
             interests: [
                 'Runtime PCG',
@@ -218,7 +218,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['C++', 'C#', 'PCG', 'Tooling', 'Pipeline'],
                 },
                 {
-                    company: 'TODO_STUDIO_NAME',
+                    company: '妙世界科技',
                     role: 'Technical Art Lead · City PCG & Terrain',
                     start: '2024.05',
                     end: '2025.07',
@@ -432,10 +432,10 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             contact: '联系',
         },
         profile: {
-            name: 'TODO_NAME',
+            name: 'Shuangqing Liu',
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
-            location: 'TODO_LOCATION',
-            email: 'TODO_EMAIL',
+            location: '上海',
+            email: '0x1900.eth@gmail.com',
             bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链；同时独立开发 Cunning3D——一个基于可复用 Rust 内核的图式程序化引擎。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
@@ -522,7 +522,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     tags: ['C++', 'C#', 'PCG', '工具链', '管线'],
                 },
                 {
-                    company: 'TODO_STUDIO_NAME',
+                    company: '妙世界科技',
                     role: 'TA 组长 · 城市 PCG 与地形',
                     start: '2024.05',
                     end: '2025.07',
