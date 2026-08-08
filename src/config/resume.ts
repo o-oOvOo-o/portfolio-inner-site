@@ -127,7 +127,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
             location: 'Shanghai, China',
             email: '0x1900.eth@gmail.com',
-            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron. This started early: I was making game mods in middle school and moderating the Half-Life section on ModChina, and GoldSource with Half-Life’s Hammer editor was the first engine and level toolchain I ever touched.',
+            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron. Cunning3D is not a side sketch: its CDA runtime is the kernel my production runtime island generation is built on, integrated into Unreal Engine. This started early: I was making game mods in middle school and moderating the Half-Life section on ModChina, and GoldSource with Half-Life’s Hammer editor was the first engine and level toolchain I ever touched.',
             interests: [
                 'Runtime PCG',
                 'Engine Systems',
@@ -236,7 +236,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     company: 'miHoYo · Vasapura',
                     role: 'Runtime PCG Engineer · AI Game Project',
                     start: '2025.07',
-                    end: '2026.03',
+                    end: '2026.02',
                     summary:
                         'Maintained the city PCG pipeline, then delivered the project’s core technical breakthrough: terrain and island generation executed at runtime rather than baked offline — the class of PCG content usually presented as an offline pipeline, made live.',
                     bullets: [
@@ -251,15 +251,24 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     company: 'miHoYo · Anti-Entropy',
                     role: 'AI Technology R&D Group',
-                    start: '2026.03',
-                    end: '2026.07',
+                    start: '2026.02',
+                    end: 'Present',
                     summary:
-                        'Moved internally to the AI technology R&D department, carrying the runtime island and terrain generation work into an AI-driven research context.',
+                        'Moved internally to the AI technology R&D group, continuing runtime island and terrain generation in an AI-driven research context. The generation layer runs on Cunning3D’s CDA runtime — the same procedural kernel I develop independently, carried into production work.',
                     bullets: [
-                        'Continued the runtime island/terrain generation line of work inside the AI R&D department.',
-                        'Applied runtime procedural world generation in an AI-driven research and production setting.',
+                        'Own runtime island generation, implemented as CDA business logic on the Cunning3D procedural runtime rather than a one-off engine feature.',
+                        'Drive the generation core through a GPU compute path (wgpu-backed operators: noise, remap, mask-by-feature, height-field conversion) so terrain and geometry resolve live instead of being baked.',
+                        'Integrate the generation layer into Unreal Engine for in-engine runtime use.',
+                        'Keep one kernel serving both the independent authoring platform and production runtime generation, so operator work compounds across both.',
                     ],
-                    tags: ['AI R&D', 'Runtime PCG', 'World Generation'],
+                    tags: [
+                        'AI R&D',
+                        'Runtime PCG',
+                        'Island Generation',
+                        'CDA',
+                        'Unreal Engine',
+                        'wgpu',
+                    ],
                 },
             ],
         },
@@ -274,8 +283,15 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'Takes procedural content of the kind usually shown as an offline pipeline and delivers it live in the runtime.',
                         'Streaming and large-world support carried through the runtime path, so generation holds at production scale.',
                         'Generalized from one AI game project into reusable backend infrastructure adopted company-wide.',
+                        'Island generation is implemented as CDA business logic on the Cunning3D runtime and integrated into Unreal Engine; the UE integration code is not public, the kernel side is.',
                     ],
-                    tags: ['Runtime PCG', 'Terrain', 'Streaming', 'Open World', 'Rust'],
+                    tags: [
+                        'Runtime PCG',
+                        'Terrain',
+                        'Streaming',
+                        'Unreal Engine',
+                        'Rust',
+                    ],
                 },
                 {
                     name: 'Cunning3D',
@@ -283,7 +299,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'An independent procedural authoring platform (DCC) built around a reusable Rust kernel, node-graph workflows, and creator-facing tools — the same class of system as Houdini-style procedural authoring, built from scratch.',
                     highlights: [
                         'A complete, runnable system rather than a mockup: node graph, geometry kernel, viewport, and tooling all live in one Rust codebase.',
-                        'Reusable kernel design lets the same operators drive both authoring-time graphs and runtime generation.',
+                        'Reusable kernel design lets the same operators drive both authoring-time graphs and runtime generation — the CDA runtime backs my production runtime island generation, so the kernel is proven outside its own editor.',
                         'Runs on Metra, the self-built native GUI framework, so the editor avoids the Web/Electron performance ceiling.',
                         'Doubles as the testbed for graph-based authoring and AI-native creation workflow.',
                     ],
@@ -411,6 +427,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'Traffic graphs',
                         'Island & terrain generation',
                         'Asset partitioning & packaging',
+                        'Unreal Engine · Unity integration',
                     ],
                 },
                 {
@@ -433,7 +450,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         contact: {
             title: 'Contact',
             subtitle:
-                'Open to game development engineering roles in runtime systems, PCG, and AI × games. Email is best.',
+                'Currently at miHoYo. Open to conversations about game development engineering in runtime systems, PCG, and AI × games. Email is best.',
             sendEmail: 'Send email',
             copyEmail: 'Copy email',
             copiedTitle: 'Copied',
@@ -462,7 +479,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
             location: '上海',
             email: '0x1900.eth@gmail.com',
-            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。这条线开始得很早：我初中就在做游戏 Mod，并在 ModChina 担任半条命（HL）区版主；接触的第一款游戏引擎是 GoldSource，第一个关卡编辑工具是半条命的 Hammer。',
+            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。Cunning3D 不是随手写的 side project：它的 CDA Runtime 就是我在生产环境做 Runtime 岛屿生成所依赖的内核，并已集成进 Unreal Engine。这条线开始得很早：我初中就在做游戏 Mod，并在 ModChina 担任半条命（HL）区版主；接触的第一款游戏引擎是 GoldSource，第一个关卡编辑工具是半条命的 Hammer。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
                 github: 'https://github.com/Cunning3D',
@@ -566,7 +583,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     company: '米哈游 · Vasapura',
                     role: 'Runtime PCG 工程师 · AI 游戏项目',
                     start: '2025.07',
-                    end: '2026.03',
+                    end: '2026.02',
                     summary:
                         '负责城市 PCG 管线维护，并完成项目核心技术突破：地形与岛屿生成在 Runtime 实时兑现，而非离线烘制——把通常以离线管线形态呈现的 PCG 内容做成了实时的。',
                     bullets: [
@@ -581,15 +598,24 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 {
                     company: '米哈游 · 逆熵',
                     role: 'AI 技术研发组',
-                    start: '2026.03',
-                    end: '2026.07',
+                    start: '2026.02',
+                    end: '至今',
                     summary:
-                        '内部转入 AI 技术研发部门，把 Runtime 岛屿与地形生成的工作延续到 AI 驱动的研发语境中。',
+                        '内部转入 AI 技术研发组，在 AI 驱动的研发语境中继续 Runtime 岛屿与地形生成。生成层跑在 Cunning3D 的 CDA Runtime 上——也就是我独立开发的那套程序化内核，被带进了生产工作。',
                     bullets: [
-                        '在 AI 技术研发部门内延续 Runtime 岛屿 / 地形生成方向的工作。',
-                        '在 AI 驱动的研发与生产场景中应用 Runtime 程序化世界生成。',
+                        '负责 Runtime 岛屿生成，以 CDA 业务代码的形式实现在 Cunning3D 程序化运行时之上，而不是做成一次性的引擎功能。',
+                        '生成内核走 GPU 计算路径（wgpu 后端算子：噪声、Remap、Mask by Feature、高度场转换），让地形与几何在运行时实时解算而非预先烘出。',
+                        '将生成层集成进 Unreal Engine，实现引擎内的运行时使用。',
+                        '同一套内核同时服务独立创作平台与生产环境的运行时生成，算子层面的工作在两边复利。',
                     ],
-                    tags: ['AI 研发', 'Runtime PCG', '世界生成'],
+                    tags: [
+                        'AI 研发',
+                        'Runtime PCG',
+                        '岛屿生成',
+                        'CDA',
+                        'Unreal Engine',
+                        'wgpu',
+                    ],
                 },
             ],
         },
@@ -604,8 +630,15 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         '把通常以离线管线形态呈现的程序化内容，做到运行时实时兑现。',
                         '流式加载与大世界支持贯穿 Runtime 路径，保证生成在生产规模下站得住。',
                         '从单个 AI 游戏项目泛化为可复用后端基础设施，被公司多个项目采用。',
+                        '岛屿生成以 CDA 业务代码形式实现在 Cunning3D 运行时上，并集成进 Unreal Engine；UE 侧集成代码未公开，内核侧公开。',
                     ],
-                    tags: ['Runtime PCG', 'Terrain', '流式加载', '大世界', 'Rust'],
+                    tags: [
+                        'Runtime PCG',
+                        'Terrain',
+                        '流式加载',
+                        'Unreal Engine',
+                        'Rust',
+                    ],
                 },
                 {
                     name: 'Cunning3D',
@@ -613,7 +646,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         '围绕可复用 Rust 内核、节点图工作流与创作者工具从零搭建的独立程序化创作平台（DCC），对标 Houdini 一类的程序化创作系统。',
                     highlights: [
                         '不是概念图，而是完整可运行的系统：节点图、几何内核、视口与工具链都在同一套 Rust 代码库里。',
-                        '可复用内核设计让同一套算子既能驱动创作期 Graph，也能用于运行时生成。',
+                        '可复用内核设计让同一套算子既能驱动创作期 Graph，也能用于运行时生成——CDA Runtime 正是我在生产环境做 Runtime 岛屿生成的底座，内核在自己的编辑器之外也被验证过。',
                         '运行在自研 GUI 框架 Metra 之上，因此编辑器不受 Web / Electron 的性能天花板限制。',
                         '同时作为图式创作与 AI 原生工作流的试验场。',
                     ],
@@ -722,7 +755,13 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                 },
                 {
                     name: 'PCG / 大世界',
-                    items: ['道路与城市生成', '交通 Graph', '岛屿与地形生成', '资产分割与打包'],
+                    items: [
+                        '道路与城市生成',
+                        '交通 Graph',
+                        '岛屿与地形生成',
+                        '资产分割与打包',
+                        'Unreal Engine · Unity 集成',
+                    ],
                 },
                 {
                     name: '引擎与工具',
@@ -743,7 +782,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
         },
         contact: {
             title: '联系',
-            subtitle: '正在寻找游戏开发工程师机会，方向为运行时系统、PCG 与 AI × 游戏；优先邮件。',
+            subtitle: '目前在米哈游。欢迎就游戏开发工程方向交流：运行时系统、PCG 与 AI × 游戏；优先邮件。',
             sendEmail: '发送邮件',
             copyEmail: '复制邮箱',
             copiedTitle: '已复制',
