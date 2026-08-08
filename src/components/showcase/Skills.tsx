@@ -12,13 +12,28 @@ const Skills: React.FC<SkillsProps> = () => {
         <div className="site-page-content">
             <h1>{config.skills.title}</h1>
             <div className="captioned-image">
-                <NodeGraphIllustration />
+                <NodeGraphIllustration
+                    labels={
+                        locale === 'zh'
+                            ? [
+                                  '噪声',
+                                  '曲线',
+                                  '地形',
+                                  '侵蚀',
+                                  '遮罩',
+                                  '网格',
+                                  '散布',
+                                  '运行时',
+                              ]
+                            : undefined
+                    }
+                />
                 <p>
                     <sub>
                         <b>{locale === 'zh' ? '图示：' : 'Figure:'}</b>{' '}
                         {locale === 'zh'
-                            ? '技能像一张图谱：工具把不同学科连接起来。'
-                            : 'Skills as a graph — tools connect disciplines.'}
+                            ? '算子 + Graph：地形生成从噪声与曲线出发，分叉出侵蚀与遮罩，最后在运行时收敛成可用世界。'
+                            : 'Operators and graph — terrain generation fans out from noise and curves into erosion and masks, then converges into a runtime world.'}
                     </sub>
                 </p>
             </div>

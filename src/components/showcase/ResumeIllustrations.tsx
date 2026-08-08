@@ -112,83 +112,183 @@ export const PipelineIllustration: React.FC<PipelineIllustrationProps> = ({
     );
 };
 
-export const NodeGraphIllustration: React.FC<IllustrationProps> = ({
+export interface NodeGraphIllustrationProps extends IllustrationProps {
+    labels?: string[];
+}
+
+const GRAPH_NODE_W = 120;
+const GRAPH_NODE_H = 44;
+const GRAPH_COL_X = [30, 190, 350, 510, 670];
+
+const GRAPH_NODES = [
+    { id: 'noise', col: 0, y: 28, accent: '#8b5cf6' },
+    { id: 'curve', col: 0, y: 116, accent: '#8b5cf6' },
+    { id: 'terrain', col: 1, y: 72, accent: '#0ea5e9' },
+    { id: 'erosion', col: 2, y: 20, accent: '#0ea5e9' },
+    { id: 'mask', col: 2, y: 124, accent: '#f59e0b' },
+    { id: 'mesh', col: 3, y: 20, accent: '#22c55e' },
+    { id: 'scatter', col: 3, y: 124, accent: '#f59e0b' },
+    { id: 'runtime', col: 4, y: 72, accent: '#ef4444' },
+];
+
+const GRAPH_DEFAULT_LABELS = [
+    'Noise',
+    'Curve',
+    'Terrain',
+    'Erosion',
+    'Mask',
+    'Mesh',
+    'Scatter',
+    'Runtime',
+];
+
+const GRAPH_EDGES: Array<[string, string]> = [
+    ['noise', 'terrain'],
+    ['curve', 'terrain'],
+    ['terrain', 'erosion'],
+    ['terrain', 'mask'],
+    ['erosion', 'mesh'],
+    ['mask', 'scatter'],
+    ['mesh', 'runtime'],
+    ['scatter', 'runtime'],
+];
+
+const graphNodeAt = (id: string) => {
+    const node = GRAPH_NODES.find((n) => n.id === id);
+    if (!node) return { x: 0, y: 0 };
+    return { x: GRAPH_COL_X[node.col], y: node.y };
+};
+
+const graphWire = (from: string, to: string) => {
+    const a = graphNodeAt(from);
+    const b = graphNodeAt(to);
+    const x1 = a.x + GRAPH_NODE_W;
+    const y1 = a.y + GRAPH_NODE_H / 2;
+    const x2 = b.x;
+    const y2 = b.y + GRAPH_NODE_H / 2;
+    return `M ${x1} ${y1} C ${x1 + 44} ${y1}, ${x2 - 44} ${y2}, ${x2} ${y2}`;
+};
+
+export const NodeGraphIllustration: React.FC<NodeGraphIllustrationProps> = ({
     width = '100%',
-    height = 160,
+    height = 190,
     style,
+    labels,
 }) => {
+    const text =
+        labels && labels.length === GRAPH_NODES.length
+            ? labels
+            : GRAPH_DEFAULT_LABELS;
+
     return (
         <svg
             width={width}
             height={height}
-            viewBox="0 0 800 160"
+            viewBox="0 0 820 190"
             style={Object.assign({}, { display: 'block' }, style)}
             role="img"
-            aria-label="Node graph illustration"
+            aria-label="Operator graph illustration"
         >
             <defs>
                 <linearGradient id="graphGrad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.14" />
-                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.12" />
+                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.1" />
                 </linearGradient>
+                <pattern
+                    id="graphDots"
+                    width="16"
+                    height="16"
+                    patternUnits="userSpaceOnUse"
+                >
+                    <circle cx="1.5" cy="1.5" r="1.5" fill="#0f172a" opacity="0.2" />
+                </pattern>
             </defs>
-            <rect
-                x="0"
-                y="0"
-                width="800"
-                height="160"
-                fill="url(#graphGrad)"
-                stroke="#000"
-                strokeWidth="2"
-                rx="10"
-            />
+            <rect x="0" y="0" width="820" height="190" fill="#fff" stroke="#000" strokeWidth="2" rx="10" />
+            <rect x="2" y="2" width="816" height="186" fill="url(#graphGrad)" rx="9" />
+            <rect x="2" y="2" width="816" height="186" fill="url(#graphDots)" rx="9" />
 
-            {/* Links */}
-            <path
-                d="M 120 80 C 240 20, 320 20, 420 80"
-                stroke="#111"
-                strokeWidth="2"
-                fill="none"
-            />
-            <path
-                d="M 120 80 C 240 140, 320 140, 420 80"
-                stroke="#111"
-                strokeWidth="2"
-                fill="none"
-            />
-            <path
-                d="M 420 80 C 520 30, 620 30, 700 80"
-                stroke="#111"
-                strokeWidth="2"
-                fill="none"
-            />
-            <path
-                d="M 420 80 C 520 130, 620 130, 700 80"
-                stroke="#111"
-                strokeWidth="2"
-                fill="none"
-            />
+            {/* Wires: drawn under the nodes, port to port */}
+            {GRAPH_EDGES.map(([from, to]) => (
+                <g key={`wire-${from}-${to}`}>
+                    <path
+                        d={graphWire(from, to)}
+                        stroke="#fff"
+                        strokeWidth="5"
+                        fill="none"
+                        strokeLinecap="round"
+                    />
+                    <path
+                        d={graphWire(from, to)}
+                        stroke="#111"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                    />
+                </g>
+            ))}
 
             {/* Nodes */}
-            {[
-                { x: 120, y: 80, r: 22, fill: '#fff' },
-                { x: 420, y: 80, r: 26, fill: '#fff' },
-                { x: 700, y: 80, r: 22, fill: '#fff' },
-                { x: 300, y: 34, r: 16, fill: '#fff' },
-                { x: 300, y: 126, r: 16, fill: '#fff' },
-                { x: 560, y: 44, r: 16, fill: '#fff' },
-                { x: 560, y: 116, r: 16, fill: '#fff' },
-            ].map((n, i) => (
-                <circle
-                    key={`node-${i}`}
-                    cx={n.x}
-                    cy={n.y}
-                    r={n.r}
-                    fill={n.fill}
-                    stroke="#000"
-                    strokeWidth="2"
-                />
-            ))}
+            {GRAPH_NODES.map((node, idx) => {
+                const x = GRAPH_COL_X[node.col];
+                const y = node.y;
+                const midY = y + GRAPH_NODE_H / 2;
+                const isSource = node.col === 0;
+                const isSink = node.col === GRAPH_COL_X.length - 1;
+                return (
+                    <g key={`node-${node.id}`}>
+                        <rect
+                            x={x}
+                            y={y}
+                            width={GRAPH_NODE_W}
+                            height={GRAPH_NODE_H}
+                            rx="4"
+                            fill="#fff"
+                            stroke="#000"
+                            strokeWidth="2"
+                        />
+                        <rect
+                            x={x + 2}
+                            y={y + 2}
+                            width="7"
+                            height={GRAPH_NODE_H - 4}
+                            fill={node.accent}
+                        />
+                        <text
+                            x={x + 9 + (GRAPH_NODE_W - 9) / 2}
+                            y={midY + 1}
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            fontSize="15"
+                            fontWeight="bold"
+                            fill="#111"
+                        >
+                            {text[idx]}
+                        </text>
+                        {!isSource && (
+                            <rect
+                                x={x - 4}
+                                y={midY - 4}
+                                width="8"
+                                height="8"
+                                fill="#fff"
+                                stroke="#000"
+                                strokeWidth="2"
+                            />
+                        )}
+                        {!isSink && (
+                            <rect
+                                x={x + GRAPH_NODE_W - 4}
+                                y={midY - 4}
+                                width="8"
+                                height="8"
+                                fill="#111"
+                                stroke="#000"
+                                strokeWidth="2"
+                            />
+                        )}
+                    </g>
+                );
+            })}
         </svg>
     );
 };
