@@ -127,7 +127,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / Engine Systems / Open-World Toolchain',
             location: 'Shanghai, China',
             email: '0x1900.eth@gmail.com',
-            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron. Cunning3D is not a side sketch — it is the same operator-and-graph architecture I work with professionally, developed independently and pushed further than any single production need would justify. This started early: I was making game mods in middle school and moderating the Half-Life section on ModChina, and GoldSource with Half-Life’s Hammer editor was the first engine and level toolchain I ever touched.',
+            bio: 'I build procedural generation systems for games, and I ship them. My core work is runtime PCG: terrain, geometry, and island-scale world generation executed live in the engine — the kind of content usually confined to offline DCC pipelines — with streaming and open-world scale built in. That work has hardened into a shared PCG backend now used across multiple projects. Before that I owned road authoring and large-world asset pipelines on flagship open-world titles that shipped to public reveal and testing. I work in Rust, C++, and C# across runtime, editor, and toolchain. Independently I build Cunning3D, a procedural authoring platform, and Metra, the Rust-native GPU-driven GUI framework underneath it — written because DCC-scale and agent-facing tools stall on Web/Electron. Cunning3D is not a side sketch — it is the same operator-and-graph architecture I work with professionally, developed independently and pushed further than any single production need would justify. Praxis, the local agent runtime, is embedded in it, so the whole stack is one bet: a procedural kernel, a native GUI that agents can read and act through, and an agent runtime driving the real editor. This started early: I was making game mods in middle school and moderating the Half-Life section on ModChina, and GoldSource with Half-Life’s Hammer editor was the first engine and level toolchain I ever touched.',
             interests: [
                 'Runtime PCG',
                 'Engine Systems',
@@ -334,6 +334,25 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     ],
                 },
                 {
+                    name: 'Praxis — Local Agent Runtime',
+                    description:
+                        'A local agent runtime for coding and authoring workflows, built to drive a native DCC rather than a terminal: the agent runs against the same tool surfaces a human uses.',
+                    highlights: [
+                        'Runtime backend maintained as its own repository, forked from Codex and reworked behind a deliberate clean-room compatibility boundary so legacy config, auth, and wire formats stay read-through instead of leaking into the runtime identity.',
+                        'Self-written application core (session/thread commands, timeline, transcript projection, plan and work panels, model selection, plugin and slash-command surfaces) sitting on a shared protocol crate.',
+                        'Embedded into the Cunning3D harness as an in-process app server, so the agent drives the real editor instead of a detached CLI.',
+                        'Plugin and skill marketplace surfaces let domain workflows — biome layer drawing, voxel drawing, harness control — be packaged as skills the agent can call.',
+                        'Pairs with Metra’s semantic reflection: the agent observes and acts through the native UI, which is what makes procedural authoring automatable end to end.',
+                    ],
+                    tags: [
+                        'Rust',
+                        'Agent Runtime',
+                        'Tool Protocol',
+                        'Plugins & Skills',
+                        'DCC Automation',
+                    ],
+                },
+                {
                     name: 'Real-time Procedural Road System (Unity, Personal)',
                     description:
                         'A real-time procedural road & junction system built in the Unity Editor for large scenes.',
@@ -437,6 +456,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         'Reusable kernels & backends',
                         'Native GUI frameworks',
                         'GPU-driven UI (Vulkan / WGPU)',
+                        'Agent runtimes & tool protocols',
                         'AI-native workflows',
                     ],
                 },
@@ -478,7 +498,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
             title: 'Runtime PCG / 引擎系统 / 大世界工具链',
             location: '上海',
             email: '0x1900.eth@gmail.com',
-            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。Cunning3D 不是随手写的 side project——它和我在工作中使用的是同一套「算子 + Graph」架构，只是完全独立开发，并且推得比任何单一生产需求所要求的都更远。这条线开始得很早：我初中就在做游戏 Mod，并在 ModChina 担任半条命（HL）区版主；接触的第一款游戏引擎是 GoldSource，第一个关卡编辑工具是半条命的 Hammer。',
+            bio: '我做游戏程序化生成系统，并且把它们真正跑到上线。核心能力是 Runtime PCG：把通常只存在于离线 DCC 管线里的地形、几何与岛屿级世界生成搬进运行时实时兑现，并且完整带上流式加载与大世界规模支持。这套东西已经沉淀成公司级 PCG 后端，被多个项目复用。在此之前，我在旗舰开放世界项目上负责道路生成系统与大世界资产分割打包管线，稳定支撑到 PV 首爆与首测。技术栈覆盖 Rust / C++ / C#，横跨运行时、编辑器与工具链。个人项目上独立开发 Cunning3D（程序化创作平台）与其底层的 Metra——一个 Rust 原生、GPU 驱动的 GUI 框架，动机是 DCC 量级与 Agent 类工具在 Web / Electron 上会卡。Cunning3D 不是随手写的 side project——它和我在工作中使用的是同一套「算子 + Graph」架构，只是完全独立开发，并且推得比任何单一生产需求所要求的都更远。本地 Agent 运行时 Praxis 也嵌在其中，所以整个栈其实是同一个判断：一个程序化内核、一个 Agent 能读能操作的原生 GUI、一个真正驱动编辑器的 Agent 运行时。这条线开始得很早：我初中就在做游戏 Mod，并在 ModChina 担任半条命（HL）区版主；接触的第一款游戏引擎是 GoldSource，第一个关卡编辑工具是半条命的 Hammer。',
             interests: ['Runtime PCG', '引擎系统', '大世界', 'AI × 游戏'],
             social: {
                 github: 'https://github.com/Cunning3D',
@@ -680,6 +700,25 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                     ],
                 },
                 {
+                    name: 'Praxis — 本地 Agent Runtime',
+                    description:
+                        '面向编码与创作工作流的本地 Agent 运行时，目标不是驱动一个终端，而是驱动原生 DCC：Agent 使用的是和人完全相同的工具表面。',
+                    highlights: [
+                        '运行时后端作为独立仓库维护，从 Codex fork 后按 clean-room 边界重做：旧的配置、鉴权与协议格式收拢到兼容层做 read-through，不渗进运行时本身的身份。',
+                        '自研应用层（会话 / 线程指令、时间线、转录投影、Plan 与 Work 面板、模型选择、插件与斜杠命令表面），通过共享 protocol crate 与后端对接。',
+                        '以进程内 App Server 的形式嵌入 Cunning3D Harness，让 Agent 直接驱动真实编辑器，而不是一个脱离宿主的 CLI。',
+                        '插件与 Skill 市场机制，把领域工作流——地貌图层绘制、体素绘制、Harness 控制——封装成 Agent 可调用的 Skill。',
+                        '与 Metra 的语义反射配套：Agent 通过原生 UI 观察与执行，这正是让程序化创作端到端可自动化的前提。',
+                    ],
+                    tags: [
+                        'Rust',
+                        'Agent Runtime',
+                        '工具协议',
+                        '插件与 Skill',
+                        'DCC 自动化',
+                    ],
+                },
+                {
                     name: '实时程序化道路系统（个人作品）',
                     description:
                         '基于 Unity Editor 的实时程序化道路/路口系统，用于大规模场景的道路制作与编辑。',
@@ -769,6 +808,7 @@ export const RESUME_BY_LOCALE: Record<ResumeLocale, ResumeConfig> = {
                         '可复用内核与后端',
                         '原生 GUI 框架',
                         'GPU 驱动 UI（Vulkan / WGPU）',
+                        'Agent 运行时与工具协议',
                         'AI 原生工作流',
                     ],
                 },
